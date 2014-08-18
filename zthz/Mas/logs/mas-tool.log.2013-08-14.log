@@ -1,0 +1,177 @@
+[20130814 09:51:42 804 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130814 10:26:56 629 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130814 10:26:56 693 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130814 10:26:56 693 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130814 10:26:56 704 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130814 10:26:56 705 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130814 10:26:56 708 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130814 10:26:56 709 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130814 10:26:56 712 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130814 10:26:56 712 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130814 10:26:56 713 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130814 10:26:56 746 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130814 10:26:56 747 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130814 10:26:56 748 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130814 10:26:56 754 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130814 10:26:56 877 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130814 10:27:16 113 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,10
+[20130814 10:27:33 144 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,100
+[20130814 10:31:04 049 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=101 order by  u.rank desc limit 0,100
+[20130814 12:00:00 009 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130814 12:00:00 070 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"47","Total Rows Fetched":"92","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 12:00:00","":"Indexing completed. Added/Updated: 46 documents. Deleted 0 documents.","Committed":"2013-08-14 12:00:00","Optimized":"2013-08-14 12:00:00","Total Documents Processed":"46","Time taken":"0:0:0.718"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130814 12:00:00 070 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 12:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-14 12:00:00","Optimized":"2013-08-14 12:00:00","Total Documents Processed":"30","Time taken":"0:0:0.650"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130814 14:00:00 001 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130814 14:00:00 057 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"46","Total Rows Fetched":"90","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 14:00:00","":"Indexing completed. Added/Updated: 45 documents. Deleted 0 documents.","Committed":"2013-08-14 14:00:00","Optimized":"2013-08-14 14:00:00","Total Documents Processed":"45","Time taken":"0:0:0.602"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130814 14:00:00 057 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 14:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-14 14:00:00","Optimized":"2013-08-14 14:00:00","Total Documents Processed":"30","Time taken":"0:0:0.508"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130814 14:06:58 649 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130814 14:06:58 699 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130814 14:06:58 699 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130814 14:06:58 703 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130814 14:06:58 704 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130814 14:06:58 707 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130814 14:06:58 708 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130814 14:06:58 712 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130814 14:06:58 712 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130814 14:06:58 713 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130814 14:06:58 734 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130814 14:06:58 735 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130814 14:06:58 736 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130814 14:06:58 740 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130814 14:06:58 804 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130814 14:07:22 006 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by createTime desc limit 1,10
+[20130814 14:07:22 018 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by createTime desc limit 1,10
+[20130814 14:07:22 051 ERROR] cn.zthz.tool.user.EmployeeService - requirement query failed!userId:'402880173f07abcf013f08a0f97f002d'
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'status' in where clause is ambiguous
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1039)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at cn.zthz.tool.db.NamedParameterStatement.executeQuery(NamedParameterStatement.java:322)
+	at cn.zthz.tool.user.EmployeeService.requirementManagement(EmployeeService.java:132)
+	at cn.zthz.actor.rest.EmployeeRest.requirementManagement(EmployeeRest.java:55)
+	at cn.zthz.actor.rest.EmployeeRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130814 14:07:23 371 ERROR] cn.zthz.actor.rest.EmployeeRest - requestParams:{
+	"pageSize":["10"],
+	"startIndex":["1"],
+	"status":["4"],
+	"userId":["402880173f07abcf013f08a0f97f002d"],
+	"userToken":["e0ddde3a4c40439e8160f03f310e94e9"]
+}
+cn.zthz.tool.common.HzException: requirement query failed!userId:'402880173f07abcf013f08a0f97f002d'
+	at cn.zthz.tool.user.EmployeeService.requirementManagement(EmployeeService.java:142)
+	at cn.zthz.actor.rest.EmployeeRest.requirementManagement(EmployeeRest.java:55)
+	at cn.zthz.actor.rest.EmployeeRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'status' in where clause is ambiguous
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1039)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at cn.zthz.tool.db.NamedParameterStatement.executeQuery(NamedParameterStatement.java:322)
+	at cn.zthz.tool.user.EmployeeService.requirementManagement(EmployeeService.java:132)
+	... 19 more
+[20130814 14:07:23 549 WARN ] qileke.jer.server.SyncHandler - pass this error,requirement query failed!userId:'402880173f07abcf013f08a0f97f002d'
+[20130814 14:08:40 858 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130814 14:08:40 901 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130814 14:08:40 901 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130814 14:08:40 905 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130814 14:08:40 906 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130814 14:08:40 908 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130814 14:08:40 909 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130814 14:08:40 912 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130814 14:08:40 912 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130814 14:08:40 913 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130814 14:08:40 934 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130814 14:08:40 935 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130814 14:08:40 935 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130814 14:08:40 939 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130814 14:08:41 004 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130814 14:08:44 397 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,10
+[20130814 14:09:14 614 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,10
+[20130814 14:09:40 503 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:09:40 512 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:09:51 932 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:09:51 933 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:10:14 105 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:10:14 106 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:20:11 071 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130814 14:20:11 111 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130814 14:20:11 111 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130814 14:20:11 115 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130814 14:20:11 116 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130814 14:20:11 118 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130814 14:20:11 119 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130814 14:20:11 122 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130814 14:20:11 123 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130814 14:20:11 124 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130814 14:20:11 144 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130814 14:20:11 145 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130814 14:20:11 146 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130814 14:20:11 150 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130814 14:20:11 215 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130814 14:20:13 040 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 14:20:13 051 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130814 16:00:00 005 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130814 16:00:00 043 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"44","Total Rows Fetched":"86","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 16:00:00","":"Indexing completed. Added/Updated: 43 documents. Deleted 0 documents.","Committed":"2013-08-14 16:00:00","Optimized":"2013-08-14 16:00:00","Total Documents Processed":"43","Time taken":"0:0:0.595"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130814 16:00:00 043 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-14 16:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-14 16:00:00","Optimized":"2013-08-14 16:00:00","Total Documents Processed":"30","Time taken":"0:0:0.491"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+

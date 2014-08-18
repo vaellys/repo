@@ -1,0 +1,31 @@
+package cn.zthz.tool.cache;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.junit.Test;
+
+import cn.zthz.tool.cache.user.UserStatus;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.proxy.UserProxy;
+import cn.zthz.tool.user.User;
+
+public class RedisCacheTest {
+	@Test
+	public void testGet(){
+		User result = UserProxy.getUserInfo("1");
+		System.out.println(LogUtils.format("user" , result));
+		
+	}
+	
+	@Test
+	public void testExpire(){
+		UserProxy.expireUser("ff8080813d24180a013d241a38ff0001");
+	}
+	
+	@Test
+	public void testHttps(){
+		HttpClient httpClient = new HttpClient();
+		HttpMethod method = new PostMethod();
+	}
+}

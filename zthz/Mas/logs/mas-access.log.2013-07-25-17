@@ -1,0 +1,44 @@
+[20130725 17:01:59 321 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:01 964 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:10 986 INFO ] 192.168.0.107 POST /user/update.json {}
+[20130725 17:02:12 455 INFO ] upload params:{"pictureData":"iconbitmap.jpg","pictureData_content_type":"image/*","pictureData_file":"\\home\\uzoice\\tmp\\402880ff4015004c014015106aac0007","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:15 121 INFO ] 192.168.0.107 POST /user/login.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","weiboAccessToken":"","weiboUid":""}
+[20130725 17:02:35 252 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:35 264 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:51 833 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:02:51 953 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:07 570 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:07 620 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:18 779 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:18 816 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:28 772 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:03:28 838 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:06:16 944 INFO ] 192.168.0.107 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130725 17:06:17 261 INFO ] 192.168.0.107 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:06:26 742 INFO ] 192.168.0.107 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:06:39 326 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:06:40 053 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:06:56 557 INFO ] 192.168.0.107 POST /user/update.json {}
+[20130725 17:06:56 591 INFO ] upload params:{"pictureData":"iconbitmap.jpg","pictureData_content_type":"image/*","pictureData_file":"\\home\\uzoice\\tmp\\402880ff4015004c01401514c1ca0008","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:07:04 134 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:07:04 195 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:08:49 587 INFO ] 192.168.0.101 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130725 17:08:50 692 INFO ] 192.168.0.101 POST /user/updateDevice.json {"deviceToken":"7f058718f0a9a33f9f256b91b911fe80","deviceType":"1","userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130725 17:08:51 623 INFO ] 192.168.0.101 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130725 17:09:02 619 INFO ] 192.168.0.107 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130725 17:09:02 646 INFO ] 192.168.0.107 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:06 930 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:14 454 INFO ] 192.168.0.107 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:18 477 INFO ] 192.168.0.107 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130725 17:09:26 905 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:44 210 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:49 893 INFO ] 192.168.0.107 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:50 040 INFO ] 192.168.0.107 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:09:59 617 INFO ] 192.168.0.107 POST /user/update.json {}
+[20130725 17:09:59 650 INFO ] upload params:{"pictureData":"iconbitmap.jpg","pictureData_content_type":"image/*","pictureData_file":"\\home\\uzoice\\tmp\\402880ff4015004c014015178cdc0009","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:12:28 503 INFO ] 192.168.0.107 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:12:30 803 INFO ] 192.168.0.107 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130725 17:12:33 121 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:12:38 463 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:12:39 264 INFO ] 192.168.0.107 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130725 17:12:43 394 INFO ] 192.168.0.107 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

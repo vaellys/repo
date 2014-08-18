@@ -1,0 +1,35 @@
+package qileke.jer.server;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.esotericsoftware.reflectasm.MethodAccess;
+
+public class Actor {
+	public Object object;
+	public final Map<String, Integer> methodIndex = new HashMap<String, Integer>();
+
+	public Actor(Object object) {
+		this.object = object;
+		for (Method method : object.getClass().getMethods()) {
+			if (0 != (method.getModifiers() & Modifier.STATIC)) {
+				continue;
+			}
+			try {
+				methodIndex.put(method.getName(), MethodAccess.get(this.object.getClass()).getIndex(method.getName()));
+			} catch (java.lang.IllegalArgumentException e) {
+				continue;
+			}
+		}
+
+	}
+
+	public void act(String method, Object... args) throws ActionException {
+		if(!methodIndex.containsKey(method)){
+			throw new ActionException("no service for this method:"+method);
+		}
+		MethodAccess.get(object.getClass()).invoke(object, methodIndex.get(method), args);
+	}
+}

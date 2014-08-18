@@ -1,0 +1,464 @@
+package cn.zthz.tool.user;
+
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import cn.zthz.tool.common.Formats;
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.common.StringUtils;
+import cn.zthz.tool.db.Connections;
+import cn.zthz.tool.db.NamedParameterStatement;
+import cn.zthz.tool.db.ResultSetMap;
+import cn.zthz.tool.proxy.UserProxy;
+import cn.zthz.tool.requirement.ConnectionUtils;
+import cn.zthz.tool.requirement.RequirementStatus;
+import cn.zthz.tool.requirement.RequirementUtils;
+/**
+ * applyCount:申请任务的总数,applyingCount:竞选中,employmentCount:雇佣中,
+ * cCount:已完成,expiredCount:过期数量,applyCloseCount:已结束,applyCompleteCount:成功雇佣
+ * @author samul
+ *
+ */
+public class EmployeeService {
+	public static final EmployeeService instance = new EmployeeService();
+	private static final Log log = LogFactory.getLog(EmployeeService.class);
+	public Map<String, Object> home(String userId) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			User user = UserProxy.getUserInfo(userId);
+			Map<String, Object> result = new HashMap<>();
+			result.put("name",user.getName());
+			result.put("nick", user.getNick());
+			result.put("email", user.getEmail());
+			result.put("userPictureSmall", user.getMainPictureSmall());
+			result.put("telphone", user.getTelephone());
+			result.put("completeScore", user.getCompleteScore());
+			result.put("rank", user.getRank());
+			String applyCountSql = "select count(requirementId) as applyCount from RequirementCandidate where userId='" +userId+"'";
+			int applyCount = ResultSetMap.mapInt(statement.executeQuery(applyCountSql));
+			result.put("applyCount", applyCount);
+			String sql = "select applyCount,applyCompleteCount,applyCloseCount from User where id='"+userId+"'";
+			Map<String, Object> employeeMap = ResultSetMap.map(statement.executeQuery(sql));			
+//			result.put("applyCount",employeeMap.get("applyCount")==null?0:(int)employeeMap.get("applyCount"));
+//			result.put("cCount",(int)employeeMap.get("applyCompleteCount"));
+			result.put("applyCloseCount", employeeMap.get("applyCloseCount")==null?0:(int)employeeMap.get("applyCloseCount"));
+			String applyingCountSql = "select count(*) as applyingCount from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status="+RequirementStatus.published+" and rc.userId='"+userId+"'";
+			int applyingCount = ResultSetMap.mapInt(statement.executeQuery(applyingCountSql));
+			result.put("applyingCount", applyingCount);
+			String employmentSql = "select count(*) as employment from Requirement where status="+RequirementStatus.selected+" and selectedCandidate='"+userId+"'";
+			int employmentCount = ResultSetMap.mapInt(statement.executeQuery(employmentSql));
+			result.put("employmentCount",employmentCount);
+			String cCountSql = "select count(*) as cCount from Requirement where status in ("+RequirementStatus.expired+","+RequirementStatus.closed+") and userId='"+userId+"'";
+			int cCount = ResultSetMap.mapInt(statement.executeQuery(cCountSql));
+			String employeeCompleteSql = "select count(*) from Requirement where status ="+RequirementStatus.complete+" and selectedCandidate='"+userId+"'";
+			int employeeCompleteCount = ResultSetMap.mapInt(statement.executeQuery(employeeCompleteSql));
+			result.put("cCount", (cCount + employeeCompleteCount));
+			result.put("applyCompleteCount", employeeCompleteCount);
+			String expiredCountSql = "select count(*) as expiredCount from Requirement where status="+RequirementStatus.expired+" and userId='"+userId+"'";
+			int expiredCount = ResultSetMap.mapInt(statement.executeQuery(expiredCountSql));
+			result.put("expiredCount", expiredCount);
+//			String closedCountSql = "select count(*) as closedCount from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status="+RequirementStatus.closed+" and rc.userId='"+userId+"'";
+//			int closedCount = ResultSetMap.mapInt(statement.executeQuery(closedCountSql));
+//			result.put("closedCount", closedCount);
+			String soCountSql = "select count(*) as soCount from Store where userId='"+userId+"'";
+			int soCount = ResultSetMap.mapInt(statement.executeQuery(soCountSql));
+			result.put("soCount", soCount);
+			String incomeCommissionSql = "select sum(price) as incomeCommission from Requirement where selectedCandidate='"+userId+"' and status="+RequirementStatus.complete;
+			Map<String, Object> map = ResultSetMap.map(statement.executeQuery(incomeCommissionSql));
+			BigDecimal incomeCommission = (BigDecimal)map.get("incomeCommission");
+			BigDecimal formatIncomeCommission = Formats.formatMoney(incomeCommission==null?new BigDecimal("0"):incomeCommission);
+			result.put("incomeCommission", formatIncomeCommission);
+//			String employeeCountSql = "select count(*) from Requirement r where r.status="+RequirementStatus.complete + " and r.selectedC='"+userId+"'";
+//			if(log.isDebugEnabled()){
+//				log.debug(employeeCountSql);
+//			}
+//			int employeeSuccessCount = ResultSetMap.mapInt(statement.executeQuery(employeeCountSql));
+			//result.put("applyCompleteCount",employeeMap.get("applyCompleteCount")==null?0:(int)employeeMap.get("applyCompleteCount"));
+			String collectUserCountSql = "select count(*) as count from EmployerCollect where userId='"+userId+"'";
+			int collectUserCount = ResultSetMap.mapInt(statement.executeQuery(collectUserCountSql));
+			result.put("collectUserCount", collectUserCount);
+			String balanceSql = "select balance from Account where userId='"+userId+"'";
+			BigDecimal balance = (BigDecimal)ResultSetMap.map(statement.executeQuery(balanceSql)).get("balance");
+			BigDecimal formatBalance = Formats.formatMoney(balance);
+			result.put("balance", formatBalance);
+			return result;
+		}catch(Exception e){
+			log.error("employee home query failed!userId:'"+ userId+ "'",e);
+			throw new HzException("employee home query failed!userId:'"+userId+"'");
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	
+	public List<Map<String, Object>> requirementManagement(String userId, Map<String, Object> conditionArgs, Integer startIndex, Integer pageSize) throws HzException{
+		Connection connection = null;
+		NamedParameterStatement namedParameterStatement = null;
+		List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
+		try{
+			connection = Connections.instance.get();
+			String sql = createQuerySql(userId, null != conditionArgs ? conditionArgs.keySet() : Collections.EMPTY_SET, startIndex,
+					pageSize);
+			if(log.isDebugEnabled()){
+				log.debug(sql);
+			}
+			Map<String, Object> args = new HashMap<>();
+			if (null != conditionArgs)
+				args.putAll(conditionArgs);
+			namedParameterStatement = new NamedParameterStatement(connection, sql);
+			if(log.isDebugEnabled()){
+				log.debug(namedParameterStatement.toString());
+			}
+			Set<Map.Entry<String, Object>> set = args.entrySet();
+			for(Map.Entry<String, Object> entry: set){
+				namedParameterStatement.setObject(entry.getKey(), entry.getValue());
+			}
+			results = ResultSetMap.maps(namedParameterStatement.executeQuery());
+			if(null != results){
+				for(Map<String, Object> map : results){
+					String remainTime = RequirementUtils.remainTime(System.currentTimeMillis(), ((Timestamp)map.get("expire")).getTime());
+					map.put("expire", remainTime);
+				}
+			}
+			return results;
+		}catch(Exception e){
+			log.error("requirement query failed!userId:'"+userId+"'", e);
+			throw new HzException("requirement query failed!userId:'"+userId+"'", e);
+		}finally{
+			ConnectionUtils.closeStatement(namedParameterStatement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	
+	private String createQuerySql(String userId, Set<String> conditionKeys,int startIndex, int pageSize) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where ");
+		if (null != conditionKeys && !conditionKeys.isEmpty()) {
+			for (String key : conditionKeys) {
+				sql.append("r.");
+				sql.append(key);
+				sql.append("=:");
+				sql.append(key);
+				sql.append(" and ");
+			}
+		}
+		sql.append(" rc.userId='");
+		sql.append(userId);
+		sql.append("'");
+		sql.append(" order by r.createTime desc limit ");
+		sql.append(startIndex);
+		sql.append(",");
+		sql.append(pageSize);
+		return sql.toString();
+	}
+	
+	public Map<String , Object> requirements(String userId , Integer status, Integer type , int si , int ps) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			Map<String, Object> result = new HashMap<>();
+			StringBuilder qsql = new StringBuilder();
+			StringBuilder csql = new StringBuilder();
+			StringBuilder con = new StringBuilder();
+			qsql.append("select r.id , r.title ,r.price,r.expire,r.address,r.type as tags");
+			csql.append("select count(*) ");
+			con.append(" from Requirement r where userId='");
+			con.append(userId);
+			con.append('\'');
+			if (null != status) {
+				con.append(" and r.status=");
+				con.append(status);
+			}
+			if (null != type) {
+				con.append(" and r.type=");
+				con.append(type);
+			}
+			qsql.append(con);
+			qsql.append(" limit "+si+","+ps);
+			csql.append(con);
+			
+			List<Map<String, Object>>  requirements = ResultSetMap.maps(statement.executeQuery(qsql.toString()));
+			long totolCount = ResultSetMap.mapInt(statement.executeQuery(csql.toString()));
+			result.put("requirements", requirements);			
+			result.put("totolCount", totolCount);			
+			return result;
+		}catch(Exception e){
+			log.error("employment query requirements failed!userId:'"+userId+"'", e);
+			throw new HzException("employment query requirements failed!userId:'"+userId+"'", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	
+	public Map<String, Object> employmentSuccess(String userId, int startIndex, int pageSize) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			Map<String, Object> result = new HashMap<>();
+			String employmentSql = "select r.id, r.title,r.description,r.address,r.price,r.completeTime,r.type as tags from Requirement r where r.selectedCandidate='"+userId+"' and r.status=" +RequirementStatus.complete +" limit "+startIndex+","+pageSize;
+			if(log.isDebugEnabled()){
+				log.debug(employmentSql);
+			}
+			List<Map<String, Object>>  employments = ResultSetMap.maps(statement.executeQuery(employmentSql));			
+			result.put("employments", employments);			
+//			String payCommissionSql = "select sum(price) as payCommission from Requirement where userId='"+userId+"' and status="+RequirementStatus.complete;
+//			Map<String, Object> map = ResultSetMap.map(statement.executeQuery(payCommissionSql));
+//			BigDecimal payCommission = (BigDecimal)map.get("payCommission");
+//			BigDecimal formatPayCommission = Formats.formatMoney(payCommission);
+//			result.put("payCommission", formatPayCommission);
+			String balanceSql = "select balance from Account where userId='"+userId+"'";
+			BigDecimal balance = (BigDecimal)ResultSetMap.map(statement.executeQuery(balanceSql)).get("balance");
+			BigDecimal formatBalance = Formats.formatMoney(balance);
+			result.put("balance", formatBalance);
+			return result;
+		}catch(Exception e){
+			log.error("employment query failed!userId:'"+userId+"'", e);
+			throw new HzException("employment query failed!userId:'"+userId+"'", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	
+	public void addTags(String userId , List<Integer> tnums) throws HzException {
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+				StringBuilder sql = new StringBuilder();
+				sql.append("insert ignore UserTags (userId , tnum) values ");
+				for (Integer tnum : tnums) {
+					sql.append("('"+userId+"',"+tnum+"),");
+				}
+				sql.deleteCharAt(sql.length()-1);
+				statement.executeUpdate(sql.toString());
+		}catch(Exception e){
+			log.error("", e);
+			throw new HzException("", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	
+	}
+	
+	public void deleteTags(String userId , List<Integer> tnums) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			if(null == tnums || tnums.isEmpty()){
+				return;
+			}
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			String sql = "delete from UserTags where userId='"+userId+"' and tnum in("+StringUtils.join(tnums,",")+")";
+			statement.executeUpdate(sql.toString());
+		}catch(Exception e){
+			log.error("", e);
+			throw new HzException("", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	
+	}
+	
+	/**
+	 * 
+	 *
+	 * @param tag
+	 * @param queryOrder
+	 * @return { icon , name , credit,completeDegree,tags,auth(type) }
+	 * @throws HzException
+	 */
+	public List<Map<String, Object>> findByTag(Integer tnum ,Map<String, Object> params, UserQueryOrder queryOrder, int si , int ps) throws HzException {
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			StringBuilder sql = new StringBuilder();
+			sql.append("select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id ");
+			sql.append(" where u.id!='");
+			sql.append((String)params.get("userId"));
+			sql.append("' and u.hasCompleteProfile=0");
+			if(null != tnum){
+				if(tnum.intValue() == 1){
+					sql.append(" and t.tnum between 100 and 200");				
+				}else if(tnum.intValue() == 2){
+					sql.append(" and t.tnum between 200 and 300");
+				}else if(tnum.intValue() == 3 ){
+					sql.append(" and t.tnum between 300 and 400");
+				}else if(tnum.intValue() == 4){
+					sql.append(" and t.tnum between 400 and 500");
+				}else if(tnum.intValue() == 5){
+					sql.append(" and t.tnum between 500 and 600");
+				}else{
+					sql.append(" and t.tnum="+tnum);
+				}
+			}
+			sql.append(" order by ");
+			if(null!=queryOrder){
+				switch (queryOrder) {
+				case completeScore:
+					sql.append(" u.completeScore desc, ");
+					break;
+				case sponsorScore:
+					sql.append(" u.sponsorScore desc, ");
+					break;
+				case nearest:
+					sql.append(" distance(u.latestLongtitude , u.latestLatitude , "+params.get("longitude")+","+params.get("latitude")+") desc, ");
+					break;
+				case rank:
+					break;
+				default:
+					break;
+				}
+			}
+			sql.append(" u.rank desc limit "+si+","+ps);
+			if(log.isDebugEnabled()){
+				log.debug(sql);
+			}
+			return ResultSetMap.maps(statement.executeQuery(sql.toString()));
+		}catch(Exception e){
+			log.error("failed to findByTag", e);
+			throw new HzException("failed to findByTag", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param userId
+	 * @return { name , icon , nick, phone , totalTranactionMoney,rank,tags,applyCompleteCount , comleteDegree
+	 * @throws HzException
+	 */
+	public Map<String, Object> employeeInfo(String targetUserId, String userId) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			String sql = "select u.id,u.name , u.mainPictureSmall ,u.rank,u.nick ,u.name ,u.completeScore, u.sponsorScore,u.telephone,u.applyCompleteCount,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,(select sum(r.price) from Requirement r where r.selectedCandidate='"+targetUserId+"' and r.status="+RequirementStatus.complete+") as totalTranactionMoney ,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId='"+targetUserId+"') as tags,(select count(*) from Requirement r where r.userId='"+targetUserId+"') as totalRequirements,(select count(*) from Requirement r where r.status="+RequirementStatus.published+" and r.userId='"+targetUserId+"') as campaignCount,(select count(*) from Requirement r where r.status="+RequirementStatus.selected+" and r.userId='"+targetUserId+"') as employmentCount,(select count(fid) from UserCollect uc where uc.userId='"+userId+"' and fid='"+targetUserId+"') as hasUserCollect from User u where u.id='"+targetUserId+"' limit 1";
+			return ResultSetMap.map(statement.executeQuery(sql));
+		}catch(Exception e){
+			log.error("user id:"+userId, e);
+			throw new HzException("user id:"+userId, e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	/**
+	 * @param userId
+	 * @return
+	 * @throws HzException
+	 */
+	public Map<String, List<Object>> abilityTags(String userId) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			Map<String, List<Object>> results = new HashMap<>();
+			String sql = "select tnum from UserTags where userId='"+userId+"'";
+			List<Map<String, Object>> maps = ResultSetMap.maps(statement.executeQuery(sql)); 
+			List<Object> tnums = null;
+			if(null != maps){
+				for(Map<String, Object> map : maps){
+					Integer tnum = (Integer)map.get("tnum");
+					String str = String.valueOf(tnum);
+					String t = str.substring(0,1);
+					boolean falg = false;
+					for(int i = 1; i <= 5; i++){
+						if(i == Integer.parseInt(t)){
+							if(results.containsKey(i+"")){
+								results.get(i+"").add(str);
+								falg = true;
+							}else{
+								tnums = new ArrayList<>();
+								tnums.add(str);
+								results.put(i+"", tnums);
+								falg = true;
+							}
+							if(falg){
+								i = 1;
+							}
+							break;
+						}
+					}
+				}
+			}
+			return results;
+		}catch(Exception e){
+			log.debug("acquire abilityTags failed!userId:'"+userId+"'", e);
+			throw new HzException("acquire abilityTags failed!userId:'"+userId+"'", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+	/**
+	 * @param userId
+	 * @param tnums
+	 * @throws HzException
+	 */
+	public void addAbility(String userId , List<Integer> tnums) throws HzException {
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			if(log.isDebugEnabled()){
+				log.debug(LogUtils.format("k", tnums));
+			}
+			if((int)tnums.get(0) == 0){
+				String sql = "delete from UserTags where userId='"+userId+"'";
+				statement.executeUpdate(sql);
+			}else{
+				String dsql = "delete from UserTags where userId='"+userId+"'";
+				statement.executeUpdate(dsql);
+				StringBuilder sql = new StringBuilder();
+				sql.append("insert ignore UserTags (userId , tnum) values ");
+				for (Integer tnum : tnums) {
+					sql.append("('"+userId+"',"+tnum+"),");
+				}
+				sql.deleteCharAt(sql.length()-1);
+				statement.executeUpdate(sql.toString());
+			}
+		}catch(Exception e){
+			log.error("", e);
+			throw new HzException("", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	
+	}
+	
+}

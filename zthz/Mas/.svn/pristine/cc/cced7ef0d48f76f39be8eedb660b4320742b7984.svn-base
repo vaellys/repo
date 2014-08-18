@@ -1,0 +1,11 @@
+/user=cn.zthz.actor.rest.UserRest
+/userRequirement=cn.zthz.actor.rest.UserRequirementRest
+/io=cn.zthz.actor.rest.IORest
+/hz=cn.zthz.actor.rest.HzRest
+/message=cn.zthz.actor.rest.MessageRest
+/setup=cn.zthz.actor.rest.SetupRest
+/account=cn.zthz.actor.rest.AccountRest
+/userStatics=cn.zthz.actor.rest.UserStaticsRest
+/alipay=cn.zthz.actor.rest.AlipayRest
+/io=cn.zthz.actor.rest.IORest
+/store=cn.zthz.actor.rest.StoreRest

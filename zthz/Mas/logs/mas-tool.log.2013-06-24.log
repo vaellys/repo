@@ -1,0 +1,15 @@
+[20130624 16:20:35 623 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130624 16:20:35 925 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130624 16:20:35 925 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130624 16:20:36 017 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130624 16:20:36 021 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130624 16:20:36 078 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130624 16:20:36 115 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130624 16:20:36 147 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130624 16:20:36 164 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130624 16:20:36 180 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130624 16:20:36 285 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130624 16:20:36 298 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130624 16:20:36 308 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130624 16:20:36 334 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130624 16:20:36 473 INFO ] cn.zthz.actor.assemble.MasStarter - init image server

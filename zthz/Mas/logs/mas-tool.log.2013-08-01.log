@@ -1,0 +1,169 @@
+[20130801 09:45:12 617 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 09:45:12 960 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 09:45:12 960 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 09:45:12 968 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 09:45:12 970 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 09:45:12 972 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 09:45:12 973 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 09:45:12 976 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 09:45:12 977 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 09:45:12 978 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 09:45:13 004 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 09:45:13 005 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 09:45:13 006 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 09:45:13 020 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 09:45:13 096 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 09:45:36 174 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId='402880173f07abcf013f08a0f97f002d') as tags from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130801 09:45:36 175 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId='402880173f07abcf013f08a0f97f002d') as tags from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130801 10:00:00 006 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130801 10:00:01 032 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":85},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 10:00:01 033 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":38},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 10:09:36 328 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130801 10:09:36 329 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130801 10:09:36 386 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 57
+[20130801 10:28:59 819 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 10:28:59 929 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 10:28:59 929 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 10:28:59 932 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 10:28:59 934 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 10:28:59 936 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 10:28:59 937 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 10:28:59 940 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 10:28:59 940 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 10:28:59 941 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 10:28:59 961 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 10:28:59 963 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 10:28:59 963 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 10:28:59 967 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 10:29:00 030 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 10:31:06 913 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 10:31:06 990 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 10:31:06 990 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 10:31:06 993 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 10:31:06 995 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 10:31:06 997 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 10:31:06 998 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 10:31:07 001 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 10:31:07 001 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 10:31:07 002 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 10:31:07 023 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 10:31:07 024 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 10:31:07 024 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 10:31:07 028 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 10:31:07 093 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 10:31:27 934 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id, r.title,r.description,r.address,r.price,r.completeTime,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId='402880173f07abcf013f08a0f97f002d') as tags from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where rc.userId='402880173f07abcf013f08a0f97f002d' and r.status=2 limit 1,10
+[20130801 10:40:19 052 WARN ] qileke.jer.server.SyncHandler - pass this error,fid is empty
+[20130801 10:40:52 095 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f08a0f97f002d','2013-08-01 10:40:52.095','402880173f07abcf013f091c3600003f')
+[20130801 10:59:55 477 WARN ] cn.zthz.actor.rest.MasRestExceptionHandler - no this service;request url:http://localhost:8080/userCollect/queryUserCollect.json params:{
+	"pageSize":["10"],
+	"startIndex":["0"],
+	"userId":["402880173f07abcf013f08a0f97f002d"],
+	"userToken":["e0ddde3a4c40439e8160f03f310e94e9"]
+}
+qileke.jer.server.ActionException: no service for this method:queryUserCollect
+	at qileke.jer.server.Actor.act(Actor.java:42)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130801 11:00:04 888 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 11:00:04 942 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 11:00:04 942 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 11:00:04 946 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 11:00:04 947 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 11:00:04 950 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 11:00:04 951 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 11:00:04 954 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 11:00:04 955 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 11:00:04 956 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 11:00:04 977 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 11:00:04 978 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 11:00:04 979 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 11:00:04 983 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 11:00:05 048 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 11:00:09 132 DEBUG] cn.zthz.tool.user.UserCollectService - select u.mainPictureSmall,u.completeScore,u.sponsorScore,u.applyCompleteCount,uc.fid from UserCollect uc left join User u on uc.userId=u.id where uc.userId='402880173f07abcf013f08a0f97f002d' limit 0,10
+[20130801 11:01:38 249 DEBUG] cn.zthz.tool.user.UserCollectService - select u.mainPictureSmall,u.completeScore,u.sponsorScore,u.applyCompleteCount,uc.fid from UserCollect uc left join User u on uc.userId=u.id where uc.userId='402880173f07abcf013f08a20b1b002e' limit 0,10
+[20130801 12:00:00 005 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130801 12:00:00 137 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"45","Total Rows Fetched":"88","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 12:00:00","":"Indexing completed. Added/Updated: 44 documents. Deleted 0 documents.","Committed":"2013-08-01 12:00:01","Optimized":"2013-08-01 12:00:01","Total Documents Processed":"44","Time taken":"0:0:0.980"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 12:00:00 137 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 12:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-01 12:00:00","Optimized":"2013-08-01 12:00:00","Total Documents Processed":"30","Time taken":"0:0:0.662"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 14:00:00 001 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130801 14:00:00 515 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"45","Total Rows Fetched":"88","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 14:00:00","":"Indexing completed. Added/Updated: 44 documents. Deleted 0 documents.","Committed":"2013-08-01 14:00:00","Optimized":"2013-08-01 14:00:00","Total Documents Processed":"44","Time taken":"0:0:0.864"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 14:00:00 515 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 14:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-01 14:00:00","Optimized":"2013-08-01 14:00:00","Total Documents Processed":"30","Time taken":"0:0:0.623"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 14:49:55 798 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f08a0f97f002d','2013-08-01 14:49:55.798','402880173f07abcf013f0db0839d0047')
+[20130801 14:50:19 073 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f08a0f97f002d','2013-08-01 14:50:19.073','402880173f07abcf013f0db0839d0047')
+[20130801 14:50:49 636 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 14:50:49 834 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 14:50:49 834 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 14:50:49 837 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 14:50:49 838 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 14:50:49 841 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 14:50:49 842 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 14:50:49 845 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 14:50:49 845 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 14:50:49 846 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 14:50:49 867 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 14:50:49 868 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 14:50:49 869 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 14:50:49 873 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 14:50:49 937 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 14:50:54 458 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f0db0839d0047','2013-08-01 14:50:54.458','402880173f07abcf013f08a0f97f002d')
+[20130801 14:51:19 679 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f0db0839d0047','2013-08-01 14:51:19.679','402880173f07abcf013f08a0f97f002d')
+[20130801 14:51:35 701 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f07abcf013f0db0839d0047','2013-08-01 14:51:35.701','402880173f07abcf013f08a0f97f002d')
+[20130801 14:51:59 195 DEBUG] cn.zthz.tool.user.UserCollectService - select u.mainPictureSmall,u.completeScore,u.sponsorScore,u.applyCompleteCount,uc.fid,u.name from UserCollect uc left join User u on uc.userId=u.id where uc.userId='402880173f07abcf013f08a0f97f002d' limit 0,10
+[20130801 14:52:22 287 DEBUG] cn.zthz.tool.user.UserCollectService - select u.mainPictureSmall,u.completeScore,u.sponsorScore,u.applyCompleteCount,uc.fid,u.name from UserCollect uc left join User u on uc.userId=u.id where uc.userId='402880173f07abcf013f08a0f97f002d' limit 0,10
+[20130801 14:54:02 301 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 14:54:02 339 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 14:54:02 340 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 14:54:02 342 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 14:54:02 344 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 14:54:02 346 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 14:54:02 347 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 14:54:02 350 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 14:54:02 350 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 14:54:02 351 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 14:54:02 371 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 14:54:02 372 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 14:54:02 373 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 14:54:02 377 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 14:54:02 439 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 14:54:09 084 DEBUG] cn.zthz.tool.user.UserCollectService - select u.mainPictureSmall,u.completeScore,u.sponsorScore,u.applyCompleteCount,uc.fid,u.name from UserCollect uc left join User u on uc.fid=u.id where uc.userId='402880173f07abcf013f08a0f97f002d' limit 0,10
+[20130801 14:55:53 926 DEBUG] cn.zthz.tool.user.UserCollectService - insert ignore UserCollect(fid, createTime, userId) values('402880173f0e6534013f12105e660001','2013-08-01 14:55:53.926','402880173f07abcf013f08a0f97f002d')
+[20130801 15:07:44 404 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130801 15:07:44 444 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130801 15:07:44 444 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130801 15:07:44 447 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130801 15:07:44 449 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130801 15:07:44 451 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130801 15:07:44 452 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130801 15:07:44 455 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130801 15:07:44 455 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130801 15:07:44 456 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130801 15:07:44 476 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130801 15:07:44 478 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130801 15:07:44 478 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130801 15:07:44 482 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130801 15:07:44 547 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130801 15:08:10 980 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id, r.title,r.description,r.address,r.price,r.completeTime,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId='402880173f07abcf013f08a0f97f002d') as tags from RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where rc.userId='402880173f07abcf013f08a0f97f002d' and r.status=2 limit 1,10
+[20130801 16:00:00 005 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130801 16:00:00 056 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"45","Total Rows Fetched":"88","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 16:00:00","":"Indexing completed. Added/Updated: 44 documents. Deleted 0 documents.","Committed":"2013-08-01 16:00:00","Optimized":"2013-08-01 16:00:00","Total Documents Processed":"44","Time taken":"0:0:0.713"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130801 16:00:00 056 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":8},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-01 16:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-01 16:00:00","Optimized":"2013-08-01 16:00:00","Total Documents Processed":"30","Time taken":"0:0:0.503"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+

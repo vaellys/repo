@@ -1,0 +1,7 @@
+[20130814 14:07:21 753 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:08:43 950 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:09:14 612 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","status":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:09:40 448 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:09:51 926 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:10:14 100 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130814 14:20:12 741 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

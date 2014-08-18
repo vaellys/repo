@@ -1,0 +1,2 @@
+[20130801 11:00:08 359 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/queryUserCollect.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130801 11:01:37 594 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/queryUserCollect.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

@@ -1,0 +1,2 @@
+[20130801 15:08:08 815 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentSuccess.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130801 15:08:27 697 INFO ] 0:0:0:0:0:0:0:1 GET /employee/home.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

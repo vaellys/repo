@@ -1,0 +1,9 @@
+[20130729 09:34:47 072 INFO ] 192.168.0.150 POST /userStatics/urs.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:34:47 072 INFO ] 192.168.0.150 POST /user/login.json {"deviceToken":"369accdd5d1866ba26ad52ca3c716b322ae027a1912d2d63c19c644f95a8dda2","deviceType":"0","qqAccessToken":"71C404C03109160B9F1D804FD371DB68","qqUid":"E78D39776EF59318BC5AF2A270F095C7","userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:34:47 076 INFO ] 192.168.0.150 POST /userRequirement/queryRequirement.json {"pageSize":"30","queryOrder":"newest","startIndex":"0","status":"0","type":"0"}
+[20130729 09:34:50 465 INFO ] 192.168.0.150 GET /employer/home.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:34:51 685 INFO ] 192.168.0.150 GET /employer/employmentSuccess.json {"pageSize":"10","startIndex":"0","userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:34:56 678 INFO ] 192.168.0.150 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"0","userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:34:58 309 INFO ] 192.168.0.150 GET /employer/home.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:36:06 398 INFO ] 192.168.0.150 POST /user/info.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 09:36:09 087 INFO ] 192.168.0.150 GET /employer/home.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}

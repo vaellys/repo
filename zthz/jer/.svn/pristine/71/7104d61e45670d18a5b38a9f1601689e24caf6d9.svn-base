@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.002" errors="0" skipped="0" tests="1" name="qileke.jer.server.ActionLoaderTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin"/>
+    <property name="java.vm.version" value="22.1-b02"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\workspace\datamining\jer"/>
+    <property name="java.runtime.version" value="1.7.0_03-b05"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="D:\workspace\datamining\jer"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="D:\workspace\datamining\jer\target\surefire\surefirebooter5103625860936559663.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\uzoice\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows NT (unknown)"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.7.0_03/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_03/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_03/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_03\bin;D:\projects\commons\maven\apache-maven-3.0.4\bin;D:\projects\java\scala\scala-2.9.2\bin;D:\projects\java\scala\sbt\bin;D:\projects\java\clojure\clojure-1.3.0;D:\softwares\java\eclipse-pj;;."/>
+    <property name="surefire.test.class.path" value="D:\workspace\datamining\jer\target\test-class;D:\workspace\datamining\jer\target\classes;C:\Users\uzoice\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\uzoice\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\uzoice\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\uzoice\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\uzoice\.m2\repository\com\alibaba\fastjson\1.1.19\fastjson-1.1.19.jar;C:\Users\uzoice\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\uzoice\.m2\repository\org\slf4j\slf4j-api\1.5.6\slf4j-api-1.5.6.jar;C:\Users\uzoice\.m2\repository\com\googlecode\reflectasm\1.01\reflectasm-1.01.jar;C:\Users\uzoice\.m2\repository\asm\asm\3.2\asm-3.2.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\uzoice"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="user.name" value="uzoice"/>
+    <property name="java.class.path" value="D:\workspace\datamining\jer\target\test-class;D:\workspace\datamining\jer\target\classes;C:\Users\uzoice\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\uzoice\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\uzoice\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\uzoice\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\uzoice\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\uzoice\.m2\repository\com\alibaba\fastjson\1.1.19\fastjson-1.1.19.jar;C:\Users\uzoice\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\uzoice\.m2\repository\org\slf4j\slf4j-api\1.5.6\slf4j-api-1.5.6.jar;C:\Users\uzoice\.m2\repository\com\googlecode\reflectasm\1.01\reflectasm-1.01.jar;C:\Users\uzoice\.m2\repository\asm\asm\3.2\asm-3.2.jar;"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_03\jre"/>
+    <property name="sun.java.command" value="D:\workspace\datamining\jer\target\surefire\surefirebooter5103625860936559663.jar D:\workspace\datamining\jer\target\surefire\surefire4657085242357745387tmp D:\workspace\datamining\jer\target\surefire\surefire5820771465246432300tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_03"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_03\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_03\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_03\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="C:\Users\uzoice\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="0" classname="qileke.jer.server.ActionLoaderTest" name="testLoad"/>
+</testsuite>

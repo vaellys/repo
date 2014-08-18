@@ -1,0 +1,5 @@
+[20130801 10:09:36 251 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0"}
+[20130801 10:31:27 691 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentSuccess.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130801 10:40:18 978 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/add.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130801 10:40:52 086 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/add.json {"fid":"402880173f07abcf013f091c3600003f","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130801 10:59:55 467 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/queryUserCollect.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

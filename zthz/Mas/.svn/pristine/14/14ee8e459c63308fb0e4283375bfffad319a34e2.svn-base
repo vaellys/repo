@@ -1,0 +1,32 @@
+package cn.zthz.tool.message;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
+import cn.zthz.tool.push.AndroidJPush;
+import cn.zthz.tool.push.Push;
+import cn.zthz.tool.push.PushException;
+
+public class AndroidJPushTest {
+
+	@Test
+	public void testPush() throws PushException {
+		Push push = new AndroidJPush();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("receiverId", "402880173c1394dc013c13b37c050009");
+		map.put("sendTime", "2013-01-28 16:56:03");
+		map.put("senderId", "402880173c1394dc013c13b37c050009");
+		map.put("t", 1);
+		push.push("这是我的第一个JPush测试！",map, "825B33B9CF5527B33BF00633263F79CE");
+	}
+	
+	@Test
+	public void testPush2() throws PushException {
+		Push push = new AndroidJPush();
+		Map<String, Object> map = new HashMap<String, Object>();
+		push.push("123321321",map, "fsfsa");
+	}
+
+}

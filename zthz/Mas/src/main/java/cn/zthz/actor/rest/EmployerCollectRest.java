@@ -1,0 +1,46 @@
+package cn.zthz.actor.rest;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.user.EmployerCollectService;
+
+public class EmployerCollectRest extends FunctionalRest{
+	public void add(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try {
+			EmployerCollectService.instance.add(userId, getString(request, response, "fid" , true));
+			putSuccess(request, response);
+		} catch (HzException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void delete(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		try {
+			EmployerCollectService.instance.delete(getMultiValues(request, "fid"), userId);
+			putSuccess(request, response);
+		} catch (HzException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, "delete employerCollect failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void queryEmployerCollect(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		try {
+			List<Map<String, Object>> result = EmployerCollectService.instance.query(userId, getInt(request, response, "startIndex", true), getInt(request, response, "pageSize", true));
+			putJson(request, response, result);
+		} catch (HzException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, "query employerCollect failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+}

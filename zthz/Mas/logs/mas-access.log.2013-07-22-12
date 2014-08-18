@@ -1,0 +1,7 @@
+[20130722 11:36:13 506 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 11:36:37 379 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 11:36:58 906 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 11:37:05 475 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 11:37:10 741 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"2","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 12:54:41 506 INFO ] 0:0:0:0:0:0:0:1 GET /employer/employmentSuccess.json {"pageSize":"10","startIndex":"1","status":"2","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130722 12:55:14 280 INFO ] 0:0:0:0:0:0:0:1 GET /employer/employmentSuccess.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

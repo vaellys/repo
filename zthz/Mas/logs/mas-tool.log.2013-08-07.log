@@ -1,0 +1,95 @@
+[20130807 09:36:04 380 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130807 09:36:04 453 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130807 09:36:04 453 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130807 09:36:04 461 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130807 09:36:04 462 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130807 09:36:04 464 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130807 09:36:04 465 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130807 09:36:04 468 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130807 09:36:04 468 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130807 09:36:04 469 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130807 09:36:04 498 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130807 09:36:04 499 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130807 09:36:04 499 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130807 09:36:04 505 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130807 09:36:04 581 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130807 09:36:07 881 DEBUG] cn.zthz.tool.user.EmployerCollectService - insert ignore EmployerCollect(fid, createTime, userId) values('402880173f07abcf013f08a20b1b002e','2013-08-07 09:36:07.881','402880173f07abcf013f08a0f97f002d')
+[20130807 09:54:18 895 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130807 09:54:19 012 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130807 09:54:19 012 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130807 09:54:19 015 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130807 09:54:19 016 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130807 09:54:19 018 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130807 09:54:19 019 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130807 09:54:19 022 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130807 09:54:19 023 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130807 09:54:19 024 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130807 09:54:19 045 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130807 09:54:19 046 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130807 09:54:19 047 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130807 09:54:19 051 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130807 09:54:19 114 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130807 10:00:00 019 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130807 10:00:00 240 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"88","Total Rows Fetched":"174","Total Documents Skipped":"0","Full Dump Started":"2013-08-07 10:00:00","":"Indexing completed. Added/Updated: 87 documents. Deleted 0 documents.","Committed":"2013-08-07 10:00:00","Optimized":"2013-08-07 10:00:00","Total Documents Processed":"87","Time taken":"0:0:0.709"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130807 10:00:00 240 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-07 10:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-07 10:00:00","Optimized":"2013-08-07 10:00:00","Total Documents Processed":"30","Time taken":"0:0:0.461"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130807 10:11:40 932 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130807 10:11:41 053 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130807 10:11:41 053 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130807 10:11:41 057 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130807 10:11:41 058 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130807 10:11:41 060 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130807 10:11:41 061 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130807 10:11:41 064 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130807 10:11:41 064 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130807 10:11:41 065 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130807 10:11:41 086 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130807 10:11:41 087 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130807 10:11:41 087 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130807 10:11:41 091 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130807 10:11:41 156 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130807 12:00:00 005 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130807 12:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"88","Total Rows Fetched":"174","Total Documents Skipped":"0","Full Dump Started":"2013-08-07 12:00:00","":"Indexing completed. Added/Updated: 87 documents. Deleted 0 documents.","Committed":"2013-08-07 12:00:00","Optimized":"2013-08-07 12:00:00","Total Documents Processed":"87","Time taken":"0:0:0.731"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130807 12:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-07 12:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-08-07 12:00:00","Optimized":"2013-08-07 12:00:00","Total Documents Processed":"30","Time taken":"0:0:0.597"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130807 13:18:09 502 ERROR] cn.zthz.actor.daemon.RequirementExpirer - 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 2,418,943 milliseconds ago.  The last packet sent successfully to the server was 18,922 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3589)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3478)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4019)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5030)
+	at com.jolbox.bonecp.ConnectionHandle.setAutoCommit(ConnectionHandle.java:1063)
+	at cn.zthz.tool.db.Connections.get(Connections.java:60)
+	at cn.zthz.actor.daemon.RequirementExpirer.expire(RequirementExpirer.java:54)
+	at cn.zthz.actor.daemon.RequirementExpirer.run(RequirementExpirer.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(Unknown Source)
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:114)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:161)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:189)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3036)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3489)
+	... 18 more

@@ -1,0 +1,96 @@
+package cn.zthz.actor.cache.user;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import cn.zthz.actor.assemble.Global;
+import cn.zthz.actor.assemble.GlobalConfig;
+import cn.zthz.actor.queue.UserSubjects;
+import cn.zthz.tool.common.HttpUtils;
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.proxy.UserProxy;
+import cn.zthz.tool.queue.OnMessage;
+import cn.zthz.tool.share.QqShare;
+import cn.zthz.tool.share.WeiboShare;
+import cn.zthz.tool.user.User;
+
+public class UserCacheUpdater {
+	private static final Log log = LogFactory.getLog(UserCacheUpdater.class);
+	public static void registerAll(){
+		log.info("register user update message");
+		onUserUpdate();
+		isShareQQ();
+		isShareWB();
+	}
+	
+	public static void onUserUpdate(){
+		Global.queue.subscribe( new OnMessage() {
+			@Override
+			public void handle(String subject, Object message) {
+				Map<String, Object> map = (Map<String, Object>)message;
+				String userId = (String) map.get("userId");
+				UserProxy.refreshUserCaches(userId);
+			}
+		},UserSubjects.USER_UPDATED);
+	}
+	
+	public static void isShareQQ(){
+		Global.queue.subscribe(new OnMessage() {
+			@Override
+			public void handle(String subject, Object message) {
+				Map<String, Object> map = (Map<String, Object>)message;
+				String userId = (String)map.get("userId");
+				User user = UserProxy.getUserInfo(userId);
+				String qqAccessToken = user.getQqAccessToken();
+				Map<String, Object> params = new HashMap<>();
+				params.put("title", GlobalConfig.get("share.user.update.title"));
+				params.put("comment", GlobalConfig.get("share.user.update.comment") + " " + GlobalConfig.get("share.url"));
+				params.put("summary", GlobalConfig.get("share.user.update.summary"));
+				params.put("images", GlobalConfig.get("share.images"));
+				params.put("url", GlobalConfig.get("share.url"));
+				try {
+					QqShare.instance.share(qqAccessToken, params);
+				} catch (HzException e) {
+					log.error("share qq failed!");
+					e.printStackTrace();
+				}
+			}
+		}, UserSubjects.SHARE_QQ);
+	}
+	
+	public static void isShareWB(){
+		Global.queue.subscribe(new OnMessage() {
+			@Override
+			public void handle(String subject, Object message) {
+				Map<String, Object> map = (Map<String, Object>)message;
+				String userId = (String)map.get("userId");
+				User user = UserProxy.getUserInfo(userId);
+				String weiboAccessToken = user.getWeiboAccessToken();
+				Map<String, Object> params = new HashMap<>();
+				//params.put("title", GlobalConfig.get("share.user.update.title"));
+				params.put("body", GlobalConfig.get("share.user.update.comment") +" " + GlobalConfig.get("share.url"));
+				System.out.println(GlobalConfig.get("share.user.update.comment"));
+				//params.put("pic", GlobalConfig.get("share.images"));
+				String images = GlobalConfig.get("share.images");
+				try {
+					byte[] pic = HttpUtils.doGetInBytes(images);
+					log.debug(pic);
+					params.put("pic", pic);
+					params.put("url", GlobalConfig.get("share.url"));
+					WeiboShare.instance.share(weiboAccessToken, params);
+				} catch(IOException e ){
+					log.error("share wb failed!", e);
+				}
+				catch (HzException e) {
+					log.error("share wb failed!");
+					e.printStackTrace();
+				}
+			}
+		}, UserSubjects.SHARE_WB);
+	}
+
+}

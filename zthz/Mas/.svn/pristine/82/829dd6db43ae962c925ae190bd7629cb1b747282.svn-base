@@ -1,0 +1,565 @@
+package cn.zthz.actor.rest;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import qileke.jer.server.ActionHelper;
+import qileke.jer.server.PassException;
+import cn.zthz.actor.assemble.GlobalConfig;
+import cn.zthz.tool.common.ConfigUtils;
+import cn.zthz.tool.common.HashUtils;
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.JsonUtils;
+import cn.zthz.tool.common.StringUtils;
+
+import com.alibaba.fastjson.JSONObject;
+
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+
+public abstract class Rest {
+	protected Log log = LogFactory.getLog(this.getClass());
+
+	protected static final String SUCCESS = "{\"result\":\"success\"}";
+	protected static final String FAILED = "{\"result\":\"failed\"}";
+	protected static final String EMPTY_OBJECT = "{}";
+	protected static final String EMPTY_ARRAY = "[]";
+	protected static final String REQUEST_PARAM_MAP = "REQUEST_PARAM_MAP";
+
+	protected void putEmptyObject(HttpServletRequest request, HttpServletResponse response) {
+		putJson(request, response, EMPTY_OBJECT);
+//		throw new PassException("success");
+	}
+
+	protected void putEmptyArray(HttpServletRequest request, HttpServletResponse response) {
+		putJson(request, response, EMPTY_ARRAY);
+//		throw new PassException("success");
+	}
+
+	protected void putSuccess(HttpServletRequest request, HttpServletResponse response) {
+		putJson(request, response, SUCCESS);
+//		throw new PassException("success");
+	}
+
+	protected void putFailed(HttpServletRequest request, HttpServletResponse response) {
+		putJson(request, response, FAILED);
+//		throw new PassException("failed");
+	}
+	
+	protected void putTemplate(HttpServletRequest request, HttpServletResponse response ,String name , String path, Object root) {
+		try {
+			response.setContentType("text/html; charset=UTF-8");
+			Template template = new Template(name, new InputStreamReader(ConfigUtils.getInputStreamFromClasspath(path)) , null);
+			template.process(root, response.getWriter());
+		} catch (IOException | TemplateException e) {
+			response.setStatus(404);
+			putError(request, response, "no this page", ErrorCodes.NO_THIS_TEMPLATE);
+		}
+	}
+
+	protected void putError(HttpServletRequest request, HttpServletResponse response, Exception e) {
+		if(e instanceof HzException){
+			HzException e1 = (HzException)e;
+			ErrorMessage errorMessage = new ErrorMessage(e1.getMessage(), e1.errorCode(), request.getRequestURI());
+			ActionHelper.writeDirectly(request, response, JsonUtils.toJsonString(errorMessage));
+			throw new PassException(e.getMessage());
+		}
+		ErrorMessage errorMessage = new ErrorMessage(e.getMessage(), ErrorCodes.SERVER_INNER_ERROR, request.getRequestURI());
+		ActionHelper.writeDirectly(request, response, JsonUtils.toJsonString(errorMessage));
+		throw new PassException(e.getMessage());
+	}
+//	protected void putError(HttpServletRequest request, HttpServletResponse response, HzException e) {
+//		ErrorMessage errorMessage = new ErrorMessage(e.getMessage(), e.errorCode(), request.getRequestURI());
+//		ActionHelper.writeDirectly(request, response, JsonUtils.toJsonString(errorMessage));
+//		throw new PassException(e.getMessage());
+//	}
+	protected void putError(HttpServletRequest request, HttpServletResponse response, String error, int errorCode) {
+		ErrorMessage errorMessage = new ErrorMessage(error, errorCode, request.getRequestURI());
+		ActionHelper.writeDirectly(request, response, JsonUtils.toJsonString(errorMessage));
+		throw new PassException(error);
+	}
+
+	protected void putJson(HttpServletRequest request, HttpServletResponse response, Object result) {
+		if (result instanceof String) {
+			ActionHelper.writeDirectly(request, response, (String) result);
+
+		} else {
+			String json = JsonUtils.toJsonString(result);
+			ActionHelper.writeDirectly(request, response, json);
+		}
+	}
+
+	protected void putJsonObjects(HttpServletRequest request, HttpServletResponse response, Iterable<String> result) {
+		ActionHelper.writeDirectly(request, response, createObjectArray(result));
+	}
+
+	protected boolean checkPost(HttpServletRequest request, HttpServletResponse response) {
+		if (!"POST".equalsIgnoreCase(request.getMethod())) {
+			ErrorMessage errorMessage = new ErrorMessage();
+			errorMessage.error = "request method is not post";
+			errorMessage.request = request.getRequestURI();
+			putJson(request, response, errorMessage);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	protected boolean checkPut(HttpServletRequest request, HttpServletResponse response) {
+		if (!"PUT".equalsIgnoreCase(request.getMethod())) {
+			ErrorMessage errorMessage = new ErrorMessage();
+			errorMessage.error = "request method is not put";
+			errorMessage.request = request.getRequestURI();
+			putJson(request, response, errorMessage);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	protected String createObjectArray(Iterable<String> objectJsons) {
+		int length = 1;
+		for (String string : objectJsons) {
+			if (null == string)
+				continue;
+			length += string.length() + 1;
+		}
+		StringBuilder result = new StringBuilder(length);
+		result.append('[');
+		for (String string : objectJsons) {
+			if (null == string)
+				continue;
+			result.append(string);
+			result.append(',');
+		}
+		if (result.length() > 1) {
+			result.deleteCharAt(result.length() - 1);
+		}
+		result.append(']');
+		return result.toString();
+	}
+
+	protected List<String> getParams(String[] params) {
+		if (null == params) {
+			return null;
+		}
+		List<String> idList = new LinkedList<>();
+		for (String param : params) {
+			for (String i : param.split("\\,")) {
+				if (StringUtils.isNotEmpty(i)) {
+					idList.add(i);
+				}
+			}
+		}
+
+		return idList;
+	}
+
+	protected static String genJson(Object... keyValues) {
+		JSONObject jsonObject = new JSONObject();
+		for (int i = 0; i < keyValues.length; i += 2) {
+			jsonObject.put((String) keyValues[i], keyValues[i + 1]);
+		}
+		return jsonObject.toJSONString();
+	}
+
+	protected void checkParameterNotNull(HttpServletRequest request, HttpServletResponse response, String name) {
+		if (StringUtils.isEmpty(request.getParameter(name))) {
+			putError(request, response, name + " is empty", ErrorCodes.PARAMETER_INVALID);
+			throw new PassException(name + " is empty");
+		}
+	}
+
+	protected void checkParameterNotNull(HttpServletRequest request, HttpServletResponse response, String name, String value) {
+		if (StringUtils.isEmpty(value)) {
+			putError(request, response, name + " is empty", ErrorCodes.PARAMETER_INVALID);
+			throw new PassException(name + " is empty");
+		}
+	}
+
+	protected void checkParameterIsNumber(HttpServletRequest request, HttpServletResponse response, String name, String value) {
+		if (!StringUtils.isInt(value)) {
+			putError(request, response, name + " is not integer", ErrorCodes.PARAMETER_INVALID);
+			throw new PassException(name + " is not integer");
+		}
+	}
+
+	protected void checkParameterIsFloat(HttpServletRequest request, HttpServletResponse response, String name, String value) {
+		if (!StringUtils.isFloat(value)) {
+			putError(request, response, name + " is not float", ErrorCodes.PARAMETER_INVALID);
+			throw new PassException(name + " is not float");
+		}
+	}
+
+	protected void checkParameterIsBoolean(HttpServletRequest request, HttpServletResponse response, String name, String value) {
+		if (!"true".equalsIgnoreCase(value) && !"false".equalsIgnoreCase(value)) {
+			putError(request, response, name + " is not boolean value", ErrorCodes.PARAMETER_INVALID);
+			throw new PassException(name + " is not boolean value");
+		}
+	}
+
+	protected boolean getBoolean(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		if ("0".equals(value)) {
+			return false;
+		}
+		if ("1".equals(value)) {
+			return true;
+		}
+		try {
+			return Boolean.parseBoolean(value);
+		} catch (Exception e) {
+			putError(request, response, key + " is not boolean value", ErrorCodes.PARAMETER_INVALID);
+			return false;
+		}
+
+	}
+
+	protected Set<String> getMultiValueSet(HttpServletRequest request, String key) {
+		String[] values = request.getParameterValues(key);
+		if (null == values || 0 == values.length) {
+			return null;
+		}
+		Set<String> result = new HashSet<>();
+		for (String string : values) {
+			String[] vs = string.split("\\s*\\,\\s*");
+			for (String value : vs) {
+				if (StringUtils.isNotEmpty(value)) {
+					result.add(value);
+				}
+			}
+		}
+		return result;
+	}
+
+	protected List<String> getMultiValues(HttpServletRequest request, String key) {
+		String[] values = request.getParameterValues(key);
+		if (null == values || 0 == values.length) {
+			return null;
+		}
+		List<String> result = new LinkedList<>();
+		for (String string : values) {
+			String[] vs = string.split("\\,");
+			for (String value : vs) {
+				if (StringUtils.isNotEmpty(value)) {
+					result.add(value);
+				}
+			}
+		}
+		return result;
+	}
+
+	protected String getString(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		return value;
+	}
+
+	protected Integer getInt(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		} else {
+			if (StringUtils.isEmpty(value)) {
+				return null;
+			}
+		}
+		checkParameterIsNumber(request, response, key, value);
+		return Integer.parseInt(value);
+	}
+
+	protected Float getFloat(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}else{
+			if(null == value){
+				return null;
+			}
+		}
+		checkParameterIsFloat(request, response, key, value);
+		return Float.parseFloat(value);
+	}
+
+	protected Double getDouble(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}else{
+			if(null == value){
+				return null;
+			}
+		}
+		checkParameterIsFloat(request, response, key, value);
+		return Double.parseDouble(value);
+	}
+
+	protected String getStringInReg(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull , String reg) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		if(!value.matches(reg)){
+			putError(request, response, key+" value is invalid", ErrorCodes.PARAMETER_INVALID); 
+		}
+		return value;
+	}
+
+	protected Integer getIntInRange(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull , int start , int end) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		} else {
+			if (StringUtils.isEmpty(value)) {
+				return null;
+			}
+		}
+		checkParameterIsNumber(request, response, key, value);
+		Integer result= Integer.parseInt(value);
+		if(result<start || result>end){
+			putError(request, response, key+" value is invalid ,must between "+start+" and "+end, ErrorCodes.PARAMETER_INVALID);
+		}
+		return result;
+	}
+
+	protected float getFloatInRange(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull, float start , float end) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		checkParameterIsFloat(request, response, key, value);
+		float result = Float.parseFloat(value);
+		if(result<start || result>end){
+			putError(request, response, key+" value is invalid ,must between "+start+" and "+end, ErrorCodes.PARAMETER_INVALID);
+		}
+		return result;
+	}
+
+	protected double getDoubleInRange(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull, double start , double end) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		checkParameterIsFloat(request, response, key, value);
+		double result = Double.parseDouble(value);
+		if(result<start || result>end){
+			putError(request, response, key+" value is invalid ,must between "+start+" and "+end, ErrorCodes.PARAMETER_INVALID);
+		}
+		return result;
+	}
+	protected Enum getEnum(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull, Class<? extends Enum> e) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request, response, key, value);
+		}
+		Enum result = null;
+		try{
+			result = Enum.valueOf(e, value);
+		}catch (Exception e1){
+			putError(request, response, key +"'s value is invalid", ErrorCodes.PARAMETER_INVALID);
+		}
+		return result;
+	}
+	
+	
+	/**
+	 * proxy_set_header Host $host;
+     *  proxy_set_header X-Real-IP $remote_addr;
+     *  proxy_set_header REMOTE-HOST $remote_addr;
+     *  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	 * @param request
+	 * @return
+	 */
+	protected String getRemoteRealIp(HttpServletRequest request) {
+		String ip = request.getHeader("X-Real-IP");
+		if(StringUtils.isEmpty(ip)){
+			return request.getRemoteAddr();
+		}
+		return ip;
+	}
+	
+	protected static final File UPLOAD_FILE_TEMP_DIR = new File(GlobalConfig.get("upload.temp_dir"));
+	protected static final int UPLOAD_MEMORY_SIZE = GlobalConfig.getInt("upload.memory_size");
+	protected static final int UPLOAD_MAX_FILE_SIZE = GlobalConfig.getInt("upload.max_file_size");
+
+	protected boolean isMultipart(HttpServletRequest request) {
+		return ServletFileUpload.isMultipartContent(request);
+	}
+
+	protected String getms(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			return (String) value;
+		}
+	}
+	protected List<String> getmls(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			return (List<String>) value;
+		}
+	}
+	protected Boolean getmb(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			if ("0".equals(value)) {
+				return false;
+			}
+			if ("1".equals(value)) {
+				return true;
+			}
+			return Boolean.valueOf((String)value);
+		}
+	}
+	protected Integer getmi(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			return Integer.valueOf((String)value);
+		}
+	}
+	protected Long getml(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			return Long.valueOf((String)value);
+		}
+	}
+	protected Double getmd(Map<String, Object> map, String key, HttpServletRequest request, HttpServletResponse response, boolean checkNull) {
+		Object value = map.get(key);
+		if (null == value) {
+			if (checkNull) {
+				putError(request, response, key + " is empty", ErrorCodes.PARAMETER_INVALID);
+			}
+			return null;
+		} else {
+			return Double.valueOf((String)value);
+		}
+	}
+
+	protected Map<String, Object> uploadFields(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Map<String, Object> params = (Map<String, Object>) request.getAttribute(REQUEST_PARAM_MAP);
+		if(null!=params){
+			return params;
+		}
+		params = new HashMap<String, Object>();
+		for (Map.Entry<String, String[]> entry : request.getParameterMap().entrySet()) {
+			for (String value : entry.getValue()) {
+				putValues(params, entry.getKey(), value);
+			}
+		}
+		if (!ServletFileUpload.isMultipartContent(request)) {
+			return params;
+		}
+		if (!UPLOAD_FILE_TEMP_DIR.exists()) {
+			UPLOAD_FILE_TEMP_DIR.mkdirs();
+		}
+
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		factory.setSizeThreshold(UPLOAD_MEMORY_SIZE);
+		factory.setRepository(UPLOAD_FILE_TEMP_DIR);
+		ServletFileUpload upload = new ServletFileUpload(factory);
+		upload.setSizeMax(UPLOAD_MAX_FILE_SIZE);
+		List<FileItem> items = upload.parseRequest(request);
+		for (FileItem item : items) {
+			if (!item.isFormField()) {
+				processUploadedFile(params, item);
+			} else {
+				processFormField(params, item);
+
+			}
+		}
+		return params;
+	}
+
+	private void processFormField(Map<String, Object> params, FileItem item) {
+		String name = item.getFieldName();
+		String value = null;
+		try {
+			value = item.getString("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			value= item.getString();
+		}
+		putValues(params, name, value);
+
+	}
+
+	private void putValues(Map<String, Object> params, String name, String value) {
+		Object preValue = (Object) params.get(name);
+		if (null == preValue) {
+			params.put(name, value);
+		} else {
+			if (preValue instanceof List) {
+				((List<String>) preValue).add(value);
+			}
+			if (preValue instanceof String) {
+				List<String> values = new LinkedList<>();
+				values.add((String) preValue);
+				values.add(value);
+				params.put(name, values);
+			}
+		}
+	}
+
+	private void processUploadedFile(Map<String, Object> params, FileItem item) throws Exception {
+		long sizeInBytes = item.getSize();
+		if (0 >= sizeInBytes) {
+			return;
+		}
+		String fieldName = item.getFieldName();
+		String fileName = item.getName();
+		String contentType = item.getContentType();
+		// boolean isInMemory = item.isInMemory();
+		File file = new File(UPLOAD_FILE_TEMP_DIR, HashUtils.uuid());
+		item.write(file);
+		// Map<String, String[]> map = request.getParameterMap();;
+		params.put(fieldName, fileName);
+		params.put(fieldName + "_content_type", contentType);
+		params.put(fieldName + "_file", file);
+	}
+
+}

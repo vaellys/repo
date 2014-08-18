@@ -1,0 +1,7 @@
+[20130802 14:02:56 068 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentSuccess.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130802 14:14:51 154 INFO ] 192.168.0.130 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130802 14:19:26 091 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/delete.json {"id":"9","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130802 14:19:37 741 INFO ] 0:0:0:0:0:0:0:1 GET /userCollect/delete.json {"id":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130802 14:20:16 119 INFO ] 0:0:0:0:0:0:0:1 GET /employerCollect/delete.json {"id":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130802 14:25:27 217 INFO ] 192.168.0.130 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130802 14:45:31 915 INFO ] 192.168.0.130 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

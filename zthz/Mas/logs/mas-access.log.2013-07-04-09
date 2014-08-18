@@ -1,0 +1,2 @@
+[20130704 09:56:13 797 INFO ] 192.168.0.127 POST /message/adminSend.json {"message":"342312","uid":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130704 09:58:27 555 INFO ] 192.168.0.127 POST /message/adminSend.json {"message":"43214","uid":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}

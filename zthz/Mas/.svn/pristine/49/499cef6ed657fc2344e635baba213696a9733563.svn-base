@@ -1,0 +1,6 @@
+package cn.zthz.tool.user;
+
+public interface ThirdAccessTokenCheck {
+	void checkWeiboAccessToken(String weiboUid, String accessToken) throws ThirdAccessException;
+	void checkQqAccessToken(String qqUid, String accessToken) throws ThirdAccessException;
+}

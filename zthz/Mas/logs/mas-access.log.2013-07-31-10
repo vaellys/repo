@@ -1,0 +1,14 @@
+[20130731 10:21:51 090 INFO ] 192.168.0.153 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:21:53 414 INFO ] 192.168.0.153 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130731 10:21:55 286 INFO ] 192.168.0.153 POST /user/updateDevice.json {"deviceToken":"5efa0b6ce00b4cac4c15c5942d256cbe","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:22:18 686 INFO ] 192.168.0.153 POST /setup/setupInfo.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:22:18 866 INFO ] 192.168.0.153 POST /user/info.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:22:21 420 INFO ] 192.168.0.153 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:45:48 918 INFO ] 0:0:0:0:0:0:0:1 GET /message/getRMessage.json {"mid":"1517","userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130731 10:55:40 608 INFO ] 192.168.0.153 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130731 10:55:40 786 INFO ] 192.168.0.153 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:55:47 404 INFO ] 192.168.0.153 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:55:51 242 INFO ] 192.168.0.153 POST /user/updateDevice.json {"deviceToken":"5efa0b6ce00b4cac4c15c5942d256cbe","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:56:09 541 INFO ] 192.168.0.153 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130731 10:56:51 293 INFO ] 192.168.0.153 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130731 10:56:53 090 INFO ] 192.168.0.153 POST /employee/findByTag.json {"pageSize":"20","queryOrder":"","startIndex":"0","tnum":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

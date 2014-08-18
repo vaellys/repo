@@ -1,0 +1,45 @@
+package qileke.jer.server;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.eclipse.jetty.continuation.Continuation;
+import org.eclipse.jetty.http.gzip.GzipResponseWrapper;
+
+
+public class ActionHelper {
+	public static void complete(final HttpServletRequest request){
+		((Continuation)request.getAttribute(AsyncHandler.CONTINUATION)).resume();
+	}
+	
+	public static void write(final HttpServletRequest request , final HttpServletResponse response , String content){
+		try{
+			PrintWriter writer = response.getWriter();
+			int length = content.getBytes("utf-8").length;
+//			response.setBufferSize(length);
+			response.setContentLength(length);
+			writer.write(content);
+			complete(request);
+		} catch (IOException e) {
+			throw new JerException(e);
+		}
+	}
+	public static void writeDirectly(final HttpServletRequest request , final HttpServletResponse response , String content){
+		try{
+//			final GzipResponseWrapper gzipResponseWrapper = new GzipResponseWrapper(request, response);
+			PrintWriter writer = response.getWriter();
+			int length = content.getBytes("utf-8").length;
+//			if(length>500){
+//				writer = gzipResponseWrapper.getWriter();
+//			}
+			response.setContentLength(length);
+			writer.write(content);
+//			writer.close();
+		} catch (IOException e) {
+			throw new JerException(e);
+		}
+	}
+}

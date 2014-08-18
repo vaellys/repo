@@ -1,0 +1,16 @@
+[20130621 11:30:35 719 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:30:35 759 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785435759 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785397670
+[20130621 11:31:23 071 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:23 095 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785483095 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785435759
+[20130621 11:31:26 133 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:26 146 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785486146 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785483095
+[20130621 11:31:29 146 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:29 157 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785489157 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785486146
+[20130621 11:31:33 778 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:33 791 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785493791 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785489157
+[20130621 11:31:37 198 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:37 212 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785497212 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785493791
+[20130621 11:31:39 778 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:39 787 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785499787 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785497212
+[20130621 11:31:43 060 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '402880173f0e6534013f1c4f6ea50070' order by ts asc
+[20130621 11:31:43 068 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f0e6534013185cdf340060', ts=1371785503068 where requirementId='402880173f0e6534013f1c4f6ea50070' and ts=1371785499787

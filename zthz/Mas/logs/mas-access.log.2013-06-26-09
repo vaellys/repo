@@ -1,0 +1,2 @@
+[20130626 09:37:01 799 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0"}
+[20130626 09:37:39 367 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/userIssuedRequirement.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}

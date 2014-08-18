@@ -1,0 +1,3 @@
+[20130802 15:06:00 861 INFO ] 192.168.0.130 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130802 15:16:34 927 INFO ] 192.168.0.112 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130802 15:17:48 170 INFO ] 192.168.0.112 POST /user/updateDevice.json {"deviceToken":"ea4c2b792a9a5f6aba65f66af1404963","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

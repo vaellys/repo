@@ -1,0 +1,3 @@
+[20130806 13:54:43 325 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 13:55:04 294 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 13:56:04 303 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

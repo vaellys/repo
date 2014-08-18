@@ -1,0 +1,2 @@
+[20130730 17:05:13 182 INFO ] 192.168.0.149 POST /message/getRMessage.json {"mid":"","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130730 17:05:48 154 INFO ] 192.168.0.149 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

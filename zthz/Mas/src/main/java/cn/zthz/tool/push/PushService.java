@@ -1,0 +1,250 @@
+package cn.zthz.tool.push;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.jetty.server.Authentication.SendSuccess;
+
+import cn.zthz.actor.rest.ErrorCodes;
+import cn.zthz.tool.cache.user.UserStatus;
+import cn.zthz.tool.common.CollectionUtils;
+import cn.zthz.tool.common.DateUtils;
+import cn.zthz.tool.common.HashUtils;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.common.StringUtils;
+import cn.zthz.tool.db.Connections;
+import cn.zthz.tool.db.DbMapOperations;
+import cn.zthz.tool.db.DbOperations;
+import cn.zthz.tool.db.ResultSetMap;
+import cn.zthz.tool.message.Message;
+import cn.zthz.tool.message.MessageStatus;
+import cn.zthz.tool.message.MessageTypes;
+import cn.zthz.tool.message.RMessageService;
+import cn.zthz.tool.proxy.UserProxy;
+import cn.zthz.tool.requirement.AbstractService;
+import cn.zthz.tool.user.User;
+
+public class PushService extends AbstractService {
+	public static final PushService instance = new PushService();
+	
+	public boolean allowPush(String receiverId){
+		if(!UserProxy.allowPush(receiverId) || UserStatus.EXIT == UserProxy.getUserStatus(receiverId)){
+			return false;
+		}
+		return true;
+		
+	}
+	
+	public void push(String senderId , String receiverId , String alert , Map<String , Object > attachment) throws PushException{
+		Map<String, Object> device = UserProxy.getUserDevice(receiverId);
+		if (null == device) {
+			throw new PushException(ErrorCodes.USER_HAS_NO_DEVICE , "user has no device");
+		}
+		if(!allowPush(receiverId)){
+			log.info("user:"+receiverId+" disable to push or user is exit!");
+			return;
+		}
+		Integer deviceType  = (Integer) device.get("deviceType");
+		if(null == deviceType || deviceType<0 || deviceType>3){
+			throw new PushException(ErrorCodes.USER_HAS_NO_DEVICE , "user has no device");
+		}
+		AbstractPush.getInstance(deviceType).push(alert, attachment,(String) device.get("deviceToken"));
+	}
+
+
+	public void saveOrUpdateUserDevice(String userId, String deviceToken, int type) throws PushException {
+		String countSql = "select count(*) from UserDevice where userId='" + userId + "'";
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			ResultSet contResultSet = statement.executeQuery(countSql);
+			if (ResultSetMap.mapInt(contResultSet) <= 0) {
+				log.info("update deviceToken: "+deviceToken+" type:"+type+" for user:"+userId);
+				Map<String, Object> data = new HashMap<>(4);
+				data.put("userId", userId);
+				data.put("deviceToken", deviceToken);
+				data.put("type", type);
+				data.put("createTime", new Timestamp(System.currentTimeMillis()));
+				DbMapOperations.instance.saveMap(connection, "UserDevice", data);
+			} else {
+				log.info("update deviceToken: "+deviceToken+" type:"+type+" for user:"+userId);
+				Map<String, Object> newProperties = new HashMap<>(1);
+				Map<String, Object> conditionProperties = new HashMap<>(1);
+				conditionProperties.put("userId", userId);
+				newProperties.put("type", type);
+				newProperties.put("deviceToken", deviceToken);
+				DbMapOperations.instance.update(connection, "UserDevice", newProperties, conditionProperties);
+			}
+		} catch (SQLException e) {
+			log.error("", e);
+			throw new PushException(e);
+		} finally {
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+
+	protected String createAlert(User userInfo) {
+		String name = userInfo.getName();
+		return null == name ? "" : name + "发来一条消息";
+	}
+
+	private String messageSqlHeader = "select m.id , m.message , m.sendTime, m.receiverId , m.senderId,ISNULL(sound) as mType, soundLength, m.iType from Message m ";
+
+	public Map<String, Object> getMessage(String messageId, String receiveId) throws PushException {
+		String sql = messageSqlHeader + "where m.id=" + messageId + " and m.receiverId='" + receiveId + "'";
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			Map<String, Object> result = ResultSetMap.map(statement.executeQuery(sql));
+			String updateSql = "update Message set receiveStatus=" + ReceiveStatus.RECEIVED + " where id=" + messageId
+					+ " and receiverId='" + receiveId + "'";
+			statement.executeUpdate(updateSql);
+			return result;
+		} catch (SQLException e) {
+			throw new PushException(e);
+		} finally {
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+
+	public List<Map<String, Object>> getMessages(List<String> messageIds, String receiveId) throws PushException {
+		if (null == messageIds || messageIds.isEmpty()) {
+			return Collections.EMPTY_LIST;
+		}
+		String sql = messageSqlHeader + "where m.id in (" + StringUtils.link(messageIds, ",") + ")" + " and m.receiverId='" + receiveId
+				+ "' order by id desc";
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			String updateSql = "update Message set receiveStatus=" + ReceiveStatus.RECEIVED + " where id in ("
+					+ StringUtils.link(messageIds, ",") + ") and receiverId='" + receiveId + "'";
+			List<Map<String, Object>> result = ResultSetMap.maps(statement.executeQuery(sql));
+			statement.executeUpdate(updateSql);
+			return result;
+		} catch (SQLException e) {
+			log.error("", e);
+			throw new PushException(e);
+		} finally {
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+
+	public int getUnreceivedCount(String receiverId) throws PushException {
+		String sql = "select count(*) from Message where receiverId='"+receiverId+"' and receiveStatus=0";
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			int count = ResultSetMap.mapInt(statement.executeQuery(sql));
+			count+=RMessageService.instance.getUnreadRMessageCount(statement, receiverId);
+			return count;
+		} catch (SQLException e) {
+			log.error("", e);
+			throw new PushException(e);
+		} finally {
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+	public Map<Object, Object> getUnreceived(String receiverId) throws PushException {
+		String sql = messageSqlHeader + "where receiverId='"+receiverId+"' and receiveStatus="+ReceiveStatus.UNRECEIVED+" order by id desc";
+		Connection connection = null;
+		Statement statement = null;
+//		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.prepareStatement(sql);
+//			preparedStatement.setString(1, receiverId);
+//			preparedStatement.setInt(2, ReceiveStatus.UNRECEIVED);
+			List<Map<String, Object>> result = ResultSetMap.maps(statement.executeQuery(sql));
+			if (null != result && !result.isEmpty()) {
+				CollectionUtils.extract(result, "id", true);
+//				statement = connection.createStatement();
+				String updateSql = "update Message set receiveStatus=" + ReceiveStatus.RECEIVED + " where id in ("
+						+ StringUtils.link(CollectionUtils.extract(result, "id", true), ",") + ")";
+				statement.executeUpdate(updateSql);
+			}
+			Map<Object, Object> r = new HashMap<>();
+			r.put("instantMessages", CollectionUtils.classify(result, "senderId"));
+			r.put("requirementMessages", RMessageService.instance.getUnreadRMessages(statement, receiverId));
+			return r;
+//			return CollectionUtils.classify(result, "senderId");
+		} catch (SQLException e) {
+			log.error("", e);
+			throw new PushException(e);
+		} finally {
+//			closeStatement(statement);
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+
+	public List<Map<String, Object>> getUnreceived(String receiverId, String senderId) throws PushException {
+		String sql = messageSqlHeader + "where receiverId='"+receiverId+"' and senderId='"+senderId+"' and receiveStatus="+ReceiveStatus.UNRECEIVED+" order by id desc";
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			List<Map<String, Object>> result = ResultSetMap.maps(statement.executeQuery(sql));
+			if (null != result && !result.isEmpty()) {
+				String updateSql = "update Message set receiveStatus=" + ReceiveStatus.RECEIVED + " where id in ("
+						+ StringUtils.link(CollectionUtils.extract(result, "id", true), ",") + ")";
+				if (log.isDebugEnabled()) {
+					log.debug(updateSql);
+				}
+				statement.executeUpdate(updateSql);
+			}
+			return result;
+		} catch (SQLException e) {
+			log.error("", e);
+			throw new PushException(e);
+		} finally {
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
+
+	private String createUpdateSql(String userId, String tokenName, String token) {
+		StringBuilder updateSql = new StringBuilder();
+		updateSql.append("update DeviceToken set ");
+		updateSql.append(tokenName);
+		updateSql.append("='");
+		updateSql.append(token);
+		updateSql.append("' where userId='");
+		updateSql.append(userId);
+		updateSql.append('\'');
+		return updateSql.toString();
+	}
+
+	private String createInsertSql(String userId, String tokenName, String token) {
+		StringBuilder insertSql = new StringBuilder();
+		insertSql.append("insert into DeviceToken (userId , ");
+		insertSql.append(tokenName);
+		insertSql.append(" ) values('");
+		insertSql.append(userId);
+		insertSql.append("','");
+		insertSql.append(token);
+		insertSql.append("\')");
+		return insertSql.toString();
+	}
+
+}

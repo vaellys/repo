@@ -1,0 +1,338 @@
+package cn.zthz.tool.user;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
+
+import cn.zthz.tool.db.Ignore;
+import cn.zthz.tool.db.QueryField;
+
+public class User {
+	private String id;
+	private Integer sex;
+	private Date birthday;
+	private String address;
+	private String occupation;
+	private String company;
+	private String weiboUid;
+	private String qqUid;
+	private String weiboAccessToken;
+	private String qqAccessToken;
+	private Timestamp createTime;
+	private Integer type;
+	private Integer status;
+	private Integer credit;
+	private String name;
+	private String nick;
+	@QueryField
+	private Object skills;
+	@Ignore
+	private Object skillss;
+	private String password;
+	private String email;
+	private Double latestLatitude;
+	private Double latestLongtitude;
+	private String userToken;
+	private String deviceToken;
+	private Boolean allowPush;
+	private Boolean allowPushNewRequirement;
+	private String pictures;
+	private String mainPicture;
+	private Integer sponsorScore;
+	private Integer completeScore;
+	private Boolean hasCompleteProfile;
+	private Timestamp lastLoginTime;
+	private String telephone;
+	private String mainPictureSmall;
+	private String mainPictureMid;
+	private String mainPictureBig;
+
+	public String getMainPictureSmall() {
+		return mainPictureSmall;
+	}
+
+	public void setMainPictureSmall(String mainPictureSmall) {
+		this.mainPictureSmall = mainPictureSmall;
+	}
+
+	public String getMainPictureMid() {
+		return mainPictureMid;
+	}
+
+	public void setMainPictureMid(String mainPictureMid) {
+		this.mainPictureMid = mainPictureMid;
+	}
+
+	public String getMainPictureBig() {
+		return mainPictureBig;
+	}
+
+	public void setMainPictureBig(String mainPictureBig) {
+		this.mainPictureBig = mainPictureBig;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public Boolean getHasCompleteProfile() {
+		return hasCompleteProfile;
+	}
+
+	public void setHasCompleteProfile(Boolean hasCompleteProfile) {
+		this.hasCompleteProfile = hasCompleteProfile;
+	}
+
+	public Timestamp getLastLoginTime() {
+		return lastLoginTime;
+	}
+
+	public void setLastLoginTime(Timestamp lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Integer getSex() {
+		return sex;
+	}
+
+	public void setSex(Integer sex) {
+		this.sex = sex;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getWeiboUid() {
+		return weiboUid;
+	}
+
+	public void setWeiboUid(String weiboUid) {
+		this.weiboUid = weiboUid;
+	}
+
+	public String getQqUid() {
+		return qqUid;
+	}
+
+	public void setQqUid(String qqUid) {
+		this.qqUid = qqUid;
+	}
+
+	public String getWeiboAccessToken() {
+		return weiboAccessToken;
+	}
+
+	public void setWeiboAccessToken(String weiboAccessToken) {
+		this.weiboAccessToken = weiboAccessToken;
+	}
+
+	public String getQqAccessToken() {
+		return qqAccessToken;
+	}
+
+	public void setQqAccessToken(String qqAccessToken) {
+		this.qqAccessToken = qqAccessToken;
+	}
+
+	public Timestamp getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Timestamp createTime) {
+		this.createTime = createTime;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Integer getCredit() {
+		return credit;
+	}
+
+	public void setCredit(Integer credit) {
+		this.credit = credit;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public Object getSkills() {
+		return skills;
+	}
+
+	public void setSkills(Object skills) {
+		this.skills = skills;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Double getLatestLatitude() {
+		return latestLatitude;
+	}
+
+	public void setLatestLatitude(Double latestLatitude) {
+		this.latestLatitude = latestLatitude;
+	}
+
+	public Double getLatestLongtitude() {
+		return latestLongtitude;
+	}
+
+	public void setLatestLongtitude(Double latestLongtitude) {
+		this.latestLongtitude = latestLongtitude;
+	}
+
+	public String getUserToken() {
+		return userToken;
+	}
+
+	public void setUserToken(String userToken) {
+		this.userToken = userToken;
+	}
+
+	public String getDeviceToken() {
+		return deviceToken;
+	}
+
+	public void setDeviceToken(String deviceToken) {
+		this.deviceToken = deviceToken;
+	}
+
+	public Boolean getAllowPush() {
+		return allowPush;
+	}
+
+	public void setAllowPush(Boolean allowPush) {
+		this.allowPush = allowPush;
+	}
+
+	public Boolean getAllowPushNewRequirement() {
+		return allowPushNewRequirement;
+	}
+
+	public void setAllowPushNewRequirement(Boolean allowPushNewRequirement) {
+		this.allowPushNewRequirement = allowPushNewRequirement;
+	}
+
+	public String getPictures() {
+		return pictures;
+	}
+
+	public void setPictures(String pictures) {
+		this.pictures = pictures;
+	}
+
+	public String getMainPicture() {
+		return mainPicture;
+	}
+
+	public void setMainPicture(String mainPicture) {
+		this.mainPicture = mainPicture;
+	}
+
+	public Integer getSponsorScore() {
+		return sponsorScore;
+	}
+
+	public void setSponsorScore(Integer sponsorScore) {
+		this.sponsorScore = sponsorScore;
+	}
+
+	public Integer getCompleteScore() {
+		return completeScore;
+	}
+
+	public void setCompleteScore(Integer completeScore) {
+		this.completeScore = completeScore;
+	}
+
+	public Object getSkillss() {
+		return skillss;
+	}
+
+	public void setSkillss(Object skillss) {
+		this.skillss = skillss;
+	}
+
+}

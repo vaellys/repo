@@ -1,0 +1,12 @@
+[20130729 15:14:06 751 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:31:52 144 INFO ] 0:0:0:0:0:0:0:1 GET /employee/deleteTags.json {"tnum":"101","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:31:58 989 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:32:12 026 INFO ] 0:0:0:0:0:0:0:1 GET /employee/deleteTags.json {"tnum":"102","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:32:14 668 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:32:21 600 INFO ] 0:0:0:0:0:0:0:1 GET /employee/deleteTags.json {"tnum":"101","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:32:24 226 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:34:13 060 INFO ] 0:0:0:0:0:0:0:1 GET /employee/deleteTags.json {"tnum":"101","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130729 15:34:15 753 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:36:04 407 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:47:53 527 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 15:59:50 627 INFO ] 192.168.0.113 POST /employer/home.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

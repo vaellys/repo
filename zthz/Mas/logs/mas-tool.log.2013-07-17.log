@@ -1,0 +1,60 @@
+[20130717 10:04:07 926 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130717 10:04:08 189 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130717 10:04:08 189 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130717 10:04:08 246 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130717 10:04:08 269 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130717 10:04:08 315 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130717 10:04:08 329 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130717 10:04:08 367 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130717 10:04:08 381 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130717 10:04:08 397 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130717 10:04:08 487 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130717 10:04:08 541 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130717 10:04:08 552 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130717 10:04:08 566 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130717 10:04:08 674 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130717 12:00:00 017 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130717 12:00:00 120 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"40","Total Rows Fetched":"78","Total Documents Skipped":"0","Full Dump Started":"2013-07-17 12:00:00","":"Indexing completed. Added/Updated: 39 documents. Deleted 0 documents.","Committed":"2013-07-17 12:00:00","Optimized":"2013-07-17 12:00:00","Total Documents Processed":"39","Time taken":"0:0:0.566"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130717 12:00:00 120 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-07-17 12:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-07-17 12:00:00","Optimized":"2013-07-17 12:00:00","Total Documents Processed":"30","Time taken":"0:0:0.519"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130717 14:00:00 003 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130717 14:00:00 065 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"40","Total Rows Fetched":"78","Total Documents Skipped":"0","Full Dump Started":"2013-07-17 14:00:00","":"Indexing completed. Added/Updated: 39 documents. Deleted 0 documents.","Committed":"2013-07-17 14:00:00","Optimized":"2013-07-17 14:00:00","Total Documents Processed":"39","Time taken":"0:0:0.659"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130717 14:00:00 066 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-07-17 14:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-07-17 14:00:00","Optimized":"2013-07-17 14:00:00","Total Documents Processed":"31","Time taken":"0:0:0.554"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130717 14:10:09 121 ERROR] cn.zthz.actor.daemon.RequirementExpirer - 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 600,037 milliseconds ago.  The last packet sent successfully to the server was 600,039 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3851)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2471)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5030)
+	at com.jolbox.bonecp.ConnectionHandle.setAutoCommit(ConnectionHandle.java:1063)
+	at cn.zthz.tool.db.Connections.get(Connections.java:60)
+	at cn.zthz.actor.daemon.RequirementExpirer.expire(RequirementExpirer.java:54)
+	at cn.zthz.actor.daemon.RequirementExpirer.run(RequirementExpirer.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(Unknown Source)
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.io.BufferedOutputStream.flush(Unknown Source)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3832)
+	... 16 more

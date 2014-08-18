@@ -1,0 +1,13 @@
+[20130826 10:20:38 079 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0"}
+[20130826 10:23:20 389 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0"}
+[20130826 10:31:19 884 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","type":"1"}
+[20130826 10:34:17 644 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"1","type":"1"}
+[20130826 10:37:34 407 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"1","type":"1"}
+[20130826 10:39:17 540 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"1","type":"1"}
+[20130826 10:43:26 065 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"2","type":"1"}
+[20130826 10:43:36 510 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"0","type":"1"}
+[20130826 10:43:54 931 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","type":"1"}
+[20130826 10:44:56 243 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","type":"1"}
+[20130826 10:49:13 343 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"2","type":"1"}
+[20130826 10:51:12 309 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"2","type":"1"}
+[20130826 10:51:17 826 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"2","type":"101"}

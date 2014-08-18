@@ -1,0 +1,13 @@
+[20130823 10:01:52 195 INFO ] 0:0:0:0:0:0:0:1 GET /employee/home.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 10:03:01 717 INFO ] 0:0:0:0:0:0:0:1 GET /employee/home.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 10:03:45 387 INFO ] 0:0:0:0:0:0:0:1 GET /employee/home.json {"userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130823 10:05:57 478 INFO ] 0:0:0:0:0:0:0:1 GET /employee/home.json {"userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130823 10:08:03 450 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 10:08:19 153 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130823 10:08:28 353 INFO ] 0:0:0:0:0:0:0:1 GET /employee/requirementManagement.json {"pageSize":"10","startIndex":"0","status":"0","userId":"402880173f0e6534013f18175dff0057","userToken":"46249faac41b4576ace8b43d9bb7c38a"}
+[20130823 14:56:25 316 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 14:56:35 576 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","tnum":"101","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 14:56:47 547 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","tnum":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 14:57:12 173 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","tnum":"2","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 14:57:17 721 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","tnum":"3","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130823 14:57:56 764 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","tnum":"3","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

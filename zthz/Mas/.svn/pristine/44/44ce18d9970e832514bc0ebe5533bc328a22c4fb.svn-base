@@ -1,0 +1,10 @@
+/user/login.json
+/user/resetPasswordView.json
+/user/resetPassword.json
+/userRequirement/queryRequirement.json
+/userRequirement/queryRequirement2.json
+/userRequirement/requirementInfo.json
+/userRequirement/getRequirementsInRegion.json
+/userRequirement/getComments.json
+^/alipay/.*$
+^/hz/.*$

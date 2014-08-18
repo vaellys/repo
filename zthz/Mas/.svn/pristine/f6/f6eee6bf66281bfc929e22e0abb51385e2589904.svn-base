@@ -1,0 +1,6 @@
+package cn.zthz.tool.requirement;
+
+public class RequirementTypes {
+	public static final int DESIGN = 1;
+
+}

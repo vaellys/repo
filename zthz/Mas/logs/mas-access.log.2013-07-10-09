@@ -1,0 +1,24 @@
+[20130710 09:31:30 667 INFO ] 0:0:0:0:0:0:0:1 GET /message/send.json {"message":"Fh","receiverId":"402880173f07abcf013f08a0f039002c","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130710 09:32:11 959 INFO ] 192.168.0.121 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:13 391 INFO ] 192.168.0.121 GET /message/sound.json {"id":"4442","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:13 396 INFO ] 192.168.0.121 GET /message/sound.json {"id":"4443","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:13 646 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:13 857 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:14 355 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:14 454 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:15 239 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:15 292 INFO ] 192.168.0.121 GET /message/sound.json {"id":"","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:32:53 904 INFO ] 0:0:0:0:0:0:0:1 GET /message/send.json {"message":"Fh","receiverId":"402880173f07abcf013f08a0f039002c","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130710 09:34:46 159 INFO ] 192.168.0.121 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:34:46 494 INFO ] 192.168.0.121 GET /message/sound.json {"id":"4455","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:34:46 611 INFO ] 192.168.0.121 GET /message/sound.json {"id":"4454","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:34:46 672 INFO ] 192.168.0.121 GET /message/sound.json {"id":"4453","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:35:22 360 INFO ] 192.168.0.121 POST /message/send.json {}
+[20130710 09:35:22 452 INFO ] upload params:{"receiverId":"402880173f0e6534013f18175dff0057","sound":"20130710093532.amr","soundLength":"2","sound_content_type":"audio/amr","sound_file":"\\home\\uzoice\\tmp\\402880ff3fc63485013fc637f14f0002","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:35:48 575 INFO ] 192.168.0.121 POST /message/send.json {}
+[20130710 09:35:48 591 INFO ] upload params:{"receiverId":"402880173f0e6534013f18175dff0057","sound":"20130710093558.amr","soundLength":"5","sound_content_type":"audio/amr","sound_file":"\\home\\uzoice\\tmp\\402880ff3fc63485013fc63857670003","userId":"402880173f07abcf013f08a0f039002c","userToken":"6e81794ff185450e9efd41c03f6d18d8"}
+[20130710 09:36:27 093 INFO ] 0:0:0:0:0:0:0:1 GET /message/send.json {"message":"Fh","receiverId":"402880173f07abcf013f08a0f039002c","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130710 09:42:08 400 INFO ] 0:0:0:0:0:0:0:1 GET /message/send.json {"message":"Fh","receiverId":"402880173f07abcf013f08a0f039002c","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130710 09:43:06 658 INFO ] 0:0:0:0:0:0:0:1 GET /message/send.json {"message":"Fh","receiverId":"402880173f07abcf013f08a0f039002c","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130710 09:48:33 688 INFO ] 127.0.0.1 POST /message/send.json {}
+[20130710 09:48:38 349 INFO ] upload params:{"receiverId":"402880173f07abcf013f08a0f039002c","sound":"??.mp3","soundLength":"1","sound_content_type":"application/octet-stream","sound_file":"\\home\\uzoice\\tmp\\402880ff3fc64416013fc64416470000","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

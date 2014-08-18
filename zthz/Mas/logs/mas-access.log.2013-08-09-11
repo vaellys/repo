@@ -1,0 +1,7 @@
+[20130809 11:17:17 734 INFO ] 192.168.0.168 POST /user/updateDevice.json {"deviceToken":"5efa0b6ce00b4cac4c15c5942d256cbe","deviceType":"1","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130809 11:42:00 955 INFO ] 192.168.0.168 POST /userRequirement/queryRequirement.json {"pageSize":"20","queryOrder":"newest","startIndex":"0","status":"0","type":""}
+[20130809 11:42:04 994 INFO ] 192.168.0.168 POST /employee/home.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130809 11:42:08 173 INFO ] 192.168.0.168 POST /employee/abilityTags.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130809 11:42:17 735 INFO ] 192.168.0.168 POST /employee/addTags.json {"tnum":"102,103,105,106,108","userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130809 11:42:32 260 INFO ] 192.168.0.168 POST /employee/abilityTags.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}
+[20130809 11:54:12 772 INFO ] 192.168.0.168 POST /message/getAllUnreceivedMessage.json {"userId":"402880173f07abcf013f08a20b1b002e","userToken":"5773e7c7466848abbc4e5898c6f89891"}

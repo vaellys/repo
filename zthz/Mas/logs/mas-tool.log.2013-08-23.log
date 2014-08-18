@@ -1,0 +1,449 @@
+[20130823 10:01:25 578 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 10:01:25 739 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 10:01:25 739 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 10:01:25 743 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 10:01:25 744 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 10:01:25 747 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 10:01:25 748 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 10:01:25 751 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 10:01:25 751 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 10:01:25 752 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 10:01:25 781 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 10:01:25 782 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 10:01:25 783 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 10:01:25 789 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 10:01:25 866 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 10:01:52 676 ERROR] cn.zthz.tool.user.EmployeeService - employee home query failed!userId:'402880173f07abcf013f08a0f97f002d'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where r.status=0 and rc.userId='402880173f07abcf013f08a0f97f002d'' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2627)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1556)
+	at com.jolbox.bonecp.StatementHandle.executeQuery(StatementHandle.java:503)
+	at cn.zthz.tool.user.EmployeeService.home(EmployeeService.java:62)
+	at cn.zthz.actor.rest.EmployeeRest.home(EmployeeRest.java:33)
+	at cn.zthz.actor.rest.EmployeeRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130823 10:01:54 372 ERROR] cn.zthz.actor.rest.EmployeeRest - requestParams:{
+	"userId":["402880173f07abcf013f08a0f97f002d"],
+	"userToken":["e0ddde3a4c40439e8160f03f310e94e9"]
+}
+cn.zthz.tool.common.HzException: employee home query failed!userId:'402880173f07abcf013f08a0f97f002d'
+	at cn.zthz.tool.user.EmployeeService.home(EmployeeService.java:103)
+	at cn.zthz.actor.rest.EmployeeRest.home(EmployeeRest.java:33)
+	at cn.zthz.actor.rest.EmployeeRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130823 10:01:54 634 WARN ] qileke.jer.server.SyncHandler - pass this error,employee home query failed!userId:'402880173f07abcf013f08a0f97f002d'
+[20130823 10:02:58 608 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 10:02:58 652 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 10:02:58 652 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 10:02:58 655 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 10:02:58 657 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 10:02:58 659 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 10:02:58 660 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 10:02:58 663 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 10:02:58 663 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 10:02:58 664 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 10:02:58 685 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 10:02:58 686 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 10:02:58 686 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 10:02:58 690 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 10:02:58 755 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 10:05:53 936 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 10:05:53 984 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 10:05:53 984 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 10:05:53 987 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 10:05:53 988 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 10:05:53 990 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 10:05:53 991 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 10:05:53 994 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 10:05:53 995 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 10:05:53 995 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 10:05:54 016 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 10:05:54 017 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 10:05:54 018 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 10:05:54 022 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 10:05:54 086 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 10:08:03 471 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130823 10:08:03 480 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  rc.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130823 10:08:19 161 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  rc.userId='402880173f0e6534013f18175dff0057' order by r.createTime desc limit 1,10
+[20130823 10:08:19 162 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  rc.userId='402880173f0e6534013f18175dff0057' order by r.createTime desc limit 1,10
+[20130823 10:08:28 371 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=:status and  rc.userId='402880173f0e6534013f18175dff0057' order by r.createTime desc limit 0,10
+[20130823 10:08:28 372 DEBUG] cn.zthz.tool.user.EmployeeService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.status,r.createTime,r.type as tags from  RequirementCandidate rc left join Requirement r on rc.requirementId=r.id where r.status=? and  rc.userId='402880173f0e6534013f18175dff0057' order by r.createTime desc limit 0,10
+[20130823 10:46:54 114 INFO ] cn.zthz.actor.message.RequirementPushor - send expire message:{"hasMandate":false,"id":"40288017407b843b0140850889390006","price":8000.00,"title":"有个网站开发的任务想找个人过或者公司做，还请高手加入！","userId":"402880173f07abcf013f08a20b1b002e"}
+[20130823 10:46:54 154 DEBUG] cn.zthz.tool.message.RMessageService - insert into RMessage (rid, uid, message,rowId, t, createTime ,status ) values('40288017407b843b0140850889390006','402880173f07abcf013f08a20b1b002e','您的需求:有个网站开发的任务想找个人过或者公司做，还请高手加入！已经过期！','402880ff40a9113d0140a9113dca0000',16,'2013-08-23 10:46:54.154',1)
+[20130823 10:46:54 386 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:54 463 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:54 791 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:54 797 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:54 965 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 1e54fd3d[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54797]]
+[20130823 10:46:55 186 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 545d9c23[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54798]]
+[20130823 10:46:55 187 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:55 192 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:55 353 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 2f62c816[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54799]]
+[20130823 10:46:55 688 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:55 694 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:56 082 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 46733294[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54800]]
+[20130823 10:46:56 188 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:56 193 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:56 362 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 603914ca[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54801]]
+[20130823 10:46:56 688 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:56 693 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:56 856 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 7219e580[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54802]]
+[20130823 10:46:57 187 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:57 193 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:57 354 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 2ba61271[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54803]]
+[20130823 10:46:57 688 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:57 693 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:58 187 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:58 193 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:58 581 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 4d0152bb[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54805]]
+[20130823 10:46:58 687 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130823 10:46:58 693 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130823 10:46:59 077 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 31a0db5b[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54806]]
+[20130823 10:46:59 207 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+[20130823 10:46:59 208 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+[20130823 10:46:59 209 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+[20130823 10:46:59 209 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+[20130823 10:46:59 209 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+[20130823 10:46:59 209 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+[20130823 10:46:59 210 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@7e56f324
+[20130823 10:46:59 210 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+[20130823 10:46:59 379 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130823 10:46:59 381 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130823 10:46:59 513 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130823 10:46:59 513 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130823 10:46:59 513 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130823 10:46:59 514 DEBUG] org.apache.commons.httpclient.HttpClient - Java version: 1.7.0_11
+[20130823 10:46:59 514 DEBUG] org.apache.commons.httpclient.HttpClient - Java vendor: Oracle Corporation
+[20130823 10:46:59 514 DEBUG] org.apache.commons.httpclient.HttpClient - Java class path: D:\Eclipse\workspace\Mas\target\classes;C:\Users\samul\.m2\repository\redis\clients\jedis\2.0.0\jedis-2.0.0.jar;C:\Users\samul\.m2\repository\org\apache\lucene\lucene-core\3.6.1\lucene-core-3.6.1.jar;C:\Users\samul\.m2\repository\com\alibaba\fastjson\1.1.23\fastjson-1.1.23.jar;C:\Users\samul\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\samul\.m2\repository\commons-io\commons-io\2.3\commons-io-2.3.jar;C:\Users\samul\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\samul\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\samul\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\samul\.m2\repository\commons-codec\commons-codec\1.2\commons-codec-1.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpclient\4.2.2\httpclient-4.2.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2\httpcore-4.2.2.jar;C:\Users\samul\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;C:\Users\samul\.m2\repository\cn\jpush\jpush-api\0.0.1\jpush-api-0.0.1.jar;C:\Users\samul\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar;C:\Users\samul\.m2\repository\org\quartz-scheduler\quartz\2.1.6\quartz-2.1.6.jar;C:\Users\samul\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\samul\.m2\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;C:\Users\samul\.m2\repository\org\apache\solr\solr-solrj\4.1.0\solr-solrj-4.1.0.jar;C:\Users\samul\.m2\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpmime\4.1.3\httpmime-4.1.3.jar;C:\Users\samul\.m2\repository\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;C:\Users\samul\.m2\repository\mysql\mysql-connector-java\5.1.20\mysql-connector-java-5.1.20.jar;C:\Users\samul\.m2\repository\com\jolbox\bonecp\0.7.1.RELEASE\bonecp-0.7.1.RELEASE.jar;C:\Users\samul\.m2\repository\com\google\guava\guava\r08\guava-r08.jar;C:\Users\samul\.m2\repository\org\bouncycastle\bcprov-jdk16\1.46\bcprov-jdk16-1.46.jar;C:\Users\samul\.m2\repository\org\pns\JavaPNS-2.2\2.2\JavaPNS-2.2-2.2.jar;D:\Eclipse\workspace\jer\target\classes;C:\Users\samul\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\samul\.m2\repository\com\esotericsoftware\reflectasm\reflectasm\1.07\reflectasm-1.07.jar;C:\Users\samul\.m2\repository\org\ow2\asm\asm\4.0\asm-4.0.jar;C:\Users\samul\.m2\repository\net\coobird\thumbnailator\0.4.3\thumbnailator-0.4.3.jar;C:\Users\samul\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\samul\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\samul\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-base\2.0.0.3\gexin-rp-sdk-base-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-http\2.0.0.3\gexin-rp-sdk-http-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-template\2.0.0.3\gexin-rp-sdk-template-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\jackson-all\1.8.5\jackson-all-1.8.5.jar;C:\Users\samul\.m2\repository\gexin\protobuf-java\2.4.1\protobuf-java-2.4.1.jar
+[20130823 10:46:59 514 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system name: Windows 7
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system version: 6.1
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+[20130823 10:46:59 515 DEBUG] org.apache.commons.httpclient.HttpClient - SunPCSC 1.7: Sun PC/SC provider
+[20130823 10:46:59 516 DEBUG] org.apache.commons.httpclient.HttpClient - SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+[20130823 10:46:59 516 DEBUG] org.apache.commons.httpclient.HttpClient - BC 1.46: BouncyCastle Security Provider v1.46
+[20130823 10:46:59 517 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130823 10:46:59 517 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130823 10:46:59 521 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130823 10:46:59 521 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130823 10:46:59 521 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130823 10:46:59 522 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130823 10:46:59 522 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130823 10:46:59 524 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130823 10:46:59 524 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130823 10:46:59 524 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130823 10:46:59 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130823 10:46:59 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130823 10:46:59 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130823 10:46:59 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130823 10:46:59 607 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130823 10:46:59 607 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130823 10:46:59 607 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 607 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 607 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130823 10:46:59 607 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130823 10:46:59 608 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130823 10:46:59 615 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130823 10:46:59 616 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 616 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 616 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130823 10:46:59 616 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 617 DEBUG] httpclient.wire.header - >> "Content-Length: 569[\r][\n]"
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130823 10:46:59 617 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130823 10:46:59 617 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130823 10:46:59 618 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"5efa0b6ce00b4cac4c15c5942d256cbe","transmissionContent":"{\"alert\":\"[0xe6][0x82][0xa8][0xe7][0x9a][0x84][0xe9][0x9c][0x80][0xe6][0xb1][0x82]:[0xe6][0x9c][0x89][0xe4][0xb8][0xaa][0xe7][0xbd][0x91][0xe7][0xab][0x99][0xe5][0xbc][0x80][0xe5][0x8f][0x91][0xe7][0x9a][0x84][0xe4][0xbb][0xbb][0xe5][0x8a][0xa1][0xe6][0x83][0xb3][0xe6][0x89][0xbe][0xe4][0xb8][0xaa][0xe4][0xba][0xba][0xe8][0xbf][0x87][0xe6][0x88][0x96][0xe8][0x80][0x85][0xe5][0x85][0xac]...[0xe5][0xb7][0xb2][0xe7][0xbb][0x8f][0xe8][0xbf][0x87][0xe6][0x9c][0x9f][0xef][0xbc][0x81]\",\"attach\":{\"mid\":1808,\"t\":16}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130823 10:46:59 618 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130823 10:46:59 619 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 619 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 685 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130823 10:46:59 686 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130823 10:46:59 686 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130823 10:46:59 686 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130823 10:46:59 686 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 687 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 687 DEBUG] httpclient.wire.header - << "Date: Fri, 23 Aug 2013 02:47:03 GMT[\r][\n]"
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 687 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 687 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130823 10:46:59 687 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 688 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 688 DEBUG] httpclient.wire.header - << "Content-Length: 86[\r][\n]"
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130823 10:46:59 688 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130823 10:46:59 688 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130823 10:46:59 689 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130823 10:46:59 689 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0823_2Dqst9u0Fm8ghUImdszDG5","result":"ok","status":"successed_online"}"
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130823 10:46:59 690 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130823 10:46:59 691 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1377226019690
+[20130823 10:46:59 691 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130823 10:46:59 700 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0823_2Dqst9u0Fm8ghUImdszDG5, result=ok, status=successed_online}
+[20130823 10:46:59 701 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement with id:40288017407b843b0140850889390006 in solr
+[20130823 10:46:59 766 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: {}->http://192.168.0.151, timeout = 0
+[20130823 10:46:59 770 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [{}->http://192.168.0.151] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+[20130823 10:46:59 770 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - No free connections [{}->http://192.168.0.151][null]
+[20130823 10:46:59 770 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Available capacity: 2 out of 2 [{}->http://192.168.0.151][null]
+[20130823 10:46:59 770 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Creating new connection [{}->http://192.168.0.151]
+[20130823 10:46:59 778 DEBUG] org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to 192.168.0.151:80
+[20130823 10:46:59 795 DEBUG] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+[20130823 10:46:59 802 DEBUG] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+[20130823 10:46:59 802 DEBUG] org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+[20130823 10:46:59 803 DEBUG] org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+[20130823 10:46:59 803 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+[20130823 10:46:59 803 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Sending request: POST /solr/requirement/update?commit=true HTTP/1.1
+[20130823 10:46:59 803 DEBUG] org.apache.http.wire - >> "POST /solr/requirement/update?commit=true HTTP/1.1[\r][\n]"
+[20130823 10:46:59 804 DEBUG] org.apache.http.wire - >> "Content-Length: 52[\r][\n]"
+[20130823 10:46:59 804 DEBUG] org.apache.http.wire - >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+[20130823 10:46:59 804 DEBUG] org.apache.http.wire - >> "Host: 192.168.0.151[\r][\n]"
+[20130823 10:46:59 804 DEBUG] org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+[20130823 10:46:59 804 DEBUG] org.apache.http.wire - >> "[\r][\n]"
+[20130823 10:46:59 805 DEBUG] org.apache.http.headers - >> POST /solr/requirement/update?commit=true HTTP/1.1
+[20130823 10:46:59 805 DEBUG] org.apache.http.headers - >> Content-Length: 52
+[20130823 10:46:59 805 DEBUG] org.apache.http.headers - >> Content-Type: application/json; charset=UTF-8
+[20130823 10:46:59 805 DEBUG] org.apache.http.headers - >> Host: 192.168.0.151
+[20130823 10:46:59 805 DEBUG] org.apache.http.headers - >> Connection: Keep-Alive
+[20130823 10:46:59 805 DEBUG] org.apache.http.wire - >> "{"delete":{"id":"40288017407b843b0140850889390006"}}"
+[20130823 10:47:00 055 DEBUG] org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "Server: nginx/1.2.6[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "Date: Fri, 23 Aug 2013 02:49:23 GMT[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "Connection: keep-alive[\r][\n]"
+[20130823 10:47:00 056 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130823 10:47:00 057 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << HTTP/1.1 200 OK
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << Server: nginx/1.2.6
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << Date: Fri, 23 Aug 2013 02:49:23 GMT
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << Content-Type: application/json;charset=UTF-8
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << Transfer-Encoding: chunked
+[20130823 10:47:00 057 DEBUG] org.apache.http.headers - << Connection: keep-alive
+[20130823 10:47:00 060 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+[20130823 10:47:00 062 DEBUG] org.apache.http.wire - << "2c[\r][\n]"
+[20130823 10:47:00 062 DEBUG] org.apache.http.wire - << "{"responseHeader":{"status":0,"QTime":245}}[\n]"
+[20130823 10:47:00 062 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130823 10:47:00 062 DEBUG] org.apache.http.wire - << "0[\r][\n]"
+[20130823 10:47:00 062 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130823 10:47:00 062 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+[20130823 10:47:00 062 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [{}->http://192.168.0.151][null]
+[20130823 10:47:00 062 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [{}->http://192.168.0.151][null]; keep alive indefinitely
+[20130823 10:47:00 062 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+[20130823 10:47:00 063 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Shutting down
+[20130823 10:47:00 063 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Closing connection [{}->http://192.168.0.151][null]
+[20130823 10:47:00 063 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Connection 0.0.0.0:54809<->192.168.0.151:80 closed
+[20130823 10:47:00 063 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement response:{"responseHeader":{"status":0,"QTime":245}}
+
+[20130823 10:47:06 861 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: d0a42de[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.36.234,port=2195,localport=54804]]
+[20130823 12:00:00 034 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130823 12:00:00 092 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"16","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 12:00:00","":"Indexing completed. Added/Updated: 15 documents. Deleted 0 documents.","Committed":"2013-08-23 12:00:00","Optimized":"2013-08-23 12:00:00","Total Documents Processed":"15","Time taken":"0:0:0.644"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130823 12:00:00 092 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 12:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-23 12:00:00","Optimized":"2013-08-23 12:00:00","Total Documents Processed":"31","Time taken":"0:0:0.593"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130823 12:05:54 589 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Shutting down
+[20130823 14:00:00 001 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130823 14:00:00 031 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"16","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 14:00:00","":"Indexing completed. Added/Updated: 15 documents. Deleted 0 documents.","Committed":"2013-08-23 14:00:00","Optimized":"2013-08-23 14:00:00","Total Documents Processed":"15","Time taken":"0:0:0.684"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130823 14:00:00 031 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 14:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-23 14:00:00","Optimized":"2013-08-23 14:00:00","Total Documents Processed":"31","Time taken":"0:0:0.582"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130823 14:56:12 963 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 14:56:13 006 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 14:56:13 007 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 14:56:13 010 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 14:56:13 011 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 14:56:13 014 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 14:56:13 014 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 14:56:13 017 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 14:56:13 018 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 14:56:13 019 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 14:56:13 039 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 14:56:13 041 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 14:56:13 041 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 14:56:13 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 14:56:13 110 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 14:56:25 322 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,10
+[20130823 14:56:35 579 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=101 order by  u.rank desc limit 0,10
+[20130823 14:56:47 548 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=1 order by  u.rank desc limit 0,10
+[20130823 14:57:12 174 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=2 order by  u.rank desc limit 0,10
+[20130823 14:57:17 722 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=3 order by  u.rank desc limit 0,10
+[20130823 14:57:54 233 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 14:57:54 277 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 14:57:54 277 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 14:57:54 280 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 14:57:54 281 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 14:57:54 283 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 14:57:54 284 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 14:57:54 287 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 14:57:54 288 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 14:57:54 289 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 14:57:54 309 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 14:57:54 310 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 14:57:54 311 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 14:57:54 315 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 14:57:54 378 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 14:57:57 047 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum between 300 and 400 order by  u.rank desc limit 0,10
+[20130823 15:01:32 429 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 15:01:32 469 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 15:01:32 469 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 15:01:32 472 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 15:01:32 473 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 15:01:32 475 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 15:01:32 476 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 15:01:32 479 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 15:01:32 480 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 15:01:32 481 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 15:01:32 502 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 15:01:32 503 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 15:01:32 503 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 15:01:32 507 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 15:01:32 572 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 15:03:43 099 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130823 15:03:43 108 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130823 15:03:43 111 INFO ] cn.zthz.tool.push.PushService - update deviceToken: 5efa0b6ce00b4cac4c15c5942d256cbe type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130823 15:03:43 129 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 21
+[20130823 15:03:45 429 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 order by  u.rank desc limit 0,20
+[20130823 15:03:48 493 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=101 order by  u.rank desc limit 0,20
+[20130823 15:03:50 211 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum between 100 and 200 order by  u.rank desc limit 0,20
+[20130823 15:03:56 513 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=201 order by  u.rank desc limit 0,20
+[20130823 15:03:58 766 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=202 order by  u.rank desc limit 0,20
+[20130823 15:04:00 648 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum between 200 and 300 order by  u.rank desc limit 0,20
+[20130823 15:04:03 422 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=204 order by  u.rank desc limit 0,20
+[20130823 15:04:05 031 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=203 order by  u.rank desc limit 0,20
+[20130823 15:04:06 810 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=205 order by  u.rank desc limit 0,20
+[20130823 15:04:09 262 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=301 order by  u.rank desc limit 0,20
+[20130823 15:04:10 874 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=302 order by  u.rank desc limit 0,20
+[20130823 15:04:12 562 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=303 order by  u.rank desc limit 0,20
+[20130823 15:04:14 334 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=304 order by  u.rank desc limit 0,20
+[20130823 15:04:16 212 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum between 300 and 400 order by  u.rank desc limit 0,20
+[20130823 15:04:23 619 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=501 order by  u.rank desc limit 0,20
+[20130823 15:04:25 248 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=502 order by  u.rank desc limit 0,20
+[20130823 15:04:26 827 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=503 order by  u.rank desc limit 0,20
+[20130823 15:04:28 371 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=504 order by  u.rank desc limit 0,20
+[20130823 15:04:29 697 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a20b1b002e' and u.hasCompleteProfile=0 and t.tnum=5 order by  u.rank desc limit 0,20
+[20130823 15:05:56 714 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130823 15:05:56 767 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130823 15:05:56 767 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130823 15:05:56 771 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130823 15:05:56 772 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130823 15:05:56 774 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130823 15:05:56 775 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130823 15:05:56 778 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130823 15:05:56 778 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130823 15:05:56 779 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130823 15:05:56 800 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130823 15:05:56 801 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130823 15:05:56 802 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130823 15:05:56 805 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130823 15:05:56 869 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130823 15:06:06 200 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum between 500 and 600 order by  u.rank desc limit 0,10
+[20130823 15:08:30 050 DEBUG] cn.zthz.tool.user.EmployeeService - select distinct u.id, u.userToken,u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,(select GROUP_CONCAT(cast(t.tnum as char)) from UserTags t where t.userId=u.id) as tnum from User u left join UserTags t on t.userId=u.id  where u.id!='402880173f07abcf013f08a0f97f002d' and u.hasCompleteProfile=0 and t.tnum=101 order by  u.rank desc limit 0,10
+[20130823 16:00:00 007 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130823 16:00:00 060 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"16","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 16:00:00","":"Indexing completed. Added/Updated: 15 documents. Deleted 0 documents.","Committed":"2013-08-23 16:00:00","Optimized":"2013-08-23 16:00:00","Total Documents Processed":"15","Time taken":"0:0:0.553"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130823 16:00:00 060 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-23 16:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-23 16:00:00","Optimized":"2013-08-23 16:00:00","Total Documents Processed":"31","Time taken":"0:0:0.549"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+

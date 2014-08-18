@@ -1,0 +1,15 @@
+[20130806 11:01:02 380 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:12:25 684 INFO ] 0:0:0:0:0:0:0:1 GET /employee/addTags.json {"tnum":"101,102,104","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:12:28 569 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:17:53 058 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:19:02 556 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:20:54 584 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0"}
+[20130806 11:26:24 495 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0"}
+[20130806 11:28:18 016 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0"}
+[20130806 11:28:43 509 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:31:29 476 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:32:41 967 INFO ] 0:0:0:0:0:0:0:1 GET /employee/addTags.json {"tnum":"101,102,104,105","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:33:06 118 INFO ] 0:0:0:0:0:0:0:1 GET /employee/addTags.json {"tnum":"101,102,104,105,201","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:43:59 491 INFO ] 0:0:0:0:0:0:0:1 GET /employer/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:49:47 497 INFO ] 0:0:0:0:0:0:0:1 GET /employer/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130806 11:50:30 860 INFO ] 0:0:0:0:0:0:0:1 GET /employer/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

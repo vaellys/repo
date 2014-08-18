@@ -1,0 +1,129 @@
+package cn.zthz.actor.rest;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.IOUtils;
+
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.WithBlob;
+import cn.zthz.tool.common.WithInputStream;
+import cn.zthz.tool.message.MessageService;
+import cn.zthz.tool.message.RMessageService;
+import cn.zthz.tool.push.PushException;
+import cn.zthz.tool.push.PushService;
+
+
+/**
+ * 
+ * @author uzoice
+ *
+ */
+public class MessageRest extends FunctionalRest{
+	
+	public void sound(HttpServletRequest request, final HttpServletResponse response){
+		String userId  = request.getParameter(USER_ID);
+		Integer mid = getInt(request, response, "id", true);
+		response.setContentType("application/octet-stream");
+		response.setHeader("Content-disposition", "attachment; filename=\"sound\"");
+		try {
+			MessageService.instance.sound(userId, mid, new WithBlob() {
+				
+				@Override
+				public void with(Blob blob) throws IOException, SQLException {
+					response.setContentLength((int) blob.length());
+					IOUtils.copy(blob.getBinaryStream(), response.getOutputStream());
+				}
+			});
+		} catch (PushException e) {
+			putError(request, response, e);
+		}
+	}
+	
+	private void bsend(HttpServletRequest request, HttpServletResponse response){
+		try {
+			Map<String, Object> map = uploadFields(request, response);
+			
+			String userId = getms(map, "userId", request, response, true);
+			String receiverId = getms(map, "receiverId", request, response, true);
+			File soundFile = (File) map.get("sound_file");
+			MessageService.instance.send(userId, receiverId,  soundFile);
+			putSuccess(request, response);
+		} catch (Exception e) {
+			putError(request, response, e);
+		}
+	}
+	
+	public void send(HttpServletRequest request, HttpServletResponse response){
+		if (isMultipart(request)) {
+			bsend(request, response);
+			return;
+		}
+		//checkUserToken(request, response);
+		String userId  = request.getParameter(USER_ID);
+		String message = getString(request, response, "message", true);
+		String receiverId = getString(request, response, "receiverId", true);
+		try {
+			MessageService.instance.send(userId, receiverId, message);
+			putSuccess(request, response);
+		} catch (HzException e) {
+			putSuccess(request, response);
+//			putFailed(request, response);
+		}catch (Exception e) {
+			putFailed(request, response);
+		}
+		
+	}
+	public void getMessages(HttpServletRequest request, HttpServletResponse response) {
+		//checkUserToken(request, response);
+		List<String> messageIds = getMultiValues(request, "id");
+		String userId = request.getParameter(USER_ID);
+		try {
+			putJson(request, response, PushService.instance.getMessages(messageIds ,userId  ));
+		} catch (PushException e) {
+			putError(request, response, "get message is error!", ErrorCodes.SERVER_INNER_ERROR);
+		}
+	}
+	
+	public void getUnreceivedMessage(HttpServletRequest request, HttpServletResponse response){
+		//checkUserToken(request, response);
+		String userId = request.getParameter(USER_ID);
+		String senderId = request.getParameter("senderId");
+		checkParameterNotNull(request, response, "senderId" , senderId);
+		try {
+			putJson(request, response, PushService.instance.getUnreceived(userId, senderId));
+		} catch (PushException e) {
+			putError(request, response, "failed to get user unread messages,userId:"+userId+" senderId:"+senderId, ErrorCodes.SERVER_INNER_ERROR);
+		}
+	}
+	public void getAllUnreceivedMessage(HttpServletRequest request, HttpServletResponse response){
+		//checkUserToken(request, response);
+		String userId = request.getParameter(USER_ID);
+		try {
+			putJson(request, response, PushService.instance.getUnreceived(userId));
+		} catch (PushException e) {
+			putError(request, response, "failed to get all user unread messages,userId:"+userId, ErrorCodes.SERVER_INNER_ERROR);
+		}
+	}
+	
+	public void getRMessage(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		int rMessageId = getInt(request, response, "mid", true);
+		try{
+			Map<String, Object> rMessage = RMessageService.instance.getRMessage(rMessageId, userId);
+			putJson(request, response, rMessage);
+		}catch(HzException e){
+			putError(request, response, "failed to get requirement message! userId:'" + userId + "'", ErrorCodes.SERVER_INNER_ERROR);
+		}
+		
+	}
+
+}

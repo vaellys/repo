@@ -1,0 +1,17 @@
+package cn.zthz.tool.solr;
+
+import java.io.IOException;
+
+import org.junit.Test;
+
+import cn.zthz.tool.common.HttpUtils;
+
+public class SolrTest {
+	
+	@Test
+	public void testGet() throws IOException{
+		String result = HttpUtils.doGet("http://hz1/solr/user/select?q=jim&wt=json");
+		System.out.println(result);
+	}
+
+}

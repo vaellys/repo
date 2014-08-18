@@ -1,0 +1,464 @@
+[20130731 09:43:16 908 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:43:17 004 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:43:17 004 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:43:17 008 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:43:17 009 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:43:17 012 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:43:17 012 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:43:17 015 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:43:17 016 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:43:17 017 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:43:17 049 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:43:17 050 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:43:17 050 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:43:17 057 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:43:17 128 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:43:39 788 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130731 09:43:39 799 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130731 09:44:46 063 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130731 09:44:46 064 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,10
+[20130731 09:45:12 081 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:45:12 081 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:46:26 198 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:46:26 199 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:48:36 465 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:48:36 506 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:48:36 506 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:48:36 509 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:48:36 510 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:48:36 512 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:48:36 513 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:48:36 516 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:48:36 516 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:48:36 517 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:48:36 538 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:48:36 539 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:48:36 539 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:48:36 543 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:48:36 607 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:48:43 749 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:48:43 760 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount,r.selectedCandidate from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:50:02 590 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:50:02 631 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:50:02 631 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:50:02 634 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:50:02 635 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:50:02 638 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:50:02 638 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:50:02 641 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:50:02 641 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:50:02 642 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:50:02 663 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:50:02 664 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:50:02 665 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:50:02 669 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:50:02 732 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:50:07 126 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:50:07 136 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:55:42 396 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:55:42 437 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:55:42 437 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:55:42 440 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:55:42 441 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:55:42 443 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:55:42 444 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:55:42 447 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:55:42 447 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:55:42 448 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:55:42 469 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:55:42 470 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:55:42 470 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:55:42 474 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:55:42 538 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:56:05 135 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:56:05 179 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:56:05 179 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:56:05 190 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:56:05 194 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:56:05 197 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:56:05 197 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:56:05 201 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:56:05 201 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:56:05 202 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:56:05 225 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:56:05 227 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:56:05 227 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:56:05 232 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:56:05 302 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:56:26 550 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where r.status=:status and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:56:30 341 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where r.status=? and  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:56:59 114 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 09:56:59 153 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 09:56:59 153 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 09:56:59 156 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 09:56:59 157 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 09:56:59 159 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 09:56:59 160 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 09:56:59 163 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 09:56:59 163 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 09:56:59 164 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 09:56:59 185 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 09:56:59 186 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 09:56:59 187 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 09:56:59 191 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 09:56:59 253 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 09:57:07 779 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:57:07 789 DEBUG] cn.zthz.tool.user.EmployerService - select r.id,r.title,r.expire,r.description,r.address,r.price,r.longitude,r.latitude,r.status,r.type,r.hasMandate,r.selectedCandidate,(select count(*) from RequirementCandidate where requirementId=r.id) as applyCount from Requirement r where  r.userId='402880173f07abcf013f08a0f97f002d' order by r.createTime desc limit 1,100
+[20130731 09:57:30 661 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 09:57:30 662 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 09:57:30 679 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 17
+[20130731 09:57:35 202 INFO ] cn.zthz.tool.push.PushService - update deviceToken: 5efa0b6ce00b4cac4c15c5942d256cbe type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 09:57:35 480 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 10:00:00 006 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130731 10:00:00 074 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":14},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"46","Total Rows Fetched":"90","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 10:00:00","":"Indexing completed. Added/Updated: 45 documents. Deleted 0 documents.","Committed":"2013-07-31 10:00:00","Optimized":"2013-07-31 10:00:00","Total Documents Processed":"45","Time taken":"0:0:0.719"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 10:00:00 074 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 10:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-07-31 10:00:00","Optimized":"2013-07-31 10:00:00","Total Documents Processed":"30","Time taken":"0:0:0.637"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 10:21:53 415 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:21:53 416 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:21:53 444 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 27
+[20130731 10:21:55 295 INFO ] cn.zthz.tool.push.PushService - update deviceToken: 5efa0b6ce00b4cac4c15c5942d256cbe type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 10:22:21 424 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 10:45:45 006 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 10:45:45 049 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 10:45:45 050 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 10:45:45 056 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 10:45:45 059 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 10:45:45 063 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 10:45:45 064 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 10:45:45 068 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 10:45:45 068 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 10:45:45 070 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 10:45:45 092 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 10:45:45 094 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 10:45:45 094 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 10:45:45 099 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 10:45:45 170 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 10:46:04 667 DEBUG] cn.zthz.tool.message.RMessageService - select rid, uid, message, createTime, t from RMessage where mid=1517 and uid='402880173f0e6534013f18175dff0057'
+[20130731 10:55:40 629 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:55:40 639 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:55:40 675 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 36
+[20130731 10:55:51 256 INFO ] cn.zthz.tool.push.PushService - update deviceToken: 5efa0b6ce00b4cac4c15c5942d256cbe type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 10:56:51 302 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:56:51 303 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 10:56:51 321 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 18
+[20130731 10:56:56 870 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 10:56:58 161 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 10:56:58 610 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 11:00:05 553 INFO ] cn.zthz.tool.push.PushService - update deviceToken: 5efa0b6ce00b4cac4c15c5942d256cbe type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 11:00:09 484 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 11:00:09 485 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 11:00:09 505 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 20
+[20130731 11:00:32 421 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 11:00:32 422 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,20) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 11:00:32 584 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 162
+[20130731 11:00:39 367 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 11:00:41 271 DEBUG] cn.zthz.tool.user.EmployeeService - select u.id, u.mainPictureSmall ,u.name,u.nick , u.completeScore, u.sponsorScore ,u.rank,u.applyCompleteCount/(u.applyCompleteCount+u.applyCloseCount) as comleteDegree ,u.applyCompleteCount,u.telephone,t.tnum from UserTags t left join User u on t.userId=u.id  order by  u.rank desc limit 0,20
+[20130731 11:00:46 286 WARN ] cn.zthz.actor.rest.MasRestExceptionHandler - no this service;request url:http://192.168.0.127:8080/employee/employeeInfo.json params:{
+	"userId":["402880173f07abcf013f08a20b1b002e"],
+	"userToken":["5773e7c7466848abbc4e5898c6f89891"]
+}
+qileke.jer.server.ActionException: no service for this method:employeeInfo
+	at qileke.jer.server.Actor.act(Actor.java:42)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:931)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:857)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130731 11:01:10 856 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 11:01:10 900 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 11:01:10 901 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 11:01:10 904 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 11:01:10 905 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 11:01:10 907 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 11:01:10 908 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 11:01:10 911 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 11:01:10 912 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 11:01:10 913 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 11:01:10 933 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 11:01:10 935 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 11:01:10 935 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 11:01:10 939 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 11:01:11 004 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 12:41:50 416 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 12:41:50 461 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 12:41:50 461 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 12:41:50 467 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 12:41:50 471 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 12:41:50 474 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 12:41:50 474 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 12:41:50 478 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 12:41:50 478 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 12:41:50 479 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 12:41:50 503 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 12:41:50 504 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 12:41:50 505 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 12:41:50 509 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 12:41:50 583 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 14:00:00 005 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130731 14:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"49","Total Rows Fetched":"96","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 14:00:00","":"Indexing completed. Added/Updated: 48 documents. Deleted 0 documents.","Committed":"2013-07-31 14:00:00","Optimized":"2013-07-31 14:00:00","Total Documents Processed":"48","Time taken":"0:0:0.706"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 14:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 14:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-07-31 14:00:00","Optimized":"2013-07-31 14:00:00","Total Documents Processed":"30","Time taken":"0:0:0.569"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 15:31:17 163 INFO ] cn.zthz.tool.push.PushService - update deviceToken: ea4c2b792a9a5f6aba65f66af1404963 type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 15:48:54 022 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as sCount from Store where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:48:54 025 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as iCount from Requirement where userId='402880173f07abcf013f08a0f039002c' and status=0
+[20130731 15:48:54 027 DEBUG] cn.zthz.tool.user.UserStatics - select count(requirementId) from RequirementCandidate where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:48:54 096 INFO ] cn.zthz.tool.push.PushService - update deviceToken: c2e10d19656ad7d78019e4d93bc11f2f4960efe31df0e3ee880b9033afe5ece3 type:0 for user:402880173f07abcf013f08a0f039002c
+[20130731 15:48:54 142 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as sCount from Store where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:48:54 149 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as iCount from Requirement where userId='402880173f07abcf013f08a0f039002c' and status=0
+[20130731 15:48:54 150 DEBUG] cn.zthz.tool.user.UserStatics - select count(requirementId) from RequirementCandidate where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:48:54 542 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,30) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 15:48:54 542 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,30) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130731 15:48:54 568 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 25
+[20130731 15:48:59 197 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:48:59 260 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:48:59 264 DEBUG] cn.zthz.actor.solr.SolrUpdater - 
+[20130731 15:48:59 264 DEBUG] cn.zthz.actor.solr.SolrUpdater - select count(r.id) from Requirement r left join User u on r.userId=u.id  where r.selectedCandidate='402880173f07abcf013f08a0f039002c' and r.status=2
+[20130731 15:48:59 335 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: {}->http://192.168.0.151, timeout = 0
+[20130731 15:48:59 336 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [{}->http://192.168.0.151] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+[20130731 15:48:59 337 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - No free connections [{}->http://192.168.0.151][null]
+[20130731 15:48:59 337 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Available capacity: 2 out of 2 [{}->http://192.168.0.151][null]
+[20130731 15:48:59 337 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Creating new connection [{}->http://192.168.0.151]
+[20130731 15:48:59 346 DEBUG] org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to 192.168.0.151:80
+[20130731 15:48:59 366 DEBUG] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+[20130731 15:48:59 375 DEBUG] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+[20130731 15:48:59 375 DEBUG] org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+[20130731 15:48:59 376 DEBUG] org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+[20130731 15:48:59 376 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+[20130731 15:48:59 376 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Sending request: POST /solr/user/update?commit=true HTTP/1.1
+[20130731 15:48:59 376 DEBUG] org.apache.http.wire - >> "POST /solr/user/update?commit=true HTTP/1.1[\r][\n]"
+[20130731 15:48:59 377 DEBUG] org.apache.http.wire - >> "Content-Length: 444[\r][\n]"
+[20130731 15:48:59 377 DEBUG] org.apache.http.wire - >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+[20130731 15:48:59 378 DEBUG] org.apache.http.wire - >> "Host: 192.168.0.151[\r][\n]"
+[20130731 15:48:59 378 DEBUG] org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+[20130731 15:48:59 378 DEBUG] org.apache.http.wire - >> "[\r][\n]"
+[20130731 15:48:59 378 DEBUG] org.apache.http.headers - >> POST /solr/user/update?commit=true HTTP/1.1
+[20130731 15:48:59 378 DEBUG] org.apache.http.headers - >> Content-Length: 444
+[20130731 15:48:59 378 DEBUG] org.apache.http.headers - >> Content-Type: application/json; charset=UTF-8
+[20130731 15:48:59 378 DEBUG] org.apache.http.headers - >> Host: 192.168.0.151
+[20130731 15:48:59 378 DEBUG] org.apache.http.headers - >> Connection: Keep-Alive
+[20130731 15:48:59 378 DEBUG] org.apache.http.wire - >> "[{"completeCount":0,"completeScore":0,"id":"402880173f07abcf013f08a0f039002c","name":"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]","occupation":"","picture":"http://220.113.10.142/images/10/fa/10fa1d13697c4a3c2048cf6bcfbe2787.png","pictureMid":"http://220.113.10.142/images/10/fa/10fa1d13697c4a3c2048cf6bcfbe2787.100x100.png","pictureSmall":"http://220.113.10.142/images/10/fa/10fa1d13697c4a3c2048cf6bcfbe2787.50x50.png","sex":0,"skills":"","sponsorScore":0,"status":0,"type":100}]"
+[20130731 15:48:59 629 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.title , r.description , r.price, r.selectedCandidate, r.expire, r.address, r.hasMandate,r.type,r.hasPrivateMessageContact,r.hasPhoneContact,r.status,r.longitude,r.latitude,r.createTime,r.viewCount,r.userId,r.mainPictureSmall , r.mainPictureMid,r.mainPictureBig, u.id as userId, u.name as userName , u.mainPicture as userPicture , u.mainPictureSmall as userPictureSmall, u.mainPictureMid as userPictureMid, u.mainPictureBig as userPictureBig,u.latestLongtitude, u.latestLatitude,u.telephone, u.completeScore as userCompleteScore, u.sponsorScore as userSponsorScore,(select count(*)>0 from RequirementCandidate rcc where rcc.userId='402880173f07abcf013f08a0f039002c' and rcc.requirementId='4028801740339900014033b46f3b0001') as hasCandidated ,!isnull(s.id) as hasStore from (Requirement r left join User u on u.id=r.userId) left join Store s on r.id=s.requirementId and s.userId='402880173f07abcf013f08a0f039002c' where r.id='4028801740339900014033b46f3b0001' limit 1
+[20130731 15:48:59 637 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select count(*) from RequirementCandidate where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:48:59 639 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc , u.name, u.mainPicture, u.sex, r.id, u.id as userId,distance(r.longitude , r.latitude , rt.longitude , rt.latitude) as distance, u.latestLongtitude as longitude,u.latestLatitude as latitude from (User u left join RequirementCandidate r on u.id=r.userId) left join Requirement rt on rt.id=r.requirementId where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:48:59 643 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementComment where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:48:59 643 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select rc.comment,rc.commentTime,rc.userId,u.mainPictureSmall,u.name  from RequirementComment rc left join User u on rc.userId=u.id where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:48:59 650 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where userId='402880173f07abcf013f08a0f039002c' and requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:48:59 653 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - insert into RequirementVisitor(userId, requirementId, viewTime, viewCount) values('402880173f07abcf013f08a0f039002c','4028801740339900014033b46f3b0001','2013-07-31 15:48:59.653', 1)
+[20130731 15:48:59 655 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc, u.name as selectedCandidateName, u.mainPicture as selectedCandidatePicture, u.mainPictureBig as selectedCandidatePictureBig, u.mainPictureMid as selectedCandidatePictureMid, u.mainPictureSmall as selectedCandidatePictureSmall, u.address, distance(r.longitude , r.latitude , rc.longitude,rc.latitude) as distance , u.id as selectedCandidateId from (Requirement r left join User u on r.selectedCandidate=u.id) left join RequirementCandidate rc on rc.requirementId=r.id and rc.userId=u.id where r.id='4028801740339900014033b46f3b0001'
+[20130731 15:48:59 658 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:48:59 661 DEBUG] cn.zthz.tool.requirement.RequirementOperations - update Requirement set viewCount=viewCount+1 where id='4028801740339900014033b46f3b0001' and userId!='402880173f07abcf013f08a0f039002c'
+[20130731 15:48:59 663 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '4028801740339900014033b46f3b0001' order by ts asc
+[20130731 15:48:59 665 DEBUG] cn.zthz.tool.requirement.Vtop - insert into VTop(requirementId,visitorId,ts) values('4028801740339900014033b46f3b0001','402880173f07abcf013f08a0f039002c',1375256939665)
+[20130731 15:48:59 679 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:48:59 695 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:48:59 744 DEBUG] org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "Server: nginx/1.2.6[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "Date: Wed, 31 Jul 2013 07:51:30 GMT[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "Connection: keep-alive[\r][\n]"
+[20130731 15:48:59 745 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130731 15:48:59 746 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << HTTP/1.1 200 OK
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << Server: nginx/1.2.6
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << Date: Wed, 31 Jul 2013 07:51:30 GMT
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << Content-Type: application/json;charset=UTF-8
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << Transfer-Encoding: chunked
+[20130731 15:48:59 746 DEBUG] org.apache.http.headers - << Connection: keep-alive
+[20130731 15:48:59 749 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+[20130731 15:48:59 751 DEBUG] org.apache.http.wire - << "2c[\r][\n]"
+[20130731 15:48:59 751 DEBUG] org.apache.http.wire - << "{"responseHeader":{"status":0,"QTime":361}}[\n]"
+[20130731 15:48:59 751 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130731 15:48:59 752 DEBUG] org.apache.http.wire - << "0[\r][\n]"
+[20130731 15:48:59 752 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [{}->http://192.168.0.151][null]
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [{}->http://192.168.0.151][null]; keep alive indefinitely
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Shutting down
+[20130731 15:48:59 752 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Closing connection [{}->http://192.168.0.151][null]
+[20130731 15:48:59 753 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Connection 0.0.0.0:63541<->192.168.0.151:80 closed
+[20130731 15:48:59 753 INFO ] cn.zthz.actor.solr.SolrUpdater - add user with id:402880173f07abcf013f08a0f039002c response:{"responseHeader":{"status":0,"QTime":361}}
+
+[20130731 15:48:59 935 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:48:59 941 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:48:59 943 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 103efee1[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63543]]
+[20130731 15:48:59 943 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 19e51abf[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63542]]
+[20130731 15:49:00 191 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3345fc7a[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63544]]
+[20130731 15:49:00 435 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:00 441 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:00 686 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 61e434b9[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63545]]
+[20130731 15:49:00 935 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:00 941 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:01 189 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 1f9c303e[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63546]]
+[20130731 15:49:01 436 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:01 442 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:01 689 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 49ff30ad[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63547]]
+[20130731 15:49:01 935 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:01 941 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:02 182 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 58676453[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63548]]
+[20130731 15:49:02 436 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:02 442 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:02 679 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.title , r.description , r.price, r.selectedCandidate, r.expire, r.address, r.hasMandate,r.type,r.hasPrivateMessageContact,r.hasPhoneContact,r.status,r.longitude,r.latitude,r.createTime,r.viewCount,r.userId,r.mainPictureSmall , r.mainPictureMid,r.mainPictureBig, u.id as userId, u.name as userName , u.mainPicture as userPicture , u.mainPictureSmall as userPictureSmall, u.mainPictureMid as userPictureMid, u.mainPictureBig as userPictureBig,u.latestLongtitude, u.latestLatitude,u.telephone, u.completeScore as userCompleteScore, u.sponsorScore as userSponsorScore,(select count(*)>0 from RequirementCandidate rcc where rcc.userId='402880173f07abcf013f08a0f039002c' and rcc.requirementId='4028801740339900014033b46f3b0001') as hasCandidated ,!isnull(s.id) as hasStore from (Requirement r left join User u on u.id=r.userId) left join Store s on r.id=s.requirementId and s.userId='402880173f07abcf013f08a0f039002c' where r.id='4028801740339900014033b46f3b0001' limit 1
+[20130731 15:49:02 681 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 27cecb4e[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63549]]
+[20130731 15:49:02 684 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select count(*) from RequirementCandidate where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:02 686 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc , u.name, u.mainPicture, u.sex, r.id, u.id as userId,distance(r.longitude , r.latitude , rt.longitude , rt.latitude) as distance, u.latestLongtitude as longitude,u.latestLatitude as latitude from (User u left join RequirementCandidate r on u.id=r.userId) left join Requirement rt on rt.id=r.requirementId where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:02 696 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementComment where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:49:02 696 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select rc.comment,rc.commentTime,rc.userId,u.mainPictureSmall,u.name  from RequirementComment rc left join User u on rc.userId=u.id where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:49:02 700 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where userId='402880173f07abcf013f08a0f039002c' and requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:02 702 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc, u.name as selectedCandidateName, u.mainPicture as selectedCandidatePicture, u.mainPictureBig as selectedCandidatePictureBig, u.mainPictureMid as selectedCandidatePictureMid, u.mainPictureSmall as selectedCandidatePictureSmall, u.address, distance(r.longitude , r.latitude , rc.longitude,rc.latitude) as distance , u.id as selectedCandidateId from (Requirement r left join User u on r.selectedCandidate=u.id) left join RequirementCandidate rc on rc.requirementId=r.id and rc.userId=u.id where r.id='4028801740339900014033b46f3b0001'
+[20130731 15:49:02 705 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:02 707 DEBUG] cn.zthz.tool.requirement.RequirementOperations - update Requirement set viewCount=viewCount+1 where id='4028801740339900014033b46f3b0001' and userId!='402880173f07abcf013f08a0f039002c'
+[20130731 15:49:02 708 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '4028801740339900014033b46f3b0001' order by ts asc
+[20130731 15:49:02 710 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f07abcf013f08a0f039002c', ts=1375256942710 where requirementId='4028801740339900014033b46f3b0001' and ts=1375256939665
+[20130731 15:49:02 936 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:02 942 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:03 180 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 4494356f[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63550]]
+[20130731 15:49:03 436 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130731 15:49:03 442 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130731 15:49:03 676 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3fc12084[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.164,port=2195,localport=63552]]
+[20130731 15:49:03 945 DEBUG] javapns.notification.Payload - Adding alert [您有3条未读消息！]
+[20130731 15:49:03 945 DEBUG] javapns.notification.Payload - Adding sound [default]
+[20130731 15:49:03 946 DEBUG] javapns.notification.Payload - Adding custom Dictionary [c] = [3]
+[20130731 15:49:03 946 DEBUG] javapns.notification.Payload - Adding custom Dictionary [t] = [2]
+[20130731 15:49:03 948 DEBUG] javapns.notification.PushNotificationManager - Building Raw message from deviceToken and payload
+[20130731 15:49:03 948 DEBUG] javapns.notification.PushNotificationManager - Built raw message ID 16777217 of total length 120
+[20130731 15:49:03 948 DEBUG] javapns.notification.PushNotificationManager - Attempting to send notification: {"t":2,"aps":{"sound":"default","alert":"您有3条未读消息！"},"c":3}
+[20130731 15:49:03 948 DEBUG] javapns.notification.PushNotificationManager -   to device: c2e10d19656ad7d78019e4d93bc11f2f4960efe31df0e3ee880b9033afe5ece3
+[20130731 15:49:04 789 DEBUG] javapns.notification.PushNotificationManager - Flushing
+[20130731 15:49:04 789 DEBUG] javapns.notification.PushNotificationManager - At this point, the entire 120-bytes message has been streamed out successfully through the SSL connection
+[20130731 15:49:04 789 DEBUG] javapns.notification.PushNotificationManager - Notification sent on first attempt
+[20130731 15:49:10 616 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130731 15:49:10 658 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130731 15:49:10 658 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130731 15:49:10 661 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130731 15:49:10 662 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130731 15:49:10 664 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130731 15:49:10 665 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130731 15:49:10 668 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130731 15:49:10 668 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130731 15:49:10 669 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130731 15:49:10 690 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130731 15:49:10 692 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130731 15:49:10 692 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130731 15:49:10 696 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130731 15:49:10 764 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130731 15:49:15 791 INFO ] cn.zthz.tool.requirement.RequirementCandidateService - save candidate
+[20130731 15:49:16 065 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - update User set applyCount=applyCount+1 where id='402880173f07abcf013f08a0f039002c'
+[20130731 15:49:16 068 INFO ] cn.zthz.actor.message.RequirementPushor - send compete message:{"candidateId":"402880173f07abcf013f08a0f039002c","id":"4028801740339900014033b46f3b0001","title":"访华居留","userId":"402880173f0e6534013f130c6b300022"}
+[20130731 15:49:16 168 DEBUG] cn.zthz.tool.message.RMessageService - insert into RMessage (rid, uid, message,rowId, t, createTime ,status ) values('4028801740339900014033b46f3b0001','402880173f0e6534013f130c6b300022','壮壮参与了:访华居留需求的竞争！','402880ff4033b3cc014033b3cd080001',11,'2013-07-31 15:49:16.168',0)
+[20130731 15:49:16 359 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.title , r.description , r.price, r.selectedCandidate, r.expire, r.address, r.hasMandate,r.type,r.hasPrivateMessageContact,r.hasPhoneContact,r.status,r.longitude,r.latitude,r.createTime,r.viewCount,r.userId,r.mainPictureSmall , r.mainPictureMid,r.mainPictureBig, u.id as userId, u.name as userName , u.mainPicture as userPicture , u.mainPictureSmall as userPictureSmall, u.mainPictureMid as userPictureMid, u.mainPictureBig as userPictureBig,u.latestLongtitude, u.latestLatitude,u.telephone, u.completeScore as userCompleteScore, u.sponsorScore as userSponsorScore,(select count(*)>0 from RequirementCandidate rcc where rcc.userId='402880173f07abcf013f08a0f039002c' and rcc.requirementId='4028801740339900014033b46f3b0001') as hasCandidated ,!isnull(s.id) as hasStore from (Requirement r left join User u on u.id=r.userId) left join Store s on r.id=s.requirementId and s.userId='402880173f07abcf013f08a0f039002c' where r.id='4028801740339900014033b46f3b0001' limit 1
+[20130731 15:49:16 365 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select count(*) from RequirementCandidate where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:16 367 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc , u.name, u.mainPicture, u.sex, r.id, u.id as userId,distance(r.longitude , r.latitude , rt.longitude , rt.latitude) as distance, u.latestLongtitude as longitude,u.latestLatitude as latitude from (User u left join RequirementCandidate r on u.id=r.userId) left join Requirement rt on rt.id=r.requirementId where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:16 373 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementComment where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:49:16 373 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select rc.comment,rc.commentTime,rc.userId,u.mainPictureSmall,u.name  from RequirementComment rc left join User u on rc.userId=u.id where requirementId='4028801740339900014033b46f3b0001' limit 0,10
+[20130731 15:49:16 377 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where userId='402880173f07abcf013f08a0f039002c' and requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:16 380 DEBUG] cn.zthz.tool.requirement.RequirementCandidateService - select (select count(*) from Requirement where userId=u.id and status=2) as crc, u.name as selectedCandidateName, u.mainPicture as selectedCandidatePicture, u.mainPictureBig as selectedCandidatePictureBig, u.mainPictureMid as selectedCandidatePictureMid, u.mainPictureSmall as selectedCandidatePictureSmall, u.address, distance(r.longitude , r.latitude , rc.longitude,rc.latitude) as distance , u.id as selectedCandidateId from (Requirement r left join User u on r.selectedCandidate=u.id) left join RequirementCandidate rc on rc.requirementId=r.id and rc.userId=u.id where r.id='4028801740339900014033b46f3b0001'
+[20130731 15:49:16 387 DEBUG] cn.zthz.tool.requirement.RequirementCommentService - select count(*) from RequirementVisitor where requirementId='4028801740339900014033b46f3b0001'
+[20130731 15:49:16 388 DEBUG] cn.zthz.tool.requirement.RequirementOperations - update Requirement set viewCount=viewCount+1 where id='4028801740339900014033b46f3b0001' and userId!='402880173f07abcf013f08a0f039002c'
+[20130731 15:49:16 391 DEBUG] cn.zthz.tool.requirement.Vtop - select *  from VTop where requirementId = '4028801740339900014033b46f3b0001' order by ts asc
+[20130731 15:49:16 393 DEBUG] cn.zthz.tool.requirement.Vtop - update VTop set visitorId='402880173f07abcf013f08a0f039002c', ts=1375256956393 where requirementId='4028801740339900014033b46f3b0001' and ts=1375256942710
+[20130731 15:49:16 439 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as sCount from Store where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:49:16 440 DEBUG] cn.zthz.tool.user.UserStatics - select count(*) as iCount from Requirement where userId='402880173f07abcf013f08a0f039002c' and status=0
+[20130731 15:49:16 443 DEBUG] cn.zthz.tool.user.UserStatics - select count(requirementId) from RequirementCandidate where userId='402880173f07abcf013f08a0f039002c'
+[20130731 15:49:40 606 DEBUG] cn.zthz.tool.message.RMessageService - select rid, uid, message, createTime, t from RMessage where mid=1520 and uid='402880173f07abcf013f08a0f039002c'
+[20130731 16:00:00 006 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130731 16:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"49","Total Rows Fetched":"96","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 16:00:00","":"Indexing completed. Added/Updated: 48 documents. Deleted 0 documents.","Committed":"2013-07-31 16:00:00","Optimized":"2013-07-31 16:00:00","Total Documents Processed":"48","Time taken":"0:0:0.601"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 16:00:00 045 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"30","Total Documents Skipped":"0","Full Dump Started":"2013-07-31 16:00:00","":"Indexing completed. Added/Updated: 30 documents. Deleted 0 documents.","Committed":"2013-07-31 16:00:00","Optimized":"2013-07-31 16:00:00","Total Documents Processed":"30","Time taken":"0:0:0.505"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130731 16:01:49 550 INFO ] cn.zthz.tool.push.PushService - update deviceToken: ea4c2b792a9a5f6aba65f66af1404963 type:1 for user:402880173f07abcf013f08a20b1b002e
+[20130731 16:30:10 859 ERROR] cn.zthz.actor.daemon.RequirementExpirer - 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 2,379,113 milliseconds ago.  The last packet sent successfully to the server was 2,379,115 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3851)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2471)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5030)
+	at com.jolbox.bonecp.ConnectionHandle.setAutoCommit(ConnectionHandle.java:1063)
+	at cn.zthz.tool.db.Connections.get(Connections.java:60)
+	at cn.zthz.actor.daemon.RequirementExpirer.expire(RequirementExpirer.java:54)
+	at cn.zthz.actor.daemon.RequirementExpirer.run(RequirementExpirer.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(Unknown Source)
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(Unknown Source)
+	at java.net.SocketOutputStream.write(Unknown Source)
+	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.io.BufferedOutputStream.flush(Unknown Source)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3832)
+	... 16 more
+[20130731 16:35:45 971 ERROR] cn.zthz.actor.rest.MasRestExceptionHandler - service internal error;request url:http://192.168.0.127:8080/message/getAllUnreceivedMessage.json params:{
+	"userId":["402880173f07abcf013f08a20b1b002e"],
+	"userToken":["5773e7c7466848abbc4e5898c6f89891"]
+}
+qileke.jer.server.PassException: java.net.SocketException: Connection reset by peer: socket write error
+	at cn.zthz.actor.rest.Rest.putError(Rest.java:93)
+	at cn.zthz.actor.rest.AuthorityRest.checkUserToken(AuthorityRest.java:79)
+	at cn.zthz.actor.rest.filter.UserFilter.filter(UserFilter.java:90)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:131)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:931)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:857)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130731 16:36:11 066 ERROR] cn.zthz.actor.rest.MasRestExceptionHandler - service internal error;request url:http://192.168.0.127:8080/message/getAllUnreceivedMessage.json params:{
+	"userId":["402880173f07abcf013f08a20b1b002e"],
+	"userToken":["5773e7c7466848abbc4e5898c6f89891"]
+}
+qileke.jer.server.PassException: java.net.SocketException: Connection reset by peer: socket write error
+	at cn.zthz.actor.rest.Rest.putError(Rest.java:93)
+	at cn.zthz.actor.rest.AuthorityRest.checkUserToken(AuthorityRest.java:79)
+	at cn.zthz.actor.rest.filter.UserFilter.filter(UserFilter.java:90)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:131)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:931)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:857)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)

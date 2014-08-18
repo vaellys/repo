@@ -1,0 +1,51 @@
+package cn.zthz.tool.user;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import cn.zthz.actor.rest.ErrorCodes;
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.db.Connections;
+import cn.zthz.tool.db.QuickDB;
+import cn.zthz.tool.db.ResultSetMap;
+import cn.zthz.tool.requirement.ConnectionUtils;
+
+public class UserCollectService {
+	private static final Log log = LogFactory.getLog(UserCollectService.class);
+	public static final UserCollectService instance = new UserCollectService();
+	
+	public void add(String userId, String fid) throws HzException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			String checkUserCollectSql = "select count(*) from UserCollect where fid='" + fid + "' and userId='" + userId +"'";
+			if(log.isDebugEnabled()){
+				log.debug(checkUserCollectSql);
+			}
+			int userCollectCount = ResultSetMap.mapInt(statement.executeQuery(checkUserCollectSql));
+			if(0 != userCollectCount){
+				log.debug("not add userCollect repeatability! fid: '" + fid + "', userId: '" + userId + "'");
+				throw new HzException(ErrorCodes.ALREADY_STORED, "not add userCollect repeatability! fid: '" + fid + "', userId: '" + userId + "'");
+			}else{
+				String addUserCollectSql = "insert into UserCollect(fid, createTime, userId) values('" + fid + "','" + new Timestamp(System.currentTimeMillis()) + "','" + userId + "')";
+				if(log.isDebugEnabled()){
+					log.debug(addUserCollectSql);
+				}
+				QuickDB.insert(addUserCollectSql);
+			}
+		}catch(SQLException e){
+			log.debug("add userCollect failed! requirementId: '" + fid + "', userId: '" + userId + "'");
+			throw new HzException("add userCollect failed! requirementId: '" + fid + "', userId: '" + userId + "'", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+}

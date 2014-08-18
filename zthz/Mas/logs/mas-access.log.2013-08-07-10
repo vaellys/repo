@@ -1,0 +1,2 @@
+[20130807 10:12:11 534 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130807 10:14:10 614 INFO ] 0:0:0:0:0:0:0:1 GET /employee/employmentInfo.json {"pageSize":"10","startIndex":"0","targetUserId":"402880173f07abcf013f08a20b1b002e","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

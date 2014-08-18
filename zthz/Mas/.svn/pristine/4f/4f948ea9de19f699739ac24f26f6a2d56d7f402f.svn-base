@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYYMMdd HH:mm:ss SSS\} %-5p %c - %m%n" />
+		</layout>
+		<!--过滤器设置输出的级别 -->
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="debug" />
+			<param name="levelMax" value="fatal" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="mailAppender" class="org.apache.log4j.net.SMTPAppender">
+		<param name="threshold" value="debug" />
+		<!-- 日志的错误级别 <param name="threshold" value="fatal"/> -->
+		<!-- 缓存文件大小，日志达到512K时发送Email -->
+		<param name="BufferSize" value="512" /><!-- 单位K -->
+		<!-- <param name="From" value="1978870956@qq.com" /> -->
+		<param name="From" value="zthz_error@163.com" />
+		<param name="SMTPHost" value="smtp.163.com" />
+		<param name="Subject" value="hz-mas-log4jMessage" />
+		<param name="To" value="zthz_error@163.com" />
+		<param name="SMTPUsername" value="zthz_error@163.com" />
+		<param name="SMTPPassword" value="mylinux2012" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss.SSS} [%p]-[%c] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- <appender name="myFile" class="org.apache.log4j.RollingFileAppender"> 
+		<param name="File" value="D:/output.log" />设置日志输出文件名 设置是否在重新启动服务时，在原有日志的基础添加新日志 
+		<param name="Append" value="true" /> <param name="MaxBackupIndex" value="10" 
+		/> <layout class="org.apache.log4j.PatternLayout"> <param name="ConversionPattern" 
+		value="%p (%c:%L)- %m%n" /> </layout> </appender> -->
+
+	<appender name="dailyAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="./logs/mas-tool.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{YYYYMMdd HH:mm:ss SSS\} %-5p] %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制 -->
+	<!-- <logger name="com.runway.bssp.activeXdemo" additivity="false"> <priority 
+		value ="info"/> <appender-ref ref="dailyAppender" /> </logger> -->
+
+
+
+
+	<appender name="accessAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="./logs/mas-access.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd-HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{YYYYMMdd HH:mm:ss SSS\} %-5p] %m%n" />
+		</layout>
+	</appender>
+	<appender name="asyncAccessAppender" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="2048" />
+		<appender-ref ref="accessAppender" />
+	</appender>
+
+
+	<!-- <category name="cn.zthz.actor.rest.filter.UserFilter"> <priority value="info" 
+		/> <appender-ref ref="asyncAccessAppender" /> </category> -->
+	<logger name="cn.zthz.actor.rest.filter.UserFilter" additivity="false">
+		<level value="info" />
+		<appender-ref ref="asyncAccessAppender" />
+	</logger>
+	<!-- 根logger的设置 -->
+	<root>
+		<priority value="info" />
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="dailyAppender" />
+		<appender-ref ref="mailAppender" />
+	</root>
+</log4j:configuration>

@@ -1,0 +1,1002 @@
+[20130705 18:12:14 875 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:12:15 189 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:12:15 189 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:12:15 198 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:12:15 201 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:12:15 204 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:12:15 205 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:12:15 210 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:12:15 211 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:12:15 212 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:12:15 281 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:12:15 282 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:12:15 283 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:12:15 301 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:12:15 456 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:13:14 675 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:13:14 718 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:13:14 718 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:13:14 722 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:13:14 723 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:13:14 726 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:13:14 727 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:13:14 730 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:13:14 731 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:13:14 732 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:13:14 754 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:13:14 756 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:13:14 756 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:13:14 761 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:13:14 834 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:29:07 305 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:29:07 353 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:29:07 353 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:29:07 356 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:29:07 357 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:29:07 360 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:29:07 361 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:29:07 364 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:29:07 365 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:29:07 366 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:29:07 389 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:29:07 391 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:29:07 391 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:29:07 396 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:29:07 468 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:37:51 318 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:37:51 359 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:37:51 360 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:37:51 363 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:37:51 364 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:37:51 367 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:37:51 368 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:37:51 371 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:37:51 372 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:37:51 373 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:37:51 396 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:37:51 398 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:37:51 398 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:37:51 403 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:37:51 474 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:40:03 404 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:40:03 445 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:40:03 445 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:40:03 448 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:40:03 449 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:40:03 452 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:40:03 453 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:40:03 457 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:40:03 457 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:40:03 458 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:40:03 481 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:40:03 483 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:40:03 483 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:40:03 488 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:40:03 559 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:43:07 600 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:43:07 647 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:43:07 647 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:43:07 651 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:43:07 652 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:43:07 654 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:43:07 654 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:43:07 657 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:43:07 658 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:43:07 659 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:43:07 681 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:43:07 683 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:43:07 683 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:43:07 687 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:43:07 753 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:43:22 107 DEBUG] cn.zthz.tool.message.MessageService - select id from User where id in ('402880173f0e6534013f18175dff0057') order by id asc limit 
+[20130705 18:43:22 601 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:22 672 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:23 037 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:23 043 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:23 242 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 21f0d955[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58465]]
+[20130705 18:43:23 242 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 4b4c6cdb[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58464]]
+[20130705 18:43:23 332 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:23 339 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:23 518 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 593f85a[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58466]]
+[20130705 18:43:23 818 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:23 824 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:23 995 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 86b551c[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58467]]
+[20130705 18:43:24 322 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:24 333 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:24 510 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 7241d1bb[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58468]]
+[20130705 18:43:24 822 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:24 834 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:25 009 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 476b9c59[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58469]]
+[20130705 18:43:25 318 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:25 325 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:25 498 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 64ef4cd9[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58470]]
+[20130705 18:43:25 822 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:25 834 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:26 006 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 77c443f0[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58471]]
+[20130705 18:43:26 322 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:26 333 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:26 505 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 7900bb12[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58472]]
+[20130705 18:43:26 822 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:43:26 833 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:43:27 006 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 721d0440[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=58473]]
+[20130705 18:43:27 380 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+[20130705 18:43:27 382 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+[20130705 18:43:27 383 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+[20130705 18:43:27 383 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+[20130705 18:43:27 383 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+[20130705 18:43:27 383 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+[20130705 18:43:27 384 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@2175a435
+[20130705 18:43:27 385 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+[20130705 18:43:27 522 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130705 18:43:27 524 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130705 18:43:27 676 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 677 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:43:27 677 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Java version: 1.7.0_11
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Java vendor: Oracle Corporation
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Java class path: D:\Eclipse\workspace\Mas\target\classes;C:\Users\samul\.m2\repository\redis\clients\jedis\2.0.0\jedis-2.0.0.jar;C:\Users\samul\.m2\repository\org\apache\lucene\lucene-core\3.6.1\lucene-core-3.6.1.jar;C:\Users\samul\.m2\repository\com\alibaba\fastjson\1.1.23\fastjson-1.1.23.jar;C:\Users\samul\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\samul\.m2\repository\commons-io\commons-io\2.3\commons-io-2.3.jar;C:\Users\samul\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\samul\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\samul\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\samul\.m2\repository\commons-codec\commons-codec\1.2\commons-codec-1.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpclient\4.2.2\httpclient-4.2.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2\httpcore-4.2.2.jar;C:\Users\samul\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;C:\Users\samul\.m2\repository\cn\jpush\jpush-api\0.0.1\jpush-api-0.0.1.jar;C:\Users\samul\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar;C:\Users\samul\.m2\repository\org\quartz-scheduler\quartz\2.1.6\quartz-2.1.6.jar;C:\Users\samul\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\samul\.m2\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;C:\Users\samul\.m2\repository\org\apache\solr\solr-solrj\4.1.0\solr-solrj-4.1.0.jar;C:\Users\samul\.m2\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpmime\4.1.3\httpmime-4.1.3.jar;C:\Users\samul\.m2\repository\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;C:\Users\samul\.m2\repository\mysql\mysql-connector-java\5.1.20\mysql-connector-java-5.1.20.jar;C:\Users\samul\.m2\repository\com\jolbox\bonecp\0.7.1.RELEASE\bonecp-0.7.1.RELEASE.jar;C:\Users\samul\.m2\repository\com\google\guava\guava\r08\guava-r08.jar;C:\Users\samul\.m2\repository\org\bouncycastle\bcprov-jdk16\1.46\bcprov-jdk16-1.46.jar;C:\Users\samul\.m2\repository\org\pns\JavaPNS-2.2\2.2\JavaPNS-2.2-2.2.jar;D:\Eclipse\workspace\jer\target\classes;C:\Users\samul\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\samul\.m2\repository\com\esotericsoftware\reflectasm\reflectasm\1.07\reflectasm-1.07.jar;C:\Users\samul\.m2\repository\org\ow2\asm\asm\4.0\asm-4.0.jar;C:\Users\samul\.m2\repository\net\coobird\thumbnailator\0.4.3\thumbnailator-0.4.3.jar;C:\Users\samul\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\samul\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\samul\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-base\2.0.0.3\gexin-rp-sdk-base-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-http\2.0.0.3\gexin-rp-sdk-http-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-template\2.0.0.3\gexin-rp-sdk-template-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\jackson-all\1.8.5\jackson-all-1.8.5.jar;C:\Users\samul\.m2\repository\gexin\protobuf-java\2.4.1\protobuf-java-2.4.1.jar
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system name: Windows 7
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system version: 6.1
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+[20130705 18:43:27 678 DEBUG] org.apache.commons.httpclient.HttpClient - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunPCSC 1.7: Sun PC/SC provider
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+[20130705 18:43:27 679 DEBUG] org.apache.commons.httpclient.HttpClient - BC 1.46: BouncyCastle Security Provider v1.46
+[20130705 18:43:27 680 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:43:27 680 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:43:27 684 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:43:27 685 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:43:27 685 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 685 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 685 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 688 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:43:27 688 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130705 18:43:27 688 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130705 18:43:27 755 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:43:27 755 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:43:27 755 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:43:27 756 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:43:27 756 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:43:27 756 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:43:27 757 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 764 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 765 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 765 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 766 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 766 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 766 DEBUG] httpclient.wire.header - >> "Content-Length: 632[\r][\n]"
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:43:27 766 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 767 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:43:27 767 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"7f058718f0a9a33f9f256b91b911fe80","transmissionContent":"{\"alert\":\"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]:2\",\"attach\":{\"id\":3400,\"receiverId\":\"402880173f0e6534013f18175dff0057\",\"sendTime\":\"2013-07-05 18:43:22\",\"senderId\":\"402880173f07abcf013f08a0f039002c\",\"t\":1}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130705 18:43:27 767 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 768 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 820 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 820 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 821 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 821 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 821 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:43:27 821 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 821 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 821 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 822 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:43:33 GMT[\r][\n]"
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 822 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 822 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 822 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 823 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 823 DEBUG] httpclient.wire.header - << "Content-Length: 23[\r][\n]"
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 823 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 823 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:43:27 824 DEBUG] httpclient.wire.content - << "{"result":"sign_error"}"
+[20130705 18:43:27 824 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021007825
+[20130705 18:43:27 825 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:43:27 836 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 837 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Getting free connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 838 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:43:27 839 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:43:27 839 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:43:27 839 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:43:27 839 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:43:27 840 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:43:27 840 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 841 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 841 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 841 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 842 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 842 DEBUG] httpclient.wire.header - >> "Content-Length: 122[\r][\n]"
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 842 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 843 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:43:27 843 DEBUG] httpclient.wire.content - >> "{"sign":"2e63231b8c72719fa57e5a24c2f23b56","timeStamp":1373021007835,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"connect"}"
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:43:27 843 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:43:27 844 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:43:27 844 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 844 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 895 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 895 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 895 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 895 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 895 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:43:27 895 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 895 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 895 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 896 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:43:33 GMT[\r][\n]"
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 896 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 896 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 896 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 897 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 897 DEBUG] httpclient.wire.header - << "Content-Length: 20[\r][\n]"
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 897 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 897 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:43:27 898 DEBUG] httpclient.wire.content - << "{"result":"success"}"
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021007898
+[20130705 18:43:27 898 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:43:27 899 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 899 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:43:27 899 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Getting free connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 900 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:43:27 901 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 901 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:43:27 902 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 902 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 903 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 903 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 903 DEBUG] httpclient.wire.header - >> "Content-Length: 632[\r][\n]"
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 903 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:43:27 904 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:43:27 904 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"7f058718f0a9a33f9f256b91b911fe80","transmissionContent":"{\"alert\":\"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]:2\",\"attach\":{\"id\":3400,\"receiverId\":\"402880173f0e6534013f18175dff0057\",\"sendTime\":\"2013-07-05 18:43:22\",\"senderId\":\"402880173f07abcf013f08a0f039002c\",\"t\":1}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130705 18:43:27 904 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 905 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 961 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 962 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 962 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 962 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 962 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:43:33 GMT[\r][\n]"
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 963 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 963 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 963 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 963 DEBUG] httpclient.wire.header - << "Content-Length: 85[\r][\n]"
+[20130705 18:43:27 963 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:43:27 964 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:43:27 964 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0705_PySwcXf68b9oQDFeALAax","result":"ok","status":"successed_online"}"
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:43:27 964 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:43:27 965 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:43:27 965 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:43:27 965 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021007965
+[20130705 18:43:27 965 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:43:27 965 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0705_PySwcXf68b9oQDFeALAax, result=ok, status=successed_online}
+[20130705 18:43:42 266 ERROR] cn.zthz.actor.rest.MasRestExceptionHandler - service internal error;request url:http://192.168.0.127:8080/message/adminSend.json params:{}
+qileke.jer.server.PassException: userId is empty
+	at cn.zthz.actor.rest.Rest.putError(Rest.java:103)
+	at cn.zthz.actor.rest.Rest.checkParameterNotNull(Rest.java:199)
+	at cn.zthz.actor.rest.AuthorityRest.checkUserToken(AuthorityRest.java:70)
+	at cn.zthz.actor.rest.filter.UserFilter.filter(UserFilter.java:90)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:131)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130705 18:44:23 885 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:44:23 935 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:44:23 936 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:44:23 939 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:44:23 940 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:44:23 943 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:44:23 943 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:44:23 947 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:44:23 947 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:44:23 948 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:44:23 971 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:44:23 972 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:44:23 973 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:44:23 978 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:44:24 052 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:48:32 876 DEBUG] cn.zthz.tool.message.MessageService - select id from User where id in ('402880173f0e6534013f18175dff0057') order by id asc limit 
+[20130705 18:48:33 081 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:33 117 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:33 500 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:33 506 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:33 747 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 74d917f5[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58551]]
+[20130705 18:48:33 832 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 58b411c1[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58552]]
+[20130705 18:48:34 001 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:34 012 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:34 339 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 1d55188b[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58553]]
+[20130705 18:48:34 502 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:34 514 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:34 840 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 5b21b804[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58554]]
+[20130705 18:48:35 000 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:35 009 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:35 315 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3d176cb9[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58555]]
+[20130705 18:48:35 501 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:35 512 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:35 841 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3cd8ee6d[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58556]]
+[20130705 18:48:35 996 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:36 002 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:36 328 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 64477185[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58557]]
+[20130705 18:48:36 501 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:36 513 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:36 839 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 31322373[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58558]]
+[20130705 18:48:37 001 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:37 013 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:37 500 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:48:37 512 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:48:38 019 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+[20130705 18:48:38 021 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+[20130705 18:48:38 022 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+[20130705 18:48:38 023 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+[20130705 18:48:38 023 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+[20130705 18:48:38 023 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+[20130705 18:48:38 024 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@72cdca7b
+[20130705 18:48:38 025 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+[20130705 18:48:38 140 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130705 18:48:38 141 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130705 18:48:38 230 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:48:38 231 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:48:38 231 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Java version: 1.7.0_11
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Java vendor: Oracle Corporation
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Java class path: D:\Eclipse\workspace\Mas\target\classes;C:\Users\samul\.m2\repository\redis\clients\jedis\2.0.0\jedis-2.0.0.jar;C:\Users\samul\.m2\repository\org\apache\lucene\lucene-core\3.6.1\lucene-core-3.6.1.jar;C:\Users\samul\.m2\repository\com\alibaba\fastjson\1.1.23\fastjson-1.1.23.jar;C:\Users\samul\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\samul\.m2\repository\commons-io\commons-io\2.3\commons-io-2.3.jar;C:\Users\samul\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\samul\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\samul\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\samul\.m2\repository\commons-codec\commons-codec\1.2\commons-codec-1.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpclient\4.2.2\httpclient-4.2.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2\httpcore-4.2.2.jar;C:\Users\samul\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;C:\Users\samul\.m2\repository\cn\jpush\jpush-api\0.0.1\jpush-api-0.0.1.jar;C:\Users\samul\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar;C:\Users\samul\.m2\repository\org\quartz-scheduler\quartz\2.1.6\quartz-2.1.6.jar;C:\Users\samul\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\samul\.m2\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;C:\Users\samul\.m2\repository\org\apache\solr\solr-solrj\4.1.0\solr-solrj-4.1.0.jar;C:\Users\samul\.m2\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpmime\4.1.3\httpmime-4.1.3.jar;C:\Users\samul\.m2\repository\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;C:\Users\samul\.m2\repository\mysql\mysql-connector-java\5.1.20\mysql-connector-java-5.1.20.jar;C:\Users\samul\.m2\repository\com\jolbox\bonecp\0.7.1.RELEASE\bonecp-0.7.1.RELEASE.jar;C:\Users\samul\.m2\repository\com\google\guava\guava\r08\guava-r08.jar;C:\Users\samul\.m2\repository\org\bouncycastle\bcprov-jdk16\1.46\bcprov-jdk16-1.46.jar;C:\Users\samul\.m2\repository\org\pns\JavaPNS-2.2\2.2\JavaPNS-2.2-2.2.jar;D:\Eclipse\workspace\jer\target\classes;C:\Users\samul\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\samul\.m2\repository\com\esotericsoftware\reflectasm\reflectasm\1.07\reflectasm-1.07.jar;C:\Users\samul\.m2\repository\org\ow2\asm\asm\4.0\asm-4.0.jar;C:\Users\samul\.m2\repository\net\coobird\thumbnailator\0.4.3\thumbnailator-0.4.3.jar;C:\Users\samul\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\samul\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\samul\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-base\2.0.0.3\gexin-rp-sdk-base-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-http\2.0.0.3\gexin-rp-sdk-http-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-template\2.0.0.3\gexin-rp-sdk-template-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\jackson-all\1.8.5\jackson-all-1.8.5.jar;C:\Users\samul\.m2\repository\gexin\protobuf-java\2.4.1\protobuf-java-2.4.1.jar
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system name: Windows 7
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system version: 6.1
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+[20130705 18:48:38 232 DEBUG] org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunPCSC 1.7: Sun PC/SC provider
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+[20130705 18:48:38 233 DEBUG] org.apache.commons.httpclient.HttpClient - BC 1.46: BouncyCastle Security Provider v1.46
+[20130705 18:48:38 234 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:48:38 234 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:48:38 238 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:48:38 238 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:48:38 238 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:48:38 239 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:48:38 239 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:48:38 241 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:48:38 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130705 18:48:38 242 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130705 18:48:38 327 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:48:38 327 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:48:38 327 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:48:38 328 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:48:38 329 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:48:38 330 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:48:38 331 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:48:38 331 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:48:38 331 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:48:38 331 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:48:38 331 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:48:38 345 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:48:38 346 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:48:38 346 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:48:38 346 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:48:38 346 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:48:38 346 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:48:38 347 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:48:38 347 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:48:38 347 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:48:38 347 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:48:38 347 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 348 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 348 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:48:38 348 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:48:38 348 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 348 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 348 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:48:38 349 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:48:38 349 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 349 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 349 DEBUG] httpclient.wire.header - >> "Content-Length: 632[\r][\n]"
+[20130705 18:48:38 349 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:48:38 349 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 350 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 350 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:48:38 350 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:48:38 350 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:48:38 350 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:48:38 350 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:48:38 351 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:48:38 351 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:48:38 351 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:48:38 351 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:48:38 351 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:48:38 352 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:48:38 352 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"7f058718f0a9a33f9f256b91b911fe80","transmissionContent":"{\"alert\":\"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]:1\",\"attach\":{\"id\":3401,\"receiverId\":\"402880173f0e6534013f18175dff0057\",\"sendTime\":\"2013-07-05 18:48:32\",\"senderId\":\"402880173f07abcf013f08a0f039002c\",\"t\":1}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130705 18:48:38 353 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:48:38 353 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:48:38 353 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:48:38 354 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:48:38 354 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:48:38 355 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 355 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 363 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 228bda19[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58559]]
+[20130705 18:48:38 400 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:48:38 400 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:48:38 401 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:48:38 402 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:48:38 402 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:48:38 402 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 402 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 402 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:48:38 402 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 403 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 403 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:48:43 GMT[\r][\n]"
+[20130705 18:48:38 403 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 403 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 403 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:48:38 403 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 404 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 404 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:48:38 404 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 404 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 404 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:48:38 404 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 405 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 405 DEBUG] httpclient.wire.header - << "Content-Length: 86[\r][\n]"
+[20130705 18:48:38 405 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:48:38 405 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:48:38 405 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:48:38 405 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:48:38 406 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:48:38 406 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:48:38 406 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:48:38 406 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:48:38 406 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:48:38 408 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0705_1Hdq3IWmMYAdvzH7kN7OlA","result":"ok","status":"successed_online"}"
+[20130705 18:48:38 409 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:48:38 409 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:48:38 409 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:48:38 409 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:48:38 409 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:48:38 410 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:48:38 410 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:48:38 410 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021318410
+[20130705 18:48:38 410 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:48:38 426 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0705_1Hdq3IWmMYAdvzH7kN7OlA, result=ok, status=successed_online}
+[20130705 18:48:39 013 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 326225a9[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.233.163,port=2195,localport=58560]]
+[20130705 18:51:25 130 DEBUG] cn.zthz.tool.message.MessageService - select id from User where id in ('402880173f0e6534013f18175dff0057') order by id asc limit 
+[20130705 18:51:25 170 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130705 18:51:25 170 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130705 18:51:25 173 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:51:25 174 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:51:25 174 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:51:25 174 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:51:25 174 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:51:25 174 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130705 18:51:25 175 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:51:25 238 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:51:25 238 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:51:25 239 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:51:25 240 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 240 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 240 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:51:25 240 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 241 DEBUG] httpclient.wire.header - >> "Content-Length: 632[\r][\n]"
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:51:25 241 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:51:25 241 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:51:25 242 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"7f058718f0a9a33f9f256b91b911fe80","transmissionContent":"{\"alert\":\"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]:1\",\"attach\":{\"id\":3402,\"receiverId\":\"402880173f0e6534013f18175dff0057\",\"sendTime\":\"2013-07-05 18:51:25\",\"senderId\":\"402880173f07abcf013f08a0f039002c\",\"t\":1}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:51:25 242 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 243 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 288 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:51:25 288 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 288 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 288 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 289 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:51:30 GMT[\r][\n]"
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 289 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 289 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 289 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 289 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 289 DEBUG] httpclient.wire.header - << "Content-Length: 86[\r][\n]"
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:51:25 290 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:51:25 290 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:51:25 290 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0705_IAgOrkAvt8AMenxLrrxke9","result":"ok","status":"successed_online"}"
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021485291
+[20130705 18:51:25 291 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:51:25 292 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0705_IAgOrkAvt8AMenxLrrxke9, result=ok, status=successed_online}
+[20130705 18:52:29 933 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130705 18:52:29 973 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130705 18:52:29 973 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130705 18:52:29 976 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130705 18:52:29 977 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130705 18:52:29 979 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130705 18:52:29 980 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130705 18:52:29 983 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130705 18:52:29 984 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130705 18:52:29 985 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130705 18:52:30 006 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130705 18:52:30 007 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130705 18:52:30 007 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130705 18:52:30 011 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130705 18:52:30 076 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130705 18:52:40 598 DEBUG] cn.zthz.tool.message.MessageService - select id from User where id in ('402880173f0e6534013f18175dff0057') order by id asc limit 
+[20130705 18:52:40 804 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:40 837 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:41 231 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:41 251 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:41 476 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3595df92[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58639]]
+[20130705 18:52:41 588 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 28905ba[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58640]]
+[20130705 18:52:41 723 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:41 730 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:42 058 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3ea0a595[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58641]]
+[20130705 18:52:42 225 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:42 237 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:42 574 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 75b6bd33[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58642]]
+[20130705 18:52:42 725 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:42 736 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:43 033 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 69e5bbb0[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58643]]
+[20130705 18:52:43 225 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:43 237 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:43 573 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 1a9e6e54[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58644]]
+[20130705 18:52:43 725 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:43 736 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:44 225 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:44 236 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:44 570 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 2508cc45[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58646]]
+[20130705 18:52:44 725 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:44 736 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:45 224 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130705 18:52:45 235 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130705 18:52:45 338 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 3dd1a577[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58647]]
+[20130705 18:52:45 580 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: ec64756[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58648]]
+[20130705 18:52:45 740 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+[20130705 18:52:45 741 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+[20130705 18:52:45 742 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+[20130705 18:52:45 742 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+[20130705 18:52:45 742 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+[20130705 18:52:45 742 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+[20130705 18:52:45 743 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@7e4ef207
+[20130705 18:52:45 743 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+[20130705 18:52:45 855 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130705 18:52:45 857 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130705 18:52:45 934 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:52:45 935 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130705 18:52:45 935 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Java version: 1.7.0_11
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Java vendor: Oracle Corporation
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Java class path: D:\Eclipse\workspace\Mas\target\classes;C:\Users\samul\.m2\repository\redis\clients\jedis\2.0.0\jedis-2.0.0.jar;C:\Users\samul\.m2\repository\org\apache\lucene\lucene-core\3.6.1\lucene-core-3.6.1.jar;C:\Users\samul\.m2\repository\com\alibaba\fastjson\1.1.23\fastjson-1.1.23.jar;C:\Users\samul\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\samul\.m2\repository\commons-io\commons-io\2.3\commons-io-2.3.jar;C:\Users\samul\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\samul\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\samul\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\samul\.m2\repository\commons-codec\commons-codec\1.2\commons-codec-1.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpclient\4.2.2\httpclient-4.2.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2\httpcore-4.2.2.jar;C:\Users\samul\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;C:\Users\samul\.m2\repository\cn\jpush\jpush-api\0.0.1\jpush-api-0.0.1.jar;C:\Users\samul\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar;C:\Users\samul\.m2\repository\org\quartz-scheduler\quartz\2.1.6\quartz-2.1.6.jar;C:\Users\samul\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\samul\.m2\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;C:\Users\samul\.m2\repository\org\apache\solr\solr-solrj\4.1.0\solr-solrj-4.1.0.jar;C:\Users\samul\.m2\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpmime\4.1.3\httpmime-4.1.3.jar;C:\Users\samul\.m2\repository\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;C:\Users\samul\.m2\repository\mysql\mysql-connector-java\5.1.20\mysql-connector-java-5.1.20.jar;C:\Users\samul\.m2\repository\com\jolbox\bonecp\0.7.1.RELEASE\bonecp-0.7.1.RELEASE.jar;C:\Users\samul\.m2\repository\com\google\guava\guava\r08\guava-r08.jar;C:\Users\samul\.m2\repository\org\bouncycastle\bcprov-jdk16\1.46\bcprov-jdk16-1.46.jar;C:\Users\samul\.m2\repository\org\pns\JavaPNS-2.2\2.2\JavaPNS-2.2-2.2.jar;D:\Eclipse\workspace\jer\target\classes;C:\Users\samul\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\samul\.m2\repository\com\esotericsoftware\reflectasm\reflectasm\1.07\reflectasm-1.07.jar;C:\Users\samul\.m2\repository\org\ow2\asm\asm\4.0\asm-4.0.jar;C:\Users\samul\.m2\repository\net\coobird\thumbnailator\0.4.3\thumbnailator-0.4.3.jar;C:\Users\samul\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\samul\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\samul\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-base\2.0.0.3\gexin-rp-sdk-base-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-http\2.0.0.3\gexin-rp-sdk-http-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-template\2.0.0.3\gexin-rp-sdk-template-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\jackson-all\1.8.5\jackson-all-1.8.5.jar;C:\Users\samul\.m2\repository\gexin\protobuf-java\2.4.1\protobuf-java-2.4.1.jar
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system name: Windows 7
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system version: 6.1
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+[20130705 18:52:45 936 DEBUG] org.apache.commons.httpclient.HttpClient - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+[20130705 18:52:45 937 DEBUG] org.apache.commons.httpclient.HttpClient - SunPCSC 1.7: Sun PC/SC provider
+[20130705 18:52:45 943 DEBUG] org.apache.commons.httpclient.HttpClient - SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+[20130705 18:52:45 943 DEBUG] org.apache.commons.httpclient.HttpClient - BC 1.46: BouncyCastle Security Provider v1.46
+[20130705 18:52:45 944 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130705 18:52:45 945 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130705 18:52:45 948 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130705 18:52:45 948 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130705 18:52:45 949 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:52:45 949 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:52:45 949 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:52:45 951 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130705 18:52:45 951 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130705 18:52:45 952 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130705 18:52:46 052 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130705 18:52:46 052 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130705 18:52:46 052 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130705 18:52:46 052 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130705 18:52:46 054 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130705 18:52:46 054 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:52:46 054 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 054 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130705 18:52:46 055 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130705 18:52:46 056 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130705 18:52:46 056 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130705 18:52:46 069 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130705 18:52:46 069 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130705 18:52:46 069 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130705 18:52:46 069 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130705 18:52:46 069 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130705 18:52:46 070 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 070 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 071 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 071 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 071 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 071 DEBUG] httpclient.wire.header - >> "Content-Length: 632[\r][\n]"
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130705 18:52:46 072 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130705 18:52:46 072 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130705 18:52:46 073 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130705 18:52:46 073 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"7f058718f0a9a33f9f256b91b911fe80","transmissionContent":"{\"alert\":\"[0xe5][0xa3][0xae][0xe5][0xa3][0xae]:0\",\"attach\":{\"id\":3403,\"receiverId\":\"402880173f0e6534013f18175dff0057\",\"sendTime\":\"2013-07-05 18:52:40\",\"senderId\":\"402880173f07abcf013f08a0f039002c\",\"t\":1}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130705 18:52:46 074 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130705 18:52:46 074 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130705 18:52:46 074 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130705 18:52:46 074 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130705 18:52:46 074 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130705 18:52:46 075 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 075 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 162 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:52:46 162 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130705 18:52:46 163 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130705 18:52:46 164 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:52:46 164 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130705 18:52:46 164 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 164 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 164 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130705 18:52:46 164 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 165 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 165 DEBUG] httpclient.wire.header - << "Date: Fri, 05 Jul 2013 10:52:51 GMT[\r][\n]"
+[20130705 18:52:46 165 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 165 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 165 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130705 18:52:46 165 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 166 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 166 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130705 18:52:46 166 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 166 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 166 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130705 18:52:46 166 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 167 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 167 DEBUG] httpclient.wire.header - << "Content-Length: 86[\r][\n]"
+[20130705 18:52:46 167 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130705 18:52:46 167 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130705 18:52:46 167 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130705 18:52:46 167 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130705 18:52:46 167 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130705 18:52:46 168 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130705 18:52:46 168 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130705 18:52:46 168 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130705 18:52:46 168 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130705 18:52:46 169 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0705_saCaWBm80O7R3IYm7OQO25","result":"ok","status":"successed_online"}"
+[20130705 18:52:46 170 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130705 18:52:46 170 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130705 18:52:46 171 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130705 18:52:46 171 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130705 18:52:46 171 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130705 18:52:46 171 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130705 18:52:46 171 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130705 18:52:46 172 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1373021566172
+[20130705 18:52:46 172 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130705 18:52:46 190 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0705_saCaWBm80O7R3IYm7OQO25, result=ok, status=successed_online}
+[20130705 18:52:47 135 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 597873b3[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.172.238.226,port=2195,localport=58645]]

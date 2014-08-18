@@ -1,0 +1,883 @@
+package cn.zthz.actor.rest;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringEscapeUtils;
+
+import qileke.jer.server.ActionHelper;
+import cn.zthz.actor.assemble.Global;
+import cn.zthz.actor.queue.QueueSubjects;
+import cn.zthz.actor.queue.UserSubjects;
+import cn.zthz.tool.account.AccountException;
+import cn.zthz.tool.account.AccountService;
+import cn.zthz.tool.cache.RedisCache;
+import cn.zthz.tool.cache.user.UserCache;
+import cn.zthz.tool.cache.user.UserCacheKeys;
+import cn.zthz.tool.cache.user.UserStatus;
+import cn.zthz.tool.common.DateUtils;
+import cn.zthz.tool.common.HashUtils;
+import cn.zthz.tool.common.HttpUtils;
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.JsonUtils;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.common.StringUtils;
+import cn.zthz.tool.common.Tuple;
+import cn.zthz.tool.db.QuickDB;
+import cn.zthz.tool.picture.IconSizes;
+import cn.zthz.tool.proxy.UserProxy;
+import cn.zthz.tool.push.PushException;
+import cn.zthz.tool.push.PushService;
+import cn.zthz.tool.share.ShareAction;
+import cn.zthz.tool.user.ReportService;
+import cn.zthz.tool.user.SkillOperations;
+import cn.zthz.tool.user.ThirdAccessException;
+import cn.zthz.tool.user.User;
+import cn.zthz.tool.user.UserException;
+import cn.zthz.tool.user.UserOperationImpl;
+import cn.zthz.tool.user.UserOperations;
+import cn.zthz.tool.user.UserStatics;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+public class UserRest extends FunctionalRest {
+
+	// private static final long LOGIN_EXPIRE =
+	// GlobalConfig.getLong("userToken.expire") * 24 * 3600 * 1000;
+
+	public void test(HttpServletRequest request, HttpServletResponse response) {
+		ActionHelper.write(request, response, "test");
+	}
+
+	public void login(HttpServletRequest request, HttpServletResponse response) {
+		String weiboUid = request.getParameter("weiboUid");
+		String qqUid = request.getParameter("qqUid");
+		String weiboAccessToken = request.getParameter("weiboAccessToken");
+		String qqAccessToken = request.getParameter("qqAccessToken");
+		Double longitude = getDouble(request, response, "longitude", false);
+		Double latitude = getDouble(request, response, "latitude", false);
+		String userId = request.getParameter("userId");
+		String userToken = request.getParameter(USER_TOKEN);
+		Integer deviceType = getInt(request, response, "deviceType", false);
+		String deviceToken = request.getParameter("deviceToken");
+		// String password = request.getParameter("password");
+//		if (StringUtils.isEmpty(weiboUid) && StringUtils.isEmpty(qqUid)) {
+//			putError(request, response, "lack of identity", ErrorCodes.PARAMETER_INVALID);
+//		}
+
+		UserOperationImpl userService = UserOperationImpl.instance;
+		
+		Map<String, Object> queryArgs = new HashMap<>(2);
+		User user = null;
+		try {
+			if (StringUtils.isNotEmpty(weiboUid) && StringUtils.isNotEmpty(weiboAccessToken)) {
+				queryArgs.put("weiboUid", weiboUid);
+				// queryArgs.put("weiboAccessToken", weiboAccessToken);
+				List<User> users = userService.query(queryArgs);
+				if (null == users || users.isEmpty()) {
+					checkAccessToken(weiboUid, weiboAccessToken, "weibo");
+					user = new User();
+					user.setWeiboUid(weiboUid);
+					user.setWeiboAccessToken(weiboAccessToken);
+					user.setLatestLongtitude(longitude);
+					user.setLatestLatitude(latitude);
+					user = setUserDefault(user);
+					// user.setCreateTime(new
+					// Timestamp(System.currentTimeMillis()));
+					// user.setLastLoginTime(new
+					// Timestamp(System.currentTimeMillis()));
+					// user.setUserToken(HashUtils.systemUuid());
+					// user.setHasCompleteProfile(true);
+					userService.save(user);
+				} else {
+					user = users.get(0);
+					Map<String, Object> newVules = new HashMap<>(5);
+					// if (System.currentTimeMillis() -
+					// user.getLastLoginTime().getTime() >= LOGIN_EXPIRE) {
+					// newVules.put(USER_TOKEN, HashUtils.systemUuid());
+					// }
+					if (null != longitude) {
+						newVules.put("latestLongitude", longitude);
+					}
+					if (null != latitude) {
+						newVules.put("latestLatitude", latitude);
+					}
+					if (!weiboAccessToken.equals(user.getWeiboAccessToken())) {
+						newVules.put("weiboAccessToken", weiboAccessToken);
+					}
+					newVules.put("lastLoginTime", new Timestamp(System.currentTimeMillis()));
+					UserOperationImpl.instance.update(user.getId(), newVules);
+				}
+			}
+			else if (StringUtils.isNotEmpty(qqUid) && StringUtils.isNotEmpty(qqAccessToken)) {
+				queryArgs.put("qqUid", qqUid);
+				// queryArgs.put("qqAccessToken", qqAccessToken);
+				List<User> users = userService.query(queryArgs);
+				if (null == users || users.isEmpty()) {
+					checkAccessToken(qqUid, qqAccessToken, "qq");
+					user = new User();
+					user.setQqUid(qqUid);
+					user.setQqAccessToken(qqAccessToken);
+					user.setLatestLongtitude(longitude);
+					user.setLatestLatitude(latitude);
+					// user.setCreateTime(new
+					// Timestamp(System.currentTimeMillis()));
+					// user.setLastLoginTime(new
+					// Timestamp(System.currentTimeMillis()));
+					// user.setUserToken(HashUtils.systemUuid());
+					// user.setHasCompleteProfile(true);
+					user = setUserDefault(user);
+					userService.save(user);
+				} else {
+					user = users.get(0);
+					Map<String, Object> newVules = new HashMap<>(5);
+					// if (System.currentTimeMillis() -
+					// user.getLastLoginTime().getTime() >= LOGIN_EXPIRE) {
+					// newVules.put(USER_TOKEN, HashUtils.systemUuid());
+					// }
+					if (null != longitude) {
+						newVules.put("latestLongitude", longitude);
+					}
+					if (null != latitude) {
+						newVules.put("latestLatitude", latitude);
+					}
+					if (!qqAccessToken.equals(user.getQqAccessToken())) {
+						newVules.put("qqAccessToken", qqAccessToken);
+					}
+					newVules.put("lastLoginTime", new Timestamp(System.currentTimeMillis()));
+					UserOperationImpl.instance.update(user.getId(), newVules);
+				}
+			}else if(StringUtils.isNotEmpty(userId)&& StringUtils.isNotEmpty(userToken)){
+//				userService.checkUserToken(userId, userToken);
+				user = userService.get(userId);
+				if(!userToken.equals(user.getUserToken())){
+					putError(request, response, "failed to login", ErrorCodes.USER_TOKEN_INVALID);
+				}
+			}else{
+				putError(request, response, "failed to login", ErrorCodes.PARAMETER_INVALID);
+			}
+		} catch (UserException e) {
+			putError(request, response, "failed to login", ErrorCodes.SERVER_INNER_ERROR);
+		} catch (HzException e) {
+			putError(request, response, e);
+		}
+		Map<String, Object> result = new HashMap<>(5);
+		result.put("userId", user.getId());
+		result.put("userToken", user.getUserToken());
+		result.put("isFirstLogin", user.getHasCompleteProfile());
+		result.put("mainPicture", user.getMainPicture());
+		result.put("name", user.getName());
+		result.put("weiboUid", user.getWeiboUid());
+		result.put("qqUid", user.getQqUid());
+		result.put("rank", user.getRank());
+		try {
+			result.put("statics", UserStatics.instance.urs( user.getId()));
+		} catch (UserException e1) {
+			log.error(e1);
+		}
+		putJson(request, response, result);
+
+		RedisCache.instance.setObject(UserCacheKeys.userInfo(user.getId()), user);
+		RedisCache.instance.set(UserCacheKeys.userStatus(user.getId()), String.valueOf(UserStatus.ONLINE));
+		RedisCache.instance.set(UserCacheKeys.userToken(user.getId()), user.getUserToken());
+		if (StringUtils.isNotEmpty(deviceToken) && null != deviceType) {
+			try {
+				updateDevice(deviceType, deviceToken, user.getId());
+			} catch (PushException e) {
+				putError(request, response, "save device token error!", ErrorCodes.SERVER_INNER_ERROR);
+			}
+		}
+		// Map<String, Object> map = new HashMap<>();
+		// map.put("user", newUser);
+		// map.put("deviceToken", deviceToken);
+		// map.put("deviceType", deviceType);
+		Global.queue.publish(QueueSubjects.USER_LOGIN, user);
+		Map<String, Object> loginCount = new HashMap<>();
+		loginCount.put("userId", user.getId());
+		loginCount.put("time", new Timestamp(System.currentTimeMillis()));
+		loginCount.put("ip", getRemoteRealIp(request));
+		Global.queue.publish(QueueSubjects.USER_LOGIN_COUNT, loginCount);
+
+		// UserListener.instance.onUserLogined(userId);
+
+	}
+
+	private void updateDevice(Integer deviceType, String deviceToken, String userId) throws PushException {
+		PushService.instance.saveOrUpdateUserDevice(userId, deviceToken, deviceType);
+		Map<String, Object> device = new HashMap<>(2);
+		device.put("deviceToken", deviceToken);
+		device.put("deviceType", deviceType);
+		RedisCache.instance.setObject(UserCacheKeys.userDevice(userId), device);
+	}
+
+	public void updateDevice(HttpServletRequest request, HttpServletResponse response) {
+		String userId = getString(request, response, USER_ID, true);
+		Integer deviceType = getInt(request, response, "deviceType", true);
+		String deviceToken = getString(request, response, "deviceToken", true);
+		try {
+			updateDevice(deviceType, deviceToken, userId);
+			putSuccess(request, response);
+		} catch (PushException e) {
+			putError(request, response, e);
+		}
+	}
+	
+	public void deleteUser(HttpServletRequest request, HttpServletResponse response){
+		String userToken = request.getParameter(USER_TOKEN);
+		String userId= request.getParameter(USER_ID);
+		try {
+			UserOperationImpl.instance.deleteUser(userId,userToken);
+			putSuccess(request, response);
+		} catch (UserException e) {
+			putError(request, response, e);
+		}
+	}
+
+	private Tuple<User, Boolean> checkUser(HttpServletRequest request, HttpServletResponse response, String id, String accessToken,
+			String type, UserOperations userService, Map<String, Object> args) throws HzException {
+
+		// String userToken = HashUtils.systemUuid();
+		if ("weibo".equals(type)) {
+			args.put("weiboUid", id);
+		}
+		if ("qq".equals(type)) {
+			args.put("qqUid", id);
+		}
+		// args.put("weiboAccessToken", weiboAccessToken);
+		List<User> users = userService.query(args);
+		if (null == users || users.isEmpty()) { // first time login
+			try {
+				checkAccessToken(id, accessToken, type);
+			} catch (ThirdAccessException e) {
+				putError(request, response, "access_token is invalid", ErrorCodes.PARAMETER_INVALID);
+			}
+			User user = new User();
+			if (UserOperationImpl.instance.hasBind(id, type)) {
+				putError(request, response, type + " has already used!uid:" + id, ErrorCodes.SERVER_DATA_NO_INCONSISTENT);
+			}
+			if ("weibo".equals(type)) {
+				user.setWeiboUid(id);
+				user.setWeiboAccessToken(accessToken);
+			}
+			if ("qq".equals(type)) {
+				user.setQqUid(id);
+				user.setQqAccessToken(accessToken);
+			}
+			user.setCreateTime(new Timestamp(System.currentTimeMillis()));
+			user.setLastLoginTime(new Timestamp(System.currentTimeMillis()));
+			user.setUserToken(HashUtils.systemUuid());
+			userService.save(user);
+			return new Tuple<>(user, true);
+		} else {
+			User oldUser = users.get(0);
+			String userId = oldUser.getId();
+			Map<String, Object> newVules = new HashMap<>(3);
+			// if (System.currentTimeMillis() -
+			// oldUser.getLastLoginTime().getTime() >= LOGIN_EXPIRE) {
+			// newVules.put(USER_TOKEN, HashUtils.systemUuid());
+			// }
+			if ("weibo".equals(type)) {
+				newVules.put("weiboAccessToken", accessToken);
+			}
+			if ("qq".equals(type)) {
+				newVules.put("qqAccessToken", accessToken);
+			}
+			newVules.put("lastLoginTime", new Timestamp(System.currentTimeMillis()));
+			UserOperationImpl.instance.update(userId, newVules);
+			return new Tuple<>(UserOperationImpl.instance.get(userId), false);
+		}
+	}
+
+	protected boolean isLogin(String userId) {
+		String status = RedisCache.instance.get(UserCacheKeys.userStatus(userId));
+		if (null == status) {
+			return false;
+		}
+		if (Integer.valueOf(status) < 1) {
+			return false;
+		}
+		return true;
+	}
+
+	public void add(HttpServletRequest request, HttpServletResponse response) {
+
+	}
+
+	private void binaryUpdate(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			Map<String, Object> map = uploadFields(request, response);
+			Map<String, Object> newValues = new HashMap<>();
+			String userId = getms(map, USER_ID, request, response, true);
+
+			File file = (File) map.get("pictureData_file");
+			if (null != file) {
+				Map<String, String> sizeUrls = savePictureThumbs(file, request, response, IconSizes.USER_ICON_SIZES);
+				// if (sizeUrls.containsKey("raw")) {
+				newValues.put("mainPicture", sizeUrls.get("raw"));
+				// }
+				// if (sizeUrls.containsKey("640x640")) {
+				newValues.put("mainPictureBig", sizeUrls.get("640x640"));
+				// }
+				// if (sizeUrls.containsKey("100x100")) {
+				newValues.put("mainPictureMid", sizeUrls.get("100x100"));
+				// }
+				// if (sizeUrls.containsKey("50x50")) {
+				newValues.put("mainPictureSmall", sizeUrls.get("50x50"));
+				// }
+			}
+
+			if (map.containsKey("sex"))
+				newValues.put("sex", getmi(map, "sex", request, response, false));
+			if (map.containsKey("birthday"))
+				newValues.put("birthday", DateUtils.parseDate(getms(map, "birthday", request, response, false)));
+			if (map.containsKey("address"))
+				newValues.put("address", getms(map, "address", request, response, false));
+			if (map.containsKey("occupation"))
+				newValues.put("occupation", getms(map, "occupation", request, response, false));
+			if (map.containsKey("company"))
+				newValues.put("company", getms(map, "company", request, response, false));
+			if (map.containsKey("weiboUid"))
+				newValues.put("weiboUid", getms(map, "weiboUid", request, response, false));
+			if (map.containsKey("qqUid"))
+				newValues.put("qqUid", getms(map, "qqUid", request, response, false));
+			if (map.containsKey("weiboAccessToken"))
+				newValues.put("weiboAccessToken", getms(map, "weiboAccessToken", request, response, false));
+			if (map.containsKey("qqAccessToken"))
+				newValues.put("qqAccessToken", getms(map, "qqAccessToken", request, response, false));
+			if (map.containsKey("name"))
+				newValues.put("name", getms(map, "name", request, response, false));
+			if (map.containsKey("nick"))
+				newValues.put("nick", getms(map, "nick", request, response, false));
+			if (map.containsKey("skills"))
+				newValues.put("skills", getms(map, "skills", request, response, false));
+			if (map.containsKey("skillss"))
+				newValues.put("skillss", getms(map, "skillss", request, response, false));
+			if (map.containsKey("password"))
+				newValues.put("password", getms(map, "password", request, response, false));
+			if (map.containsKey("email"))
+				newValues.put("email", getms(map, "email", request, response, false));
+			if (map.containsKey("latestLatitude"))
+				newValues.put("latestLatitude", getms(map, "latestLatitude", request, response, false));
+			if (map.containsKey("latestLongtitude"))
+				newValues.put("latestLongtitude", getms(map, "latestLongtitude", request, response, false));
+			if (map.containsKey("pictureName"))
+				newValues.put("pictureName", getms(map, "pictureName", request, response, false));
+			if (map.containsKey("phone"))
+				newValues.put("telephone", getms(map, "phone", request, response, false));
+			newValues.put("hasCompleteProfile", false);
+			Integer sharewb = getmi(map, "shareWB", request, response, false);
+			Integer shareqq = getmi(map, "shareQQ", request, response, false);
+			if (log.isInfoEnabled()) {
+				log.info("update with params:" + JsonUtils.toJsonString(newValues));
+			}
+			UserOperationImpl.instance.update(userId, newValues);
+			// putSuccess(request, response);
+			putJson(request, response, UserOperationImpl.instance.get(userId));
+			Map<String, Object> message = new HashMap<>();
+			message.put("userId", userId);
+			int shareQQ = (null != shareqq) ? (int)shareqq : 0;
+			int shareWB = (null != sharewb) ? (int)sharewb : 0;
+			if(ShareAction.SHARE_QQ == shareQQ){
+				log.debug(shareQQ);
+				Global.queue.publish(UserSubjects.SHARE_QQ, message);
+			}
+			if(ShareAction.SHARE_WB == shareWB){
+				log.debug(shareWB);
+				Global.queue.publish(UserSubjects.SHARE_WB, message);
+			}
+		} catch (HzException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		} catch (Exception e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+
+	}
+
+	//
+	public void update(HttpServletRequest request, HttpServletResponse response) {
+		if (isMultipart(request)) {
+			binaryUpdate(request, response);
+			return;
+		}
+		String userId = request.getParameter("userId");
+		if (log.isInfoEnabled()) {
+			log.info("update 64 for user:" + userId);
+		}
+		String userToken = request.getParameter("userToken");
+		if (StringUtils.isEmpty(userId)) {
+			putError(request, response, "user id is empty", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+
+		checkParameterNotNull(request, response, "userToken", userToken);
+		checkParameterNotNull(request, response, "userId", userId);
+		// if (!isLogin(userId)) {
+		// putError(request, response, "user is login",
+		// ErrorCodes.PARAMETER_INVALID);
+		// return;
+		// }
+
+		String sex = request.getParameter("sex");
+		String birthday = request.getParameter("birthday");
+		String address = request.getParameter("address");
+		String occupation = request.getParameter("occupation");
+		String company = request.getParameter("company");
+		String weiboUid = request.getParameter("weiboUid");
+		String qqUid = request.getParameter("qqUid");
+		String weiboAccessToken = request.getParameter("weiboAccessToken");
+		String qqAccessToken = request.getParameter("qqAccessToken");
+		// int type = request.getParameter("sex");
+		// int status = request.getParameter("sex");
+		// int credit = request.getParameter("sex");
+		String name = request.getParameter("name");
+		String nick = request.getParameter("nick");
+		String skills = request.getParameter("skills");
+		String skillss = request.getParameter("skillss");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String latestLatitude = request.getParameter("latestLatitude");
+		String latestLongtitude = request.getParameter("latestLongtitude");
+		String pictureName = request.getParameter("pictureName");
+		String base64PictureData = request.getParameter("pictureData");
+		String pictureUrl = request.getParameter("pictureUrl");
+		String telephone = request.getParameter("phone");
+		Integer shareqq = getInt(request, response, "shareQQ", false);
+		Integer sharewb = getInt(request, response, "shareWB", false);
+
+		Set<String> parameterKeys = request.getParameterMap().keySet();
+		Map<String, Object> newValues = new HashMap<>();
+		if (parameterKeys.contains("sex")) {
+			checkParameterIsNumber(request, response, "sex", sex);
+			newValues.put("sex", Integer.parseInt(sex));
+		}
+		if (parameterKeys.contains("birthday")) {
+			// checkParameterIsNumber(request, response, "birthday", birthday);
+			try {
+				newValues.put("birthday", DateUtils.parseDate(birthday));
+			} catch (ParseException e) {
+				putError(request, response, "birthday format error! must be yyyy-MM-dd format ", ErrorCodes.PARAMETER_INVALID);
+			}
+		}
+		if (parameterKeys.contains("address")) {
+			newValues.put("address", address);
+		}
+		if (parameterKeys.contains("phone")) {
+			newValues.put("telephone", telephone);
+		}
+		if (parameterKeys.contains("occupation")) {
+			newValues.put("occupation", occupation);
+		}
+		if (parameterKeys.contains("company")) {
+			newValues.put("company", company);
+		}
+		if (parameterKeys.contains("weiboUid")) {
+			newValues.put("weiboUid", weiboUid);
+		}
+		if (parameterKeys.contains("qqUid")) {
+			newValues.put("qqUid", qqUid);
+		}
+		if (parameterKeys.contains("weiboAccessToken")) {
+			newValues.put("weiboAccessToken", weiboAccessToken);
+		}
+		if (parameterKeys.contains("qqAccessToken")) {
+			newValues.put("qqAccessToken", qqAccessToken);
+		}
+		if (parameterKeys.contains("name")) {
+			newValues.put("name", name);
+		}
+		if (parameterKeys.contains("nick")) {
+			newValues.put("nick", nick);
+		}
+		if (parameterKeys.contains("skills")) {
+			newValues.put("skills", skills);
+		}
+		if (parameterKeys.contains("skillss")) {
+			newValues.put("skillss", skillss);
+		}
+		if (parameterKeys.contains("email")) {
+			newValues.put("email", email);
+		}
+		if (parameterKeys.contains("password")) {
+			newValues.put("password", password);
+		}
+		if (parameterKeys.contains("latestLatitude")) {
+			checkParameterIsFloat(request, response, "latestLatitude", latestLatitude);
+			newValues.put("latestLatitude", Float.parseFloat(latestLatitude));
+		}
+		if (parameterKeys.contains("latestLongtitude")) {
+			checkParameterIsFloat(request, response, "latestLongtitude", latestLongtitude);
+			newValues.put("latestLongtitude", Float.parseFloat(latestLongtitude));
+		}
+
+		if (StringUtils.isNotEmpty(base64PictureData)) {
+			// checkParameterNotNull(request, response, "pictureData",
+			// base64PictureData);
+			newValues.put("mainPicture", savePicture(base64PictureData, request, response));
+		} else if (StringUtils.isNotEmpty(pictureUrl)) {
+			try {
+				byte[] data = HttpUtils.doGetInBytes(pictureUrl);
+				Map<String, String> sizeUrls = savePictureThumbs(data, request, response, IconSizes.USER_ICON_SIZES);
+				newValues.put("mainPictureMid", null);
+				newValues.put("mainPictureBig", null);
+				newValues.put("mainPictureSmall", null);
+				if (sizeUrls.containsKey("raw")) {
+					newValues.put("mainPicture", sizeUrls.get("raw"));
+				}
+				if (sizeUrls.containsKey("640x640")) {
+					newValues.put("mainPictureBig", sizeUrls.get("640x640"));
+				}
+				if (sizeUrls.containsKey("100x100")) {
+					newValues.put("mainPictureMid", sizeUrls.get("100x100"));
+				}
+				if (sizeUrls.containsKey("50x50")) {
+					newValues.put("mainPictureSmall", sizeUrls.get("50x50"));
+				}
+			} catch (IOException e) {
+				log.error("", e);
+			}
+		}
+		newValues.put("hasCompleteProfile", false);
+
+		Map<String, Object> message = new HashMap<>();
+		message.put("userId", userId);
+		UserOperations userService = UserOperationImpl.instance;
+		try {
+			if (newValues.isEmpty()) {
+				putJson(request, response, userService.get(userId));
+				return;
+			}
+			userService.update(userId, newValues);
+			int shareQQ = (null != shareqq) ? (int)shareqq : 0;
+			int shareWB = (null != sharewb) ? (int)sharewb : 0;
+			if(ShareAction.SHARE_QQ == shareQQ){
+				Global.queue.publish(UserSubjects.SHARE_QQ, message);
+			}
+			if(ShareAction.SHARE_WB == shareWB){
+				Global.queue.publish(UserSubjects.SHARE_WB, message);
+			}
+			// putSuccess(request, response);
+			User user = userService.get(userId);
+			user.setPassword(null);
+			putJson(request, response, user);
+		} catch (HzException e) {
+			putError(request ,response ,e);
+//			putError(request, response, "update user failed! " + e.getMessage(), ErrorCodes.SERVER_INNER_ERROR);
+		}
+	}
+
+	public void getStatus(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter("userId");
+		if (StringUtils.isEmpty(userId)) {
+			putError(request, response, "user id is empty", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		if (isLogin(userId)) {
+			putError(request, response, "user is login", ErrorCodes.PARAMETER_INVALID);
+			return;
+
+		}
+		String status = RedisCache.instance.get(UserCacheKeys.userStatus(userId));
+		putJson(request, response, genJson("status", status));
+	}
+
+	private void changeStatus(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter("userId");
+		if (StringUtils.isEmpty(userId)) {
+			putError(request, response, "user id is empty", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		if (!isLogin(userId)) {
+			putError(request, response, "user is login", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		String statusString = request.getParameter("status");
+		try {
+			int status = Integer.valueOf(statusString);
+			if (status < 0 && status > 4) {
+				putError(request, response, "status is invalid.", ErrorCodes.PARAMETER_INVALID);
+				return;
+			}
+		} catch (Exception e) {
+			putError(request, response, "status is invalid.", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		RedisCache.instance.set(UserCacheKeys.userStatus(userId), statusString);
+		putSuccess(request, response);
+
+	}
+
+	public void info(HttpServletRequest request, HttpServletResponse response) {
+		// checkUserToken(request, response);
+		String userId = request.getParameter("userId");
+		if (StringUtils.isEmpty(userId)) {
+			putError(request, response, "user id is empty", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		// if(!isLogin(userId)){
+		// putError(request, response, "user is not login",
+		// ErrorCodes.PARAMETER_INVALID);
+		// return ;
+		// }
+		User user = UserProxy.getUserInfo(userId);
+		if (null != user) {
+			putJson(request, response, user);
+		} else {
+			putError(request, response, "no this user:" + userId, ErrorCodes.NOT_EXISTS);
+		}
+
+	}
+	
+	public void infop(HttpServletRequest request, HttpServletResponse response) {
+		// checkUserToken(request, response);
+		String userId = request.getParameter("userId");
+		if (StringUtils.isEmpty(userId)) {
+			putError(request, response, "user id is empty", ErrorCodes.PARAMETER_INVALID);
+			return;
+		}
+		// if(!isLogin(userId)){
+		// putError(request, response, "user is not login",
+		// ErrorCodes.PARAMETER_INVALID);
+		// return ;
+		// }
+		User user = UserProxy.getUserInfo(userId);
+		if (null != user) {
+			Map<String, Object> result = new HashMap<String, Object>();
+			result.put("name", user.getName());
+			result.put("address", user.getAddress());
+			result.put("allowPush", user.getAllowPush());
+			result.put("birthday", user.getBirthday());
+			result.put("email", user.getEmail());
+			result.put("mainPictureSmall", user.getMainPictureSmall());
+			result.put("rank", user.getRank());
+			result.put("sex", user.getSex());
+			result.put("completeScore", user.getCompleteScore());
+			result.put("sponsorScore", user.getSponsorScore());
+			if (StringUtils.isNotEmpty(user.getWeiboUid()) && StringUtils.isNotEmpty(user.getWeiboAccessToken())) {
+				result.put("isBindingWeibo", true);
+			} else {
+				result.put("isBindingWeibo", false);
+			}
+			if (StringUtils.isNotEmpty(user.getQqUid()) && StringUtils.isNotEmpty(user.getQqAccessToken())) {
+				result.put("isBindingQq", true);
+			} else {
+				result.put("isBindingQq", false);
+			}
+//			result.put("allowPush", UserProxy.allowPush(userId));
+//			result.put("allowPushNewRequirement", UserProxy.allowPushNewRequirement(userId));
+
+				try {
+					result.putAll(AccountService.instance.getBasicInfo(userId));
+				} catch (AccountException e) {
+					putError(request, response, e);
+				}
+				if (StringUtils.isEmpty((String) result.get("cardNumber"))) {
+					result.put("isBindedBank", false);
+				} else {
+					result.put("isBindedBank", true);
+				}
+			putJson(request, response, result);
+		} else {
+			putError(request, response, "no this user:" + userId, ErrorCodes.NOT_EXISTS);
+		}
+
+	}
+
+	public void userInfoParts(HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
+		// checkUserToken(request, response);
+		Set<String> keys = getMultiValueSet(request, "names");
+		String targetUserId = getTargetUserId(request, response);
+		try {
+			putJson(request, response, UserOperationImpl.instance.getUserInfo(targetUserId, keys));
+		} catch (Exception e) {
+			putError(request, response, "get user info error!", ErrorCodes.SERVER_INNER_ERROR);
+		}
+	}
+
+	public void exit(HttpServletRequest request, HttpServletResponse response) {
+		// checkUserToken(request, response);
+		String userId = request.getParameter(USER_ID);
+		UserCache.setUserStatus(userId, UserStatus.EXIT);
+		putSuccess(request, response);
+	}
+
+	public void heartbeat(HttpServletRequest request, HttpServletResponse response) {
+		// checkUserToken(request, response);
+		String userId = request.getParameter(USER_ID);
+		// String userToken = request.getParameter(USER_TOKEN);
+		String userStatusString = request.getParameter("userStatus");
+		int userStatus = UserStatus.ONLINE;
+		if (StringUtils.isEmpty(userStatusString)) {
+			checkParameterIsNumber(request, response, "userStatus", userStatusString);
+			userStatus = Integer.valueOf(userStatus);
+		}
+		UserCache.setUserStatus(userId, userStatus);
+		putEmptyObject(request, response);
+	}
+
+	public void modifyUserPassword(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try {
+			UserOperationImpl.instance.modifyUserPassword(userId, getString(request, response, "oldPassword", true),
+					getString(request, response, "newPassword", true), getString(request, response, "reNewPassword", true));
+			putSuccess(request, response);
+		} catch (UserException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, "modify password failed!", ErrorCodes.USER_PASSWORD_ERROR);
+		}
+	}
+
+	private static User setUserDefault(User user) {
+		user.setCreateTime(new Timestamp(System.currentTimeMillis()));
+		user.setLastLoginTime(new Timestamp(System.currentTimeMillis()));
+		user.setUserToken(HashUtils.systemUuid());
+		user.setHasCompleteProfile(true);
+		user.setSex(0);
+		user.setEmail("");
+		user.setBirthday(null);
+		user.setAddress("");
+		user.setAllowPush(true);
+		user.setAllowPushNewRequirement(true);
+		user.setCompany("");
+		user.setCompleteScore(0);
+		user.setCredit(0);
+		user.setDeviceToken("");
+		user.setName("");
+		user.setHasCompleteProfile(true);
+		user.setMainPicture("");
+		user.setOccupation("");
+		user.setPassword("");
+		user.setPictures("");
+		//user.setSkills("");
+		user.setSponsorScore(0);
+		user.setStatus(0);
+		user.setTelephone("");
+		user.setMainPictureSmall("");
+		user.setMainPictureMid("");
+		user.setMainPictureBig("");
+		return user;
+	}
+
+	public void forgetPassword(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			UserOperationImpl.instance.forgetPassword(getString(request, response, USER_ID, true));
+			putSuccess(request, response);
+		} catch (UserException e) {
+			putError(request, response, e);
+		}
+	}
+
+	public void resetPasswordView(HttpServletRequest request, HttpServletResponse response) {
+
+		Map<String, Object> root = new HashMap<>();
+		root.put("userId", getString(request, response, "userId", true));
+		root.put("resetToken", getString(request, response, "resetToken", true));
+		putTemplate(request, response, "resetPassword", "/view/resetPassword.ftl", root);
+
+	}
+
+	public void resetPassword(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String userId = getString(request, response, USER_ID, true);
+			String resetToken = getString(request, response, "resetToken", true);
+			String password = getString(request, response, "password", true);
+			String repassword = getString(request, response, "repassword", true);
+			if (!password.equals(repassword)) {
+				putTemplate(request, response, "passwordInvalid", "/view/passwordInvalid.ftl", null);
+				return;
+			}
+			UserOperationImpl.instance.resetPassword(userId, resetToken, password);
+			putTemplate(request, response, "setSuccess", "/view/setSuccess.ftl", null);
+			return;
+		} catch (UserException e) {
+			putTemplate(request, response, "resetTokenInvalid", "/view/resetTokenInvalid.ftl", null);
+			return;
+		}
+	}
+
+	public void report(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try {
+			ReportService.instance.report(userId, getString(request, response, "requirementId", true),
+					getString(request, response, "report", true), getInt(request, response, "type", true));
+			putSuccess(request, response);
+		} catch (UserException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, "report failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+
+	public void updateLocation(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try {
+			UserOperationImpl.instance.updateUserLocation(userId, getDouble(request, response, "longtitude", true),
+					getDouble(request, response, "latitude", true));
+			putSuccess(request, response);
+		} catch (UserException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, "update user location failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void addSkill(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		try{
+			SkillOperations.instance.addSkill(userId, getString(request, response, "name", true), getString(request, response, "description", false));
+			putSuccess(request, response);
+		}catch(UserException e){
+			putError(request, response, "add skill failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void deleteSkill(HttpServletRequest request, HttpServletResponse response){
+		//String userId = request.getParameter(USER_ID);
+		try{
+			SkillOperations.instance.deleteSkill(getInt(request, response, "id", true));
+			putSuccess(request, response);
+		}catch(UserException e){
+			putError(request, response, "delete skill failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void updateSkill(HttpServletRequest request, HttpServletResponse response){
+		//String userId = request.getParameter(USER_ID);
+		try{
+			SkillOperations.instance.updateSkill(getInt(request, response, "id", true), getString(request, response, "name", false), getString(request, response, "description", false));
+			putSuccess(request, response);
+		}catch(UserException e){
+			putError(request, response, "update skill failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void getSkills(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		try{
+			List<Map<String, Object>> result = SkillOperations.instance.get(userId);
+			putJson(request, response, result);
+		}catch(UserException e){
+			putError(request, response, "query skill failed!", ErrorCodes.PARAMETER_INVALID);
+		}
+	}
+	
+	public void applyAuth(HttpServletRequest request, HttpServletResponse response){
+		String userId = request.getParameter(USER_ID);
+		try{
+			QuickDB.update("update User set applyAuth=1 where id='"+StringEscapeUtils.escapeSql(userId)+"'");
+			putSuccess(request, response);
+		}catch(Exception e){
+			putError(request, response, e);
+		}
+	}
+ 
+}

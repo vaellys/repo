@@ -1,0 +1,61 @@
+package cn.zthz.tool.user;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.alibaba.fastjson.JSONObject;
+
+
+public class ThirdAccessTokenCheckImpl implements ThirdAccessTokenCheck {
+	private static final Log log = LogFactory.getLog(ThirdAccessTokenCheckImpl.class);
+	
+	public static final ThirdAccessTokenCheckImpl instance = new ThirdAccessTokenCheckImpl();
+	@Override
+	public void checkWeiboAccessToken(String weiboUid, String accessToken)
+			throws ThirdAccessException {
+		HttpClient client = new HttpClient();
+		HttpMethod method = new PostMethod(
+				"https://api.weibo.com/oauth2/get_token_info");
+		method.setQueryString("access_token=" + accessToken);
+		try {
+			client.executeMethod(method);
+			String result = method.getResponseBodyAsString();
+			JSONObject jsonResult = JSONObject.parseObject(result);
+			Long uid = jsonResult.getLong("uid");
+			
+			if (!uid.equals(Long.valueOf(weiboUid))) {
+				throw new ThirdAccessException("user is invalid!");
+			}
+		} catch (Exception e) {
+			log.error("user is invalid", e);
+			throw new ThirdAccessException("user is invalid" , e);
+		}
+
+	}
+
+	@Override
+	public void checkQqAccessToken(String qqUid, String accessToken)
+			throws ThirdAccessException {
+		HttpClient client = new HttpClient();
+		HttpMethod method = new GetMethod(
+				"https://graph.qq.com/oauth2.0/me");
+		method.setQueryString("access_token=" + accessToken);
+		try {
+			client.executeMethod(method);
+			String result = method.getResponseBodyAsString();
+			String str = result.substring(10, result.length() - 3);
+			JSONObject jsonResult = JSONObject.parseObject(str);
+			String uid = jsonResult.getString("openid");
+			if (!uid.equals(qqUid)) {
+				throw new ThirdAccessException("user is invalid!");
+			}
+		} catch (Exception e) {
+			log.error("user is invalid", e);
+			throw new ThirdAccessException("user is invalid" ,e);
+		}
+	}
+}

@@ -1,0 +1,1 @@
+[20130826 11:13:58 572 INFO ] 0:0:0:0:0:0:0:1 GET /userRequirement/queryRequirement.json {"pageSize":"10","queryOrder":"newest","startIndex":"0","status":"4","type":"101"}

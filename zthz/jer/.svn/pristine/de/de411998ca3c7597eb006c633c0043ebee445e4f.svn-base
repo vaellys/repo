@@ -1,0 +1,175 @@
+package qileke.jer.server;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.eclipse.jetty.continuation.Continuation;
+import org.eclipse.jetty.continuation.ContinuationSupport;
+import org.eclipse.jetty.http.gzip.GzipResponseWrapper;
+import org.eclipse.jetty.server.Request;
+import org.eclipse.jetty.server.session.SessionHandler;
+import org.xml.sax.EntityResolver;
+
+import qileke.jer.utils.ClassUtils;
+
+public class JerHandler extends SessionHandler {
+	private static final Log log = LogFactory.getLog(JerHandler.class);
+	private String suffix = ".json";
+	private String defaultContentType = "text/html;charset=utf-8";
+	protected ActionMapLoader actionMapLoader;
+
+	protected final LinkedList<Filter> filters = new LinkedList<>();
+
+
+	public void addFilter(Filter filter) {
+		filters.addLast(filter);
+	}
+
+	@Override
+	public void doHandle(final String target, Request baseRequest, final HttpServletRequest request, final HttpServletResponse response)
+			throws IOException, ServletException {
+		if (null == response.getContentType() || "".equals(response.getContentType())) {
+			response.setContentType(defaultContentType);
+		}
+		response.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType(defaultContentType);
+		response.setStatus(HttpServletResponse.SC_OK);
+		response.setBufferSize(8 * 1024);
+		baseRequest.setHandled(true);
+
+		try {
+			for (Filter filter : filters) {
+				filter.filter(request, response);
+			}
+		} catch (Throwable e) {
+//			response.getWriter().write(e.getMessage());
+			return;
+		}
+
+		// final GzipResponseWrapper gzipResponseWrapper = new
+		// GzipResponseWrapper(request, response);
+
+		final String[] classKeyAndMethod = targetParse(target, suffix);
+		if (null == classKeyAndMethod) {
+			log.info("request " + request.getRequestURI() + " no disposed");
+			return;
+		}
+
+		Map<String, Object> actions = actionMapLoader.getActions();
+		final Object targetObject = actions.get(classKeyAndMethod[0]);
+		final Continuation continuation = ContinuationSupport.getContinuation(request);
+		Object result = invoke(targetObject, classKeyAndMethod[1], target, request, response);
+		// continuation.suspend();
+		// executorService.submit(new Runnable() {
+		// @Override
+		// public void run() {
+		// try {
+		//
+		// response.flushBuffer();
+		// } catch (Throwable e) {
+		// log.error("请求处理异常！", e);
+		// } finally {
+		// continuation.complete();
+		// }
+		// }
+		// });
+	}
+
+	public Object invoke(Object target, String methodName, String url, HttpServletRequest request, HttpServletResponse response) {
+		if (null == target) {
+			log.warn("请求的目标为空,请求没有对应的处理类！");
+			return null;
+		}
+		Class<?> clazz = target.getClass();
+		Method method = ClassUtils.getMethod(clazz, methodName);
+		if (null == method) {
+			log.warn("请求的方法不存在 ！class:" + clazz.toString() + " not have method:" + methodName);
+			return null;
+		}
+		Class<?>[] paramTypes = method.getParameterTypes();
+		Object[] params = new Object[paramTypes.length];
+		for (int i = 0; i < paramTypes.length; i++) {
+			if (String.class.equals(paramTypes[i])) {
+				params[i] = url;
+			} else if (HttpServletRequest.class.equals(paramTypes[i])) {
+				params[i] = request;
+			} else if (HttpServletResponse.class.equals(paramTypes[i])) {
+				params[i] = response;
+			}
+		}
+		// Action action = method.getAnnotation(Action.class);
+		// if(null == action) {
+		//
+		// }else{
+		//
+		// }
+
+		return ClassUtils.invoke(target, methodName, paramTypes, params);
+
+	}
+
+	public String getSuffix() {
+		return suffix;
+	}
+
+	public void setSuffix(String suffix) {
+		this.suffix = suffix;
+	}
+
+	/**
+	 * 
+	 * @param target
+	 * @return 0:class key; 1:method name
+	 */
+	public static String[] targetParse(String target, String suffix) {
+		if (!target.endsWith(suffix)) {
+			if (log.isWarnEnabled()) {
+				log.warn("target url not end with " + suffix + " url:" + target);
+			}
+			return null;
+		}
+
+		int lastIndex = target.lastIndexOf('/');
+		if (-1 == lastIndex) {
+			if (log.isWarnEnabled()) {
+				log.warn("target url format error url:" + target);
+			}
+			return null;
+		}
+		return new String[] { target.substring(0, lastIndex + 1), target.substring(lastIndex + 1, target.length() - suffix.length()) };
+	}
+
+	public String getDefaultContentType() {
+		return defaultContentType;
+	}
+
+	public void setDefaultContentType(String defaultContentType) {
+		this.defaultContentType = defaultContentType;
+	}
+
+	public ActionMapLoader getActionMapLoader() {
+		return actionMapLoader;
+	}
+
+	public void setActionMapLoader(ActionMapLoader actionMapLoader) {
+		this.actionMapLoader = actionMapLoader;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(Arrays.toString(targetParse("/hehhe/lo.m", ".m")));
+	}
+
+}

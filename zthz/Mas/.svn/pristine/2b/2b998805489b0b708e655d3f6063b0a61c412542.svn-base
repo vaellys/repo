@@ -1,0 +1,21 @@
+package cn.zthz.actor.rest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.user.UserCollectService;
+
+public class UserCollectRest extends FunctionalRest{
+	public void add(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try {
+			UserCollectService.instance.add(getString(request, response, "fid" , true), userId);
+			putSuccess(request, response);
+		} catch (HzException e) {
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+}

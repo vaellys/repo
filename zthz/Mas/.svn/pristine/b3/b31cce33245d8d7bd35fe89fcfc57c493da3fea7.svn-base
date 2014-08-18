@@ -1,0 +1,118 @@
+package cn.zthz.actor.rest;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.zthz.tool.common.HzException;
+import cn.zthz.tool.common.LogUtils;
+import cn.zthz.tool.common.StringUtils;
+import cn.zthz.tool.user.EmployeeService;
+import cn.zthz.tool.user.EmployerService;
+
+/**
+ * 雇主
+ * @author uzoice
+ *
+ */
+public class EmployerRest extends FunctionalRest {
+	
+	/**
+	 * 雇主主页
+	 * @param request
+	 * @param response
+	 */
+	public void home(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try{
+			Map<String, Object> result = EmployerService.instance.home(userId);
+			putJson(request, response, result);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void requirementManagement(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		String rawStatus = request.getParameter("status");
+		String rawType = request.getParameter("type");
+		Map<String, Object> conditionArgs = new HashMap<>(2);
+		if(StringUtils.isNotEmpty(rawStatus)){
+			checkParameterIsNumber(request, response, "status", rawStatus);
+			conditionArgs.put("status", rawStatus);
+		}
+		if (StringUtils.isNotEmpty(rawType)) {
+			checkParameterIsNumber(request, response, "type", rawType);
+			conditionArgs.put("type", Integer.parseInt(rawType));
+		}
+		try{
+			List<Map<String, Object>> result = EmployerService.instance.requirementManagement(userId, conditionArgs, getInt(request, response, "startIndex", true), getInt(request, response, "pageSize", true));
+			putJson(request, response, result);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void employmentSuccess(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		try{
+			Map<String, Object> result = EmployerService.instance.employmentSuccess(userId, getInt(request, response, "startIndex", true), getInt(request, response, "pageSize", true));
+			putJson(request, response, result);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	public void inviteEmployee(HttpServletRequest request, HttpServletResponse response) {
+		try{
+			String userId = request.getParameter(USER_ID);
+//			String employeeId= getString(request, response, "employeeId", true);
+			String requirementId = getString(request, response, "requirementId", true);		
+			EmployerService.instance.inviteEmployee(userId, getMultiValues(request, "employeeId"),requirementId);
+			putSuccess(request, response);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void mandate(HttpServletRequest request, HttpServletResponse response) {
+		try{
+			String userId = request.getParameter(USER_ID);
+			String requirementId = getString(request, response, "requirementId", true);		
+			EmployerService.instance.mandate(requirementId);
+			putSuccess(request, response);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void employmentInfo(HttpServletRequest request, HttpServletResponse response) {
+		String userId = request.getParameter(USER_ID);
+		String targetUserId = getTargetUserId(request, response);
+		try{
+			Map<String, Object> result = EmployerService.instance.employeeInfo(targetUserId, userId);
+			putJson(request, response, result);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+	
+	public void requirements(HttpServletRequest request, HttpServletResponse response) {
+		String targetUserId = getTargetUserId(request, response);
+		try{
+			Map<String, Object> result = EmployerService.instance.requirements(targetUserId , getInt(request, response, "status", false),getInt(request, response, "type", false) ,getInt(request, response, "startIndex", true), getInt(request, response, "pageSize", true) );
+			putJson(request, response, result);
+		}catch(HzException e){
+			log.error(LogUtils.format("requestParams", request.getParameterMap()), e);
+			putError(request, response, e);
+		}
+	}
+}

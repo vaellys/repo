@@ -1,0 +1,147 @@
+collectsystem {
+	include "common"
+	akka.remote.netty.port = 2554
+
+}
+
+collectworknode {
+	include "common"
+	worknodes =["master:2553" ,"java1:2553", "java3:2553"]
+#	worknodes =["localhost:2553"]
+	akka {
+		remote.netty.port = 2553
+	}
+}
+
+imageserver {
+	include "common"
+	#local -> remote
+	servers:["master->192.168.1.141"]
+#	servers:["localhost->localhost"]
+
+	this.localHost = "192.168.1.141"
+	this.remoteHost = "master"
+#	this.remoteHost = "localhost"
+#	this.localHost = "localhost"
+	this.remotePort = 80
+	this.localImageRootDir="/home/uzoice/images"
+	this.maxRetryCount = 3
+	akka {
+		remote.netty.port = 2555
+	}
+}
+
+
+
+//#calculator
+calculator {
+
+	akka {
+  		actor {
+    		deployment {
+      			/collectmaster {
+					router = "round-robin"
+        			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2552", "akka://collectsystem@127.0.0.1:2553"]
+	        		}
+      			}
+    		}
+  		}
+	}
+  include "common"
+
+  akka {
+    remote.netty.port = 2552
+  }
+}
+//#calculator
+
+//#remotelookup
+remotelookup {
+  include "common"
+
+  akka {
+    remote.netty.port = 2553
+  }
+}
+//#remotelookup
+
+//#remotecreation
+remotecreation {
+  include "common"
+
+  akka {
+    actor {
+      deployment {
+        /advancedCalculator {
+          remote = "akka://CalculatorApplication@127.0.0.1:2552"
+        }
+      }
+    }
+    remote.netty.port = 2554
+  }
+}
+//#remotecreation
+
+collectsystem {
+ 	akka {
+		event-handlers = ["akka.event.slf4j.Slf4jEventHandler"]
+	}
+}
+
+imagesystem{
+	include "common"
+	akka {
+		remote.netty.port = 2666
+		remote.netty.message-frame-size = 10 MiB
+	}
+}
+imageclientsystem{
+	include "common"
+	akka {
+		remote.netty.port = 2552
+		actor {
+			deployment {
+	  			/collectmastor {
+					router = "round-robin"
+	    			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2553"]
+	        		}
+	  			}
+	  			/collectmastor/resourceformattor {
+					router = "round-robin"
+	    			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2553"]
+	        		}
+	  			}
+	  			/collectmastor/resourceloador {
+					router = "round-robin"
+	    			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2553"]
+	        		}
+	  			}
+	  			/collectmastor/resourceparsor {
+					router = "round-robin"
+	    			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2553"]
+	        		}
+	  			}
+	  			/collectmastor/resourcesavor {
+					router = "round-robin"
+	    			nr-of-instances = 1
+	        		target {
+	          			nodes = ["akka://collectsystem@127.0.0.1:2553"]
+	        		}
+	  			}
+			}
+		}
+	}
+}
+
+
+

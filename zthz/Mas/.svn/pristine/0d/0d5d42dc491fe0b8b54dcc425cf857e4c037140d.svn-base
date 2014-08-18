@@ -1,0 +1,44 @@
+package cn.zthz.tool.message;
+
+import java.sql.Timestamp;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+
+import cn.zthz.tool.common.LogUtils;
+
+public class MessageServiceTest {
+
+	@Test
+	public void testSave() throws MessageException {
+		List<Message> messages = new LinkedList<>();
+		for (int i = 0; i < 10; i++) {
+
+			Message message = new Message();
+			message.setMessage("hello");
+			message.setReceiverId("1");
+			message.setSenderId("10");
+			message.setSendStatus(MessageStatus.SEND_SUCCESS);
+//			message.setReceiveStatus(MessageStatus.RECEIVER_UNREAD);
+			message.setSendTime(new Timestamp(System.currentTimeMillis()));
+			// messages.add(message);
+			MessageService.instance.save(message);
+		}
+
+	}
+
+	@Test
+	public void testGetSenders() throws MessageException {
+		List<Map<String, Object>> result = MessageService.instance.getSenders("1", 0, 100);
+		System.out.println(LogUtils.format("result", result));
+	}
+
+	@Test
+	public void testQueryMessages() throws MessageException {
+		List<Map<String, Object>> result = MessageService.instance.queryMessages("1", "10", 39L, 1, 10);
+		System.out.println(LogUtils.format("result", result));
+	}
+
+}

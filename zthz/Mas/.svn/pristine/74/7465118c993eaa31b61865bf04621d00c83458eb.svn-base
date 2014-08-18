@@ -1,0 +1,26 @@
+package cn.zthz.tool.message;
+
+public class MessageTypes {
+	
+	public static int INSTANT_MESSAGE = 1;
+	public static int INSTANT_SOUND= 3;
+	public static int COUNT_MESSAGE = 2;
+//	public static int REQUIREMENT_PARTICIPATE= 10;
+	public static int REQUIREMENT_PUBLISHED= 10;
+	public static int REQUIREMENT_COMPETE= 11;
+	public static int REQUIREMENT_SELECTED_CANDIDATE= 12;
+	public static int REQUIREMENT_COMPLETE= 13;
+	public static int REQUIREMENT_DRAWBACK= 14;
+	public static int REQUIREMENT_CLOSED= 15;
+	public static int REQUIREMENT_CLOSED_ME= 17;
+	public static int REQUIREMENT_EXPIRED= 16;
+	public static int REQUIREMENT_EXPIRED_ME= 18;
+	public static int REQUIREMENT_QUICK_PAY= 19;
+	public static int FIND_INSTERESTING_REQUIREMENT= 20;
+	
+	
+	public static int ACCOUNT_BALANCE_CHANGED= 30;
+	public static int ACCOUNT_CHARGED_SUCCESS= 31;
+	
+
+}

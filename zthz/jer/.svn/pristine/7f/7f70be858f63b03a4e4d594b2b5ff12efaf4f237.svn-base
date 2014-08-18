@@ -1,0 +1,11 @@
+package qileke.jer.server;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public interface ExceptionHandler {
+	
+	void handle(ActionException e,final HttpServletRequest request, final HttpServletResponse response);
+	void handle(Exception e,final HttpServletRequest request, final HttpServletResponse response);
+
+}

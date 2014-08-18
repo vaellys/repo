@@ -1,0 +1,14 @@
+package cn.zthz.tool.user;
+
+import org.junit.Test;
+
+import cn.zthz.tool.proxy.UserProxy;
+
+public class UserProxyTest {
+
+	@Test
+	public void testGetUserToken() {
+		 UserProxy.getUserToken("402880173c243c51013c28524a22000b");
+	}
+
+}

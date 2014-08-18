@@ -1,0 +1,60 @@
+package cn.zthz.tool.user;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import cn.zthz.tool.db.Connections;
+import cn.zthz.tool.db.ResultSetMap;
+import cn.zthz.tool.requirement.ConnectionUtils;
+import cn.zthz.tool.requirement.RequirementStatus;
+
+public class UserStatics {
+	private static final Log log = LogFactory.getLog(UserStatics.class);
+	public static final UserStatics instance = new UserStatics();
+	/**
+	 * 1.收藏任务件数 s 2.发布的任务件数 i 3.a 申请的任务件数
+	 * @param userId
+	 * @return
+	 * @throws UserException 
+	 */
+	public Map<String, Object> urs(String userId) throws UserException{
+		Connection connection = null;
+		Statement statement = null;
+		try{
+			connection = Connections.instance.get();
+			statement = connection.createStatement();
+			Map<String, Object> result = new HashMap<>(3);
+			String ssql = "select count(*) as sCount from Store where userId='" +userId +"'";
+			if(log.isDebugEnabled()){
+				log.debug(ssql);
+			}
+			int sCount = ResultSetMap.mapInt(statement.executeQuery(ssql));
+			result.put("s", sCount);
+			String isql = "select count(*) as iCount from Requirement where userId='" + userId + "' and status=" + RequirementStatus.published ;
+			if(log.isDebugEnabled()){
+				log.debug(isql);
+			}
+			int iCount = ResultSetMap.mapInt(statement.executeQuery(isql));
+			result.put("i", iCount);
+			String asql = "select count(*) as iCount from Requirement where selectedCandidate='" + userId+"'";
+			if(log.isDebugEnabled()){
+				log.debug(asql);
+			}
+			int aCount = ResultSetMap.mapInt(statement.executeQuery(asql));
+			result.put("a", aCount);
+			return result;
+		}catch(Exception e){
+			log.error("statics user failed! userId:'" + userId + "'");
+			throw new UserException("statics user failed! userId:'" + userId + "'", e);
+		}finally{
+			ConnectionUtils.closeStatement(statement);
+			ConnectionUtils.closeConnection(connection);
+		}
+	}
+}

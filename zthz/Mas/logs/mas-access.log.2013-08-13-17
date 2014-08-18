@@ -1,0 +1,4 @@
+[20130813 17:08:15 822 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130813 17:11:33 847 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130813 17:12:23 751 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"10","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130813 17:13:48 133 INFO ] 0:0:0:0:0:0:0:1 GET /employee/findByTag.json {"pageSize":"100","startIndex":"0","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

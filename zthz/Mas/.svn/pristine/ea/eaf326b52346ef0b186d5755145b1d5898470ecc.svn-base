@@ -1,0 +1,23 @@
+package cn.zthz.actor.rest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 雇主
+ * @author uzoice
+ *
+ */
+public class EmployerRest extends FunctionalRest {
+	
+	/**
+	 * 雇主主页
+	 * @param request
+	 * @param response
+	 */
+	public void home(HttpServletRequest request, HttpServletResponse response) {
+
+	}
+	
+
+}

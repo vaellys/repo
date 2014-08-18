@@ -1,0 +1,1006 @@
+[20130826 09:24:49 336 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 09:25:01 736 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 09:45:50 866 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 09:45:50 922 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 09:45:50 922 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 09:45:50 939 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 09:45:50 940 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 09:45:50 942 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 09:45:50 943 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 09:45:50 946 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 09:45:50 946 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 09:45:50 947 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 09:45:50 968 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 09:45:50 970 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 09:45:50 970 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 09:45:50 976 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 09:45:51 057 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:00:00 006 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130826 10:00:00 052 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"12","Total Rows Fetched":"22","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 10:00:00","":"Indexing completed. Added/Updated: 11 documents. Deleted 0 documents.","Committed":"2013-08-26 10:00:00","Optimized":"2013-08-26 10:00:00","Total Documents Processed":"11","Time taken":"0:0:0.612"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 10:00:00 052 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":4},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 10:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-26 10:00:00","Optimized":"2013-08-26 10:00:00","Total Documents Processed":"31","Time taken":"0:0:0.614"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 10:12:51 881 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.price desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.price desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:20:35 357 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:20:35 398 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:20:35 399 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:20:35 402 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:20:35 403 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:20:35 405 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:20:35 405 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:20:35 408 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:20:35 409 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:20:35 410 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:20:35 430 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:20:35 431 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:20:35 431 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:20:35 435 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:20:35 497 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:20:38 300 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:20:38 311 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:20:38 328 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 17
+[20130826 10:23:20 393 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:23:20 394 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:23:20 414 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 18
+[20130826 10:27:37 874 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from Requirement r left join User u on r.userId=u.id where 1=1  and r.type=:type order by r.pri desc, u.completeScore desc,r.createTime desc ,r.viewCount desc limit 0,10
+[20130826 10:28:25 893 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from Requirement r left join User u on r.userId=u.id where 1=1  and r.type=? order by r.pri desc, u.completeScore desc,r.createTime desc ,r.viewCount desc limit 0,10
+[20130826 10:29:26 826 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 1238
+[20130826 10:30:55 310 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:30:55 351 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:30:55 351 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:30:55 357 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:30:55 361 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:30:55 364 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:30:55 364 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:30:55 368 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:30:55 369 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:30:55 370 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:30:55 393 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:30:55 394 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:30:55 395 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:30:55 399 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:30:55 471 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:31:33 586 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:31:41 157 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:33:22 187 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:33:25 819 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:33:27 875 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 720
+[20130826 10:34:19 756 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:34:19 757 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:34:19 790 ERROR] cn.zthz.tool.requirement.RequirementOperations - queryOrder:"newest"
+startIndex:0
+pageSize:10
+java.sql.SQLException: No value specified for parameter 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.PreparedStatement.checkAllParametersSet(PreparedStatement.java:2595)
+	at com.mysql.jdbc.PreparedStatement.fillSendPacket(PreparedStatement.java:2571)
+	at com.mysql.jdbc.PreparedStatement.fillSendPacket(PreparedStatement.java:2497)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2251)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at cn.zthz.tool.db.NamedParameterStatement.executeQuery(NamedParameterStatement.java:322)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:422)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130826 10:34:21 315 ERROR] cn.zthz.actor.rest.UserRequirementRest - requestParams:{
+	"pageSize":["10"],
+	"queryOrder":["newest"],
+	"startIndex":["0"],
+	"status":["1"],
+	"type":["1"]
+}
+cn.zthz.tool.requirement.UserRequirementException: qurey requirement failed!
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:477)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: No value specified for parameter 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.PreparedStatement.checkAllParametersSet(PreparedStatement.java:2595)
+	at com.mysql.jdbc.PreparedStatement.fillSendPacket(PreparedStatement.java:2571)
+	at com.mysql.jdbc.PreparedStatement.fillSendPacket(PreparedStatement.java:2497)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2251)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at cn.zthz.tool.db.NamedParameterStatement.executeQuery(NamedParameterStatement.java:322)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:422)
+	... 19 more
+[20130826 10:34:21 601 WARN ] qileke.jer.server.SyncHandler - pass this error,qurey requirement failed!
+[20130826 10:37:31 500 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:37:31 540 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:37:31 540 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:37:31 546 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:37:31 549 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:37:31 551 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:37:31 552 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:37:31 555 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:37:31 556 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:37:31 557 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:37:31 579 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:37:31 580 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:37:31 581 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:37:31 586 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:37:31 656 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:37:36 573 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:37:36 584 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:37:36 587 ERROR] cn.zthz.tool.requirement.RequirementOperations - queryOrder:"newest"
+startIndex:0
+pageSize:10
+java.lang.IllegalArgumentException: Parameter not found: type
+	at cn.zthz.tool.db.NamedParameterStatement.getIndexes(NamedParameterStatement.java:134)
+	at cn.zthz.tool.db.NamedParameterStatement.setObject(NamedParameterStatement.java:154)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:420)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130826 10:37:38 165 ERROR] cn.zthz.actor.rest.UserRequirementRest - requestParams:{
+	"pageSize":["10"],
+	"queryOrder":["newest"],
+	"startIndex":["0"],
+	"status":["1"],
+	"type":["1"]
+}
+cn.zthz.tool.requirement.UserRequirementException: qurey requirement failed!
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:478)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: Parameter not found: type
+	at cn.zthz.tool.db.NamedParameterStatement.getIndexes(NamedParameterStatement.java:134)
+	at cn.zthz.tool.db.NamedParameterStatement.setObject(NamedParameterStatement.java:154)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:420)
+	... 19 more
+[20130826 10:37:38 692 WARN ] qileke.jer.server.SyncHandler - pass this error,qurey requirement failed!
+[20130826 10:39:05 143 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:39:05 183 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:39:05 183 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:39:05 186 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:39:05 187 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:39:05 189 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:39:05 190 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:39:05 193 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:39:05 193 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:39:05 194 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:39:05 214 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:39:05 216 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:39:05 216 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:39:05 220 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:39:05 284 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:39:14 711 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:39:14 761 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:39:14 761 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:39:14 767 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:39:14 770 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:39:14 774 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:39:14 774 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:39:14 778 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:39:14 779 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:39:14 780 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:39:14 803 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:39:14 804 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:39:14 805 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:39:14 810 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:39:14 880 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:39:25 585 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:07 759 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:12 994 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:15 555 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 6
+[20130826 10:43:27 881 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:27 882 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:27 901 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 19
+[20130826 10:43:39 232 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:39 232 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:39 247 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 14
+[20130826 10:43:58 128 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:58 129 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:43:58 141 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 12
+[20130826 10:48:50 870 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:48:50 914 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:48:50 914 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:48:50 917 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:48:50 918 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:48:50 920 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:48:50 921 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:48:50 924 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:48:50 925 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:48:50 926 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:48:50 946 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:48:50 947 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:48:50 947 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:48:50 952 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:48:51 016 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:49:13 565 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:49:13 576 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=1) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:49:13 578 ERROR] cn.zthz.tool.requirement.RequirementOperations - queryOrder:"newest"
+startIndex:0
+pageSize:10
+java.lang.IllegalArgumentException: Parameter not found: type
+	at cn.zthz.tool.db.NamedParameterStatement.getIndexes(NamedParameterStatement.java:134)
+	at cn.zthz.tool.db.NamedParameterStatement.setObject(NamedParameterStatement.java:154)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:422)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+[20130826 10:49:18 232 ERROR] cn.zthz.actor.rest.UserRequirementRest - requestParams:{
+	"pageSize":["10"],
+	"queryOrder":["newest"],
+	"startIndex":["0"],
+	"status":["2"],
+	"type":["1"]
+}
+cn.zthz.tool.requirement.UserRequirementException: qurey requirement failed!
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:480)
+	at cn.zthz.actor.rest.UserRequirementRest.queryRequirement(UserRequirementRest.java:532)
+	at cn.zthz.actor.rest.UserRequirementRestMethodAccess.invoke(Unknown Source)
+	at qileke.jer.server.Actor.act(Actor.java:44)
+	at qileke.jer.server.Invoke.invoke(Invoke.java:64)
+	at qileke.jer.server.SyncHandler.doHandle(SyncHandler.java:143)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:196)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:117)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:111)
+	at org.eclipse.jetty.server.Server.handle(Server.java:351)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:451)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:916)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:634)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:230)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:76)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:611)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:45)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:599)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:534)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: Parameter not found: type
+	at cn.zthz.tool.db.NamedParameterStatement.getIndexes(NamedParameterStatement.java:134)
+	at cn.zthz.tool.db.NamedParameterStatement.setObject(NamedParameterStatement.java:154)
+	at cn.zthz.tool.requirement.RequirementOperations.query2(RequirementOperations.java:422)
+	... 19 more
+[20130826 10:49:21 659 WARN ] qileke.jer.server.SyncHandler - pass this error,qurey requirement failed!
+[20130826 10:51:06 872 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server cache!
+[20130826 10:51:06 931 INFO ] cn.zthz.actor.assemble.MasStarter - check redis server sucess!
+[20130826 10:51:06 931 INFO ] cn.zthz.actor.assemble.MasStarter - start DQueue
+[20130826 10:51:06 934 INFO ] cn.zthz.tool.queue.DUQueue - start DUQueue
+[20130826 10:51:06 935 INFO ] cn.zthz.actor.assemble.MasStarter - register messagor on user login
+[20130826 10:51:06 938 INFO ] cn.zthz.actor.assemble.MasStarter - register login countor on user login
+[20130826 10:51:06 938 INFO ] cn.zthz.actor.assemble.MasStarter - register all requirement pushor
+[20130826 10:51:06 941 INFO ] cn.zthz.actor.assemble.MasStarter - register user cache updater
+[20130826 10:51:06 942 INFO ] cn.zthz.actor.cache.user.UserCacheUpdater - register user update message
+[20130826 10:51:06 943 INFO ] cn.zthz.actor.assemble.MasStarter - register solr cache updater
+[20130826 10:51:06 963 INFO ] cn.zthz.actor.solr.SolrUpdater - register user update message
+[20130826 10:51:06 964 INFO ] cn.zthz.actor.assemble.MasStarter - start daemon threads
+[20130826 10:51:06 964 INFO ] cn.zthz.actor.daemon.DaemonEntry - start requirementExpirer daemon
+[20130826 10:51:06 968 INFO ] cn.zthz.actor.solr.ReimportScheduler - start ReimportScheduler
+[20130826 10:51:07 032 INFO ] cn.zthz.actor.assemble.MasStarter - init image server
+[20130826 10:51:12 660 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=:type) and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:51:12 672 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and (ri.type>=100 and ri.type<200 or ri.type=?) and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:51:12 692 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 20
+[20130826 10:51:17 852 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.type=:type and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:51:17 853 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.type=? and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 10:51:17 863 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 10
+[20130826 11:07:07 036 INFO ] cn.zthz.actor.message.RequirementPushor - send expire message:{"hasMandate":false,"id":"40288017407b843b0140948cc6a70030","price":100.00,"title":"冰棍安智咯fewill楷模嗯cos我发YY","userId":"402880173f07abcf013f08a20b1b002e"}
+[20130826 11:07:07 099 DEBUG] cn.zthz.tool.message.RMessageService - insert into RMessage (rid, uid, message,rowId, t, createTime ,status ) values('40288017407b843b0140948cc6a70030','402880173f07abcf013f08a20b1b002e','您的需求:冰棍安智咯fewill楷模嗯cos我发YY已经过期！','402880ff40b896d30140b896d3db0000',16,'2013-08-26 11:07:07.099',1)
+[20130826 11:07:07 357 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:07 416 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:07 710 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:07 716 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:07 938 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 5b7ffa5a[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53053]]
+[20130826 11:07:08 005 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 2f0d59a4[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53054]]
+[20130826 11:07:08 168 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:08 173 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:08 364 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 41511f78[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53055]]
+[20130826 11:07:08 668 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:08 674 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:08 922 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 74a0414[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53056]]
+[20130826 11:07:09 168 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:09 173 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:09 382 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 17d1747c[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53057]]
+[20130826 11:07:09 668 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:09 673 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:09 884 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 48f3b0e2[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53058]]
+[20130826 11:07:10 168 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:10 173 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:10 379 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 7047db5e[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53059]]
+[20130826 11:07:10 668 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:10 673 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:10 871 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 95125fa[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53060]]
+[20130826 11:07:11 169 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:11 174 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:11 421 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 571fe5db[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53061]]
+[20130826 11:07:11 669 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocketFactory
+[20130826 11:07:11 674 DEBUG] javapns.communication.ConnectionToAppleServer - Creating SSLSocket to gateway.push.apple.com:2195
+[20130826 11:07:11 908 DEBUG] javapns.notification.PushNotificationManager - Initialized Connection to Host: [gateway.push.apple.com] Port: [2195]: 13cea978[SSL_NULL_WITH_NULL_NULL: Socket[addr=gateway.push.apple.com/17.149.35.168,port=2195,localport=53062]]
+[20130826 11:07:12 178 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+[20130826 11:07:12 178 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+[20130826 11:07:12 179 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+[20130826 11:07:12 179 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+[20130826 11:07:12 179 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+[20130826 11:07:12 179 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+[20130826 11:07:12 180 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@332e8947
+[20130826 11:07:12 180 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+[20130826 11:07:12 287 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130826 11:07:12 289 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130826 11:07:12 360 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:12 360 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130826 11:07:12 360 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130826 11:07:12 361 DEBUG] org.apache.commons.httpclient.HttpClient - Java version: 1.7.0_11
+[20130826 11:07:12 361 DEBUG] org.apache.commons.httpclient.HttpClient - Java vendor: Oracle Corporation
+[20130826 11:07:12 361 DEBUG] org.apache.commons.httpclient.HttpClient - Java class path: D:\Eclipse\workspace\Mas\target\classes;C:\Users\samul\.m2\repository\redis\clients\jedis\2.0.0\jedis-2.0.0.jar;C:\Users\samul\.m2\repository\org\apache\lucene\lucene-core\3.6.1\lucene-core-3.6.1.jar;C:\Users\samul\.m2\repository\com\alibaba\fastjson\1.1.23\fastjson-1.1.23.jar;C:\Users\samul\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\samul\.m2\repository\commons-io\commons-io\2.3\commons-io-2.3.jar;C:\Users\samul\.m2\repository\commons-pool\commons-pool\1.6\commons-pool-1.6.jar;C:\Users\samul\.m2\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;C:\Users\samul\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\samul\.m2\repository\commons-codec\commons-codec\1.2\commons-codec-1.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpclient\4.2.2\httpclient-4.2.2.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpcore\4.2.2\httpcore-4.2.2.jar;C:\Users\samul\.m2\repository\commons-fileupload\commons-fileupload\1.2.2\commons-fileupload-1.2.2.jar;C:\Users\samul\.m2\repository\cn\jpush\jpush-api\0.0.1\jpush-api-0.0.1.jar;C:\Users\samul\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar;C:\Users\samul\.m2\repository\org\quartz-scheduler\quartz\2.1.6\quartz-2.1.6.jar;C:\Users\samul\.m2\repository\c3p0\c3p0\0.9.1.1\c3p0-0.9.1.1.jar;C:\Users\samul\.m2\repository\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;C:\Users\samul\.m2\repository\org\apache\solr\solr-solrj\4.1.0\solr-solrj-4.1.0.jar;C:\Users\samul\.m2\repository\org\apache\zookeeper\zookeeper\3.4.5\zookeeper-3.4.5.jar;C:\Users\samul\.m2\repository\org\apache\httpcomponents\httpmime\4.1.3\httpmime-4.1.3.jar;C:\Users\samul\.m2\repository\org\codehaus\woodstox\wstx-asl\3.2.7\wstx-asl-3.2.7.jar;C:\Users\samul\.m2\repository\mysql\mysql-connector-java\5.1.20\mysql-connector-java-5.1.20.jar;C:\Users\samul\.m2\repository\com\jolbox\bonecp\0.7.1.RELEASE\bonecp-0.7.1.RELEASE.jar;C:\Users\samul\.m2\repository\com\google\guava\guava\r08\guava-r08.jar;C:\Users\samul\.m2\repository\org\bouncycastle\bcprov-jdk16\1.46\bcprov-jdk16-1.46.jar;C:\Users\samul\.m2\repository\org\pns\JavaPNS-2.2\2.2\JavaPNS-2.2-2.2.jar;D:\Eclipse\workspace\jer\target\classes;C:\Users\samul\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-server\8.1.0.RC5\jetty-server-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\mortbay\jetty\servlet-api\3.0.20100224\servlet-api-3.0.20100224.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-continuation\8.1.0.RC5\jetty-continuation-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-http\8.1.0.RC5\jetty-http-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-io\8.1.0.RC5\jetty-io-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\org\eclipse\jetty\jetty-util\8.1.0.RC5\jetty-util-8.1.0.RC5.jar;C:\Users\samul\.m2\repository\com\googlecode\xmemcached\xmemcached\1.3.6\xmemcached-1.3.6.jar;C:\Users\samul\.m2\repository\com\esotericsoftware\reflectasm\reflectasm\1.07\reflectasm-1.07.jar;C:\Users\samul\.m2\repository\org\ow2\asm\asm\4.0\asm-4.0.jar;C:\Users\samul\.m2\repository\net\coobird\thumbnailator\0.4.3\thumbnailator-0.4.3.jar;C:\Users\samul\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\samul\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\samul\.m2\repository\org\freemarker\freemarker\2.3.19\freemarker-2.3.19.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-base\2.0.0.3\gexin-rp-sdk-base-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-http\2.0.0.3\gexin-rp-sdk-http-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\gexin-rp-sdk-template\2.0.0.3\gexin-rp-sdk-template-2.0.0.3.jar;C:\Users\samul\.m2\repository\gexin\jackson-all\1.8.5\jackson-all-1.8.5.jar;C:\Users\samul\.m2\repository\gexin\protobuf-java\2.4.1\protobuf-java-2.4.1.jar
+[20130826 11:07:12 361 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system name: Windows 7
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - Operating system version: 6.1
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunPCSC 1.7: Sun PC/SC provider
+[20130826 11:07:12 362 DEBUG] org.apache.commons.httpclient.HttpClient - SunMSCAPI 1.7: Sun's Microsoft Crypto API provider
+[20130826 11:07:12 363 DEBUG] org.apache.commons.httpclient.HttpClient - BC 1.46: BouncyCastle Security Provider v1.46
+[20130826 11:07:12 363 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130826 11:07:12 363 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130826 11:07:12 367 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130826 11:07:12 367 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130826 11:07:12 367 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:12 367 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:12 368 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:12 370 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130826 11:07:12 370 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130826 11:07:12 370 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130826 11:07:14 419 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130826 11:07:14 419 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130826 11:07:14 419 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130826 11:07:14 420 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130826 11:07:14 420 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130826 11:07:14 420 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130826 11:07:14 421 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 427 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130826 11:07:14 427 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:14 428 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 428 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 428 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 429 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 429 DEBUG] httpclient.wire.header - >> "Content-Length: 551[\r][\n]"
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130826 11:07:14 429 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 430 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 430 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130826 11:07:14 430 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"ea4c2b792a9a5f6aba65f66af1404963","transmissionContent":"{\"alert\":\"[0xe6][0x82][0xa8][0xe7][0x9a][0x84][0xe9][0x9c][0x80][0xe6][0xb1][0x82]:[0xe5][0x86][0xb0][0xe6][0xa3][0x8d][0xe5][0xae][0x89][0xe6][0x99][0xba][0xe5][0x92][0xaf]fewill[0xe6][0xa5][0xb7][0xe6][0xa8][0xa1][0xe5][0x97][0xaf]cos...[0xe5][0xb7][0xb2][0xe7][0xbb][0x8f][0xe8][0xbf][0x87][0xe6][0x9c][0x9f][0xef][0xbc][0x81]\",\"attach\":{\"mid\":1819,\"t\":16}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130826 11:07:14 431 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130826 11:07:14 431 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130826 11:07:14 431 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130826 11:07:14 431 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130826 11:07:14 431 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130826 11:07:14 432 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 432 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 503 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 504 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 504 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 504 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 505 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 505 DEBUG] httpclient.wire.header - << "Date: Mon, 26 Aug 2013 03:07:14 GMT[\r][\n]"
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 505 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 505 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 505 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 506 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 506 DEBUG] httpclient.wire.header - << "Content-Length: 23[\r][\n]"
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 506 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130826 11:07:14 506 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130826 11:07:14 507 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 507 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130826 11:07:14 507 DEBUG] httpclient.wire.content - << "{"result":"sign_error"}"
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1377486434508
+[20130826 11:07:14 508 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 534 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 535 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Getting free connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:14 535 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130826 11:07:14 536 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130826 11:07:14 536 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130826 11:07:14 536 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130826 11:07:14 536 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130826 11:07:14 537 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130826 11:07:14 537 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:14 538 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 538 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 539 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 539 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 539 DEBUG] httpclient.wire.header - >> "Content-Length: 122[\r][\n]"
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 539 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 540 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130826 11:07:14 540 DEBUG] httpclient.wire.content - >> "{"sign":"699ded629a025a655704ad633c0b71ca","timeStamp":1377486434518,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"connect"}"
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130826 11:07:14 540 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130826 11:07:14 541 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130826 11:07:14 541 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130826 11:07:14 541 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130826 11:07:14 541 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 541 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 596 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 596 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 596 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 596 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 597 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 597 DEBUG] httpclient.wire.header - << "Date: Mon, 26 Aug 2013 03:07:14 GMT[\r][\n]"
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 597 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 597 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130826 11:07:14 597 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 598 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 598 DEBUG] httpclient.wire.header - << "Content-Length: 20[\r][\n]"
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 598 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 598 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130826 11:07:14 599 DEBUG] httpclient.wire.content - << "{"result":"success"}"
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1377486434599
+[20130826 11:07:14 599 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130826 11:07:14 600 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:14 600 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130826 11:07:14 600 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130826 11:07:14 600 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Getting free connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:14 601 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130826 11:07:14 602 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 602 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 11:07:14 603 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 603 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 604 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 604 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 604 DEBUG] httpclient.wire.header - >> "Content-Length: 551[\r][\n]"
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 604 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 11:07:14 605 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130826 11:07:14 605 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"ea4c2b792a9a5f6aba65f66af1404963","transmissionContent":"{\"alert\":\"[0xe6][0x82][0xa8][0xe7][0x9a][0x84][0xe9][0x9c][0x80][0xe6][0xb1][0x82]:[0xe5][0x86][0xb0][0xe6][0xa3][0x8d][0xe5][0xae][0x89][0xe6][0x99][0xba][0xe5][0x92][0xaf]fewill[0xe6][0xa5][0xb7][0xe6][0xa8][0xa1][0xe5][0x97][0xaf]cos...[0xe5][0xb7][0xb2][0xe7][0xbb][0x8f][0xe8][0xbf][0x87][0xe6][0x9c][0x9f][0xef][0xbc][0x81]\",\"attach\":{\"mid\":1819,\"t\":16}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130826 11:07:14 605 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 606 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 664 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 664 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 665 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 665 DEBUG] httpclient.wire.header - << "Date: Mon, 26 Aug 2013 03:07:14 GMT[\r][\n]"
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 665 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 665 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 666 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 666 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 666 DEBUG] httpclient.wire.header - << "Content-Length: 87[\r][\n]"
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 11:07:14 666 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130826 11:07:14 666 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130826 11:07:14 667 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0826_gJssnBbufB6h01vyqgo5k4","result":"ok","status":"successed_offline"}"
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1377486434667
+[20130826 11:07:14 667 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130826 11:07:14 668 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0826_gJssnBbufB6h01vyqgo5k4, result=ok, status=successed_offline}
+[20130826 11:07:14 668 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement with id:40288017407b843b0140948cc6a70030 in solr
+[20130826 11:07:14 740 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: {}->http://192.168.0.151, timeout = 0
+[20130826 11:07:14 741 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [{}->http://192.168.0.151] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+[20130826 11:07:14 741 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - No free connections [{}->http://192.168.0.151][null]
+[20130826 11:07:14 741 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Available capacity: 2 out of 2 [{}->http://192.168.0.151][null]
+[20130826 11:07:14 741 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Creating new connection [{}->http://192.168.0.151]
+[20130826 11:07:14 749 DEBUG] org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to 192.168.0.151:80
+[20130826 11:07:14 777 DEBUG] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+[20130826 11:07:14 784 DEBUG] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+[20130826 11:07:14 785 DEBUG] org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+[20130826 11:07:14 785 DEBUG] org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+[20130826 11:07:14 785 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+[20130826 11:07:14 785 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Sending request: POST /solr/requirement/update?commit=true HTTP/1.1
+[20130826 11:07:14 785 DEBUG] org.apache.http.wire - >> "POST /solr/requirement/update?commit=true HTTP/1.1[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.wire - >> "Content-Length: 52[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.wire - >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.wire - >> "Host: 192.168.0.151[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.wire - >> "[\r][\n]"
+[20130826 11:07:14 786 DEBUG] org.apache.http.headers - >> POST /solr/requirement/update?commit=true HTTP/1.1
+[20130826 11:07:14 787 DEBUG] org.apache.http.headers - >> Content-Length: 52
+[20130826 11:07:14 787 DEBUG] org.apache.http.headers - >> Content-Type: application/json; charset=UTF-8
+[20130826 11:07:14 787 DEBUG] org.apache.http.headers - >> Host: 192.168.0.151
+[20130826 11:07:14 787 DEBUG] org.apache.http.headers - >> Connection: Keep-Alive
+[20130826 11:07:14 787 DEBUG] org.apache.http.wire - >> "{"delete":{"id":"40288017407b843b0140948cc6a70030"}}"
+[20130826 11:07:14 916 DEBUG] org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 11:07:14 917 DEBUG] org.apache.http.wire - << "Server: nginx/1.2.6[\r][\n]"
+[20130826 11:07:14 917 DEBUG] org.apache.http.wire - << "Date: Mon, 26 Aug 2013 03:09:29 GMT[\r][\n]"
+[20130826 11:07:14 917 DEBUG] org.apache.http.wire - << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+[20130826 11:07:14 917 DEBUG] org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+[20130826 11:07:14 918 DEBUG] org.apache.http.wire - << "Connection: keep-alive[\r][\n]"
+[20130826 11:07:14 918 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 11:07:14 918 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+[20130826 11:07:14 918 DEBUG] org.apache.http.headers - << HTTP/1.1 200 OK
+[20130826 11:07:14 918 DEBUG] org.apache.http.headers - << Server: nginx/1.2.6
+[20130826 11:07:14 918 DEBUG] org.apache.http.headers - << Date: Mon, 26 Aug 2013 03:09:29 GMT
+[20130826 11:07:14 918 DEBUG] org.apache.http.headers - << Content-Type: application/json;charset=UTF-8
+[20130826 11:07:14 919 DEBUG] org.apache.http.headers - << Transfer-Encoding: chunked
+[20130826 11:07:14 919 DEBUG] org.apache.http.headers - << Connection: keep-alive
+[20130826 11:07:14 921 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+[20130826 11:07:14 923 DEBUG] org.apache.http.wire - << "2c[\r][\n]"
+[20130826 11:07:14 923 DEBUG] org.apache.http.wire - << "{"responseHeader":{"status":0,"QTime":125}}[\n]"
+[20130826 11:07:14 923 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 11:07:14 923 DEBUG] org.apache.http.wire - << "0[\r][\n]"
+[20130826 11:07:14 923 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 11:07:14 923 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+[20130826 11:07:14 923 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [{}->http://192.168.0.151][null]
+[20130826 11:07:14 924 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [{}->http://192.168.0.151][null]; keep alive indefinitely
+[20130826 11:07:14 924 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+[20130826 11:07:14 924 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Shutting down
+[20130826 11:07:14 924 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Closing connection [{}->http://192.168.0.151][null]
+[20130826 11:07:14 924 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Connection 0.0.0.0:53064<->192.168.0.151:80 closed
+[20130826 11:07:14 924 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement response:{"responseHeader":{"status":0,"QTime":125}}
+
+[20130826 11:13:58 577 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.type=:type and ri.status=:status order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 11:13:58 578 DEBUG] cn.zthz.tool.requirement.RequirementOperations - select r.id, r.type,r.title,r.hasMandate, r.price, r.expire, r.viewCount, r.userId, r.longitude, r.latitude, r.selectedCandidate , r.createTime, r.mainPictureSmall,r.mainPictureMid, r.mainPictureBig, r.status, u.name as userName , u.mainPicture as userPicture, u.mainPictureSmall as userPictureSmall ,u.mainPictureMid as userPictureMid ,u.mainPictureBig as userPictureBig ,u.credit as userCredit,  u.completeScore ,r.mainPicture, r.mainPictureSmall, r.mainPictureMid, r.mainPictureBig, (select count(userId) from RequirementCandidate rc where r.id=rc.requirementId ) as applyCount from (select * from Requirement ri where 1=1  and ri.type=? and ri.status=? order by ri.pri desc, ri.createTime desc ,ri.viewCount desc limit 0,10) r left join User u on r.userId=u.id order by r.pri desc, r.createTime desc ,r.viewCount desc 
+[20130826 11:13:58 589 DEBUG] cn.zthz.tool.requirement.RequirementOperations - -------------------estimated Time3---------------------: 11
+[20130826 12:00:00 006 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130826 12:00:00 083 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"10","Total Rows Fetched":"18","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 12:00:00","":"Indexing completed. Added/Updated: 9 documents. Deleted 0 documents.","Committed":"2013-08-26 12:00:00","Optimized":"2013-08-26 12:00:00","Total Documents Processed":"9","Time taken":"0:0:0.590"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 12:00:00 083 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":4},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 12:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-26 12:00:00","Optimized":"2013-08-26 12:00:00","Total Documents Processed":"31","Time taken":"0:0:0.572"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 14:00:00 001 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130826 14:00:00 034 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":6},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"10","Total Rows Fetched":"18","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 14:00:00","":"Indexing completed. Added/Updated: 9 documents. Deleted 0 documents.","Committed":"2013-08-26 14:00:00","Optimized":"2013-08-26 14:00:00","Total Documents Processed":"9","Time taken":"0:0:0.606"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 14:00:00 035 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 14:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-26 14:00:00","Optimized":"2013-08-26 14:00:00","Total Documents Processed":"31","Time taken":"0:0:0.606"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 16:00:00 000 INFO ] cn.zthz.actor.solr.ReimportScheduler - reimport requirement and user index
+[20130826 16:00:00 077 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"10","Total Rows Fetched":"18","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 16:00:00","":"Indexing completed. Added/Updated: 9 documents. Deleted 0 documents.","Committed":"2013-08-26 16:00:00","Optimized":"2013-08-26 16:00:00","Total Documents Processed":"9","Time taken":"0:0:0.571"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 16:00:00 077 INFO ] cn.zthz.actor.solr.ReimportScheduler - {"responseHeader":{"status":0,"QTime":5},"initArgs":["defaults",["config","data-config.xml"]],"command":"full-import","status":"idle","importResponse":"","statusMessages":{"Total Requests made to DataSource":"1","Total Rows Fetched":"31","Total Documents Skipped":"0","Full Dump Started":"2013-08-26 16:00:00","":"Indexing completed. Added/Updated: 31 documents. Deleted 0 documents.","Committed":"2013-08-26 16:00:00","Optimized":"2013-08-26 16:00:00","Total Documents Processed":"31","Time taken":"0:0:0.571"},"WARNING":"This response format is experimental.  It is likely to change in the future."}
+
+[20130826 16:27:07 275 INFO ] cn.zthz.actor.message.RequirementPushor - send expire message:{"hasMandate":false,"id":"402880174095997a014095b742be0003","price":123.00,"title":"反反复复","userId":"402880173f0e6534013f12105e660001"}
+[20130826 16:27:07 370 DEBUG] cn.zthz.tool.message.RMessageService - insert into RMessage (rid, uid, message,rowId, t, createTime ,status ) values('402880174095997a014095b742be0003','402880173f0e6534013f12105e660001','您的需求:反反复复已经过期！','402880ff40b896d30140b9bbccea0001',16,'2013-08-26 16:27:07.37',1)
+[20130826 16:27:07 388 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 60000
+[20130826 16:27:07 389 DEBUG] org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=1200}
+[20130826 16:27:07 391 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 16:27:07 391 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.clearRequestBody()
+[20130826 16:27:07 391 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.clearRequestBody()
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.getConnectionWithTimeout(HostConfiguration, long)
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - HttpConnectionManager.getConnection:  config = HostConfiguration[host=http://sdk.open.api.igexin.com], timeout = 0
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Allocating new connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 16:27:07 392 DEBUG] org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+[20130826 16:27:07 393 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+[20130826 16:27:07 393 DEBUG] org.apache.commons.httpclient.HttpConnection - Open connection to sdk.open.api.igexin.com:80
+[20130826 16:27:07 462 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+[20130826 16:27:07 462 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+[20130826 16:27:07 462 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+[20130826 16:27:07 463 DEBUG] httpclient.wire.header - >> "POST /apiex.htm HTTP/1.1[\r][\n]"
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+[20130826 16:27:07 463 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 16:27:07 464 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+[20130826 16:27:07 465 DEBUG] httpclient.wire.header - >> "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 465 DEBUG] httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 465 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 465 DEBUG] httpclient.wire.header - >> "Host: sdk.open.api.igexin.com[\r][\n]"
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 466 DEBUG] httpclient.wire.header - >> "Content-Length: 527[\r][\n]"
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+[20130826 16:27:07 466 DEBUG] httpclient.wire.header - >> "[\r][\n]"
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 16:27:07 466 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getRequestOutputStream()
+[20130826 16:27:07 467 DEBUG] httpclient.wire.content - >> "{"appId":"o94ymOAtzV74lbC6I3V6a","isOffline":true,"appkey":"RQA0RdthPhA743m0n0Y6Q5","action":"pushMessageToSingleAction","pushType":"TransmissionMsg","offlineExpireTime":0,"type":2,"clientId":"eec2bd7648476297f53c9a08247cbaa3","transmissionContent":"{\"alert\":\"[0xe6][0x82][0xa8][0xe7][0x9a][0x84][0xe9][0x9c][0x80][0xe6][0xb1][0x82]:[0xe5][0x8f][0x8d][0xe5][0x8f][0x8d][0xe5][0xa4][0x8d][0xe5][0xa4][0x8d][0xe5][0xb7][0xb2][0xe7][0xbb][0x8f][0xe8][0xbf][0x87][0xe6][0x9c][0x9f][0xef][0xbc][0x81]\",\"attach\":{\"mid\":1821,\"t\":16}}","clientData":"CgASC3B1c2htZXNzYWdlGgAiFlJRQTBSZHRoUGhBNzQzbTBuMFk2UTUqFW85NHltT0F0elY3NGxi\r\nQzZJM1Y2YTIAOggKABIAGgAiAEIHCAEQABiuTkIZCK5OEAMYZOIIAOoIBgoAEgAaAPAIAPgIZEIE\r\nCGQQBw=="}"
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body sent
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponse(HttpState, HttpConnection)
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readStatusLine(HttpState, HttpConnection)
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.readLine()
+[20130826 16:27:07 467 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 468 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 523 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 16:27:07 524 DEBUG] httpclient.wire.header - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseHeaders(HttpState,HttpConnection)
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HeaderParser.parseHeaders(InputStream, String)
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 524 DEBUG] httpclient.wire.header - << "Server: nginx/1.0.5[\r][\n]"
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 524 DEBUG] httpclient.wire.header - << "Date: Mon, 26 Aug 2013 08:27:07 GMT[\r][\n]"
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 524 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 525 DEBUG] httpclient.wire.header - << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 525 DEBUG] httpclient.wire.header - << "Connection: keep-alive[\r][\n]"
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 525 DEBUG] httpclient.wire.header - << "Content-Language: en-US[\r][\n]"
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 525 DEBUG] httpclient.wire.header - << "Content-Length: 86[\r][\n]"
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readLine(InputStream, String)
+[20130826 16:27:07 525 DEBUG] org.apache.commons.httpclient.HttpParser - enter HttpParser.readRawLine()
+[20130826 16:27:07 526 DEBUG] httpclient.wire.header - << "[\r][\n]"
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processResponseHeaders(HttpState, HttpConnection)
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.processCookieHeaders(Header[], HttpState, HttpConnection)
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpState, HttpConnection)
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.readResponseBody(HttpConnection)
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.getResponseInputStream()
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.canResponseHaveBody(int)
+[20130826 16:27:07 526 DEBUG] httpclient.wire.content - << "{"taskId":"OSS-0826_wkmAQ85SHS9jmOsd9uJpM5","result":"ok","status":"successed_online"}"
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpMethodBase - Should NOT close connection in response to directive: keep-alive
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.isResponseAvailable()
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+[20130826 16:27:07 526 DEBUG] org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+[20130826 16:27:07 527 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.releaseConnection(HttpConnection)
+[20130826 16:27:07 527 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Freeing connection, hostConfig=HostConfiguration[host=http://sdk.open.api.igexin.com]
+[20130826 16:27:07 527 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - enter HttpConnectionManager.ConnectionPool.getHostPool(HostConfiguration)
+[20130826 16:27:07 527 DEBUG] org.apache.commons.httpclient.util.IdleConnectionHandler - Adding connection at: 1377505627527
+[20130826 16:27:07 527 DEBUG] org.apache.commons.httpclient.MultiThreadedHttpConnectionManager - Notifying no-one, there are no waiting threads
+[20130826 16:27:07 528 INFO ] cn.zthz.tool.push.AndroidJPush - {taskId=OSS-0826_wkmAQ85SHS9jmOsd9uJpM5, result=ok, status=successed_online}
+[20130826 16:27:07 528 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement with id:402880174095997a014095b742be0003 in solr
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: {}->http://192.168.0.151, timeout = 0
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [{}->http://192.168.0.151] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - No free connections [{}->http://192.168.0.151][null]
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Available capacity: 2 out of 2 [{}->http://192.168.0.151][null]
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Creating new connection [{}->http://192.168.0.151]
+[20130826 16:27:07 529 DEBUG] org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to 192.168.0.151:80
+[20130826 16:27:07 532 DEBUG] org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+[20130826 16:27:07 532 DEBUG] org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+[20130826 16:27:07 532 DEBUG] org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+[20130826 16:27:07 532 DEBUG] org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+[20130826 16:27:07 532 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+[20130826 16:27:07 532 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Sending request: POST /solr/requirement/update?commit=true HTTP/1.1
+[20130826 16:27:07 532 DEBUG] org.apache.http.wire - >> "POST /solr/requirement/update?commit=true HTTP/1.1[\r][\n]"
+[20130826 16:27:07 532 DEBUG] org.apache.http.wire - >> "Content-Length: 52[\r][\n]"
+[20130826 16:27:07 532 DEBUG] org.apache.http.wire - >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+[20130826 16:27:07 533 DEBUG] org.apache.http.wire - >> "Host: 192.168.0.151[\r][\n]"
+[20130826 16:27:07 533 DEBUG] org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+[20130826 16:27:07 533 DEBUG] org.apache.http.wire - >> "[\r][\n]"
+[20130826 16:27:07 533 DEBUG] org.apache.http.headers - >> POST /solr/requirement/update?commit=true HTTP/1.1
+[20130826 16:27:07 533 DEBUG] org.apache.http.headers - >> Content-Length: 52
+[20130826 16:27:07 533 DEBUG] org.apache.http.headers - >> Content-Type: application/json; charset=UTF-8
+[20130826 16:27:07 533 DEBUG] org.apache.http.headers - >> Host: 192.168.0.151
+[20130826 16:27:07 533 DEBUG] org.apache.http.headers - >> Connection: Keep-Alive
+[20130826 16:27:07 533 DEBUG] org.apache.http.wire - >> "{"delete":{"id":"402880174095997a014095b742be0003"}}"
+[20130826 16:27:07 651 DEBUG] org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+[20130826 16:27:07 651 DEBUG] org.apache.http.wire - << "Server: nginx/1.2.6[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.wire - << "Date: Mon, 26 Aug 2013 08:29:21 GMT[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.wire - << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.wire - << "Connection: keep-alive[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 16:27:07 652 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << HTTP/1.1 200 OK
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << Server: nginx/1.2.6
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << Date: Mon, 26 Aug 2013 08:29:21 GMT
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << Content-Type: application/json;charset=UTF-8
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << Transfer-Encoding: chunked
+[20130826 16:27:07 652 DEBUG] org.apache.http.headers - << Connection: keep-alive
+[20130826 16:27:07 652 DEBUG] org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+[20130826 16:27:07 653 DEBUG] org.apache.http.wire - << "2c[\r][\n]"
+[20130826 16:27:07 653 DEBUG] org.apache.http.wire - << "{"responseHeader":{"status":0,"QTime":114}}[\n]"
+[20130826 16:27:07 653 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 16:27:07 653 DEBUG] org.apache.http.wire - << "0[\r][\n]"
+[20130826 16:27:07 653 DEBUG] org.apache.http.wire - << "[\r][\n]"
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [{}->http://192.168.0.151][null]
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [{}->http://192.168.0.151][null]; keep alive indefinitely
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Shutting down
+[20130826 16:27:07 653 DEBUG] org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Closing connection [{}->http://192.168.0.151][null]
+[20130826 16:27:07 654 DEBUG] org.apache.http.impl.conn.DefaultClientConnection - Connection 0.0.0.0:50724<->192.168.0.151:80 closed
+[20130826 16:27:07 654 INFO ] cn.zthz.actor.solr.SolrUpdater - delete requirement response:{"responseHeader":{"status":0,"QTime":114}}
+

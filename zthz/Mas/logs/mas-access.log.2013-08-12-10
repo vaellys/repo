@@ -1,0 +1,2 @@
+[20130812 10:52:44 673 INFO ] 0:0:0:0:0:0:0:1 GET /user/applyAuth.json {"userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130812 10:53:31 208 INFO ] 0:0:0:0:0:0:0:1 GET /user/applyAuth.json {"idcard":"424432432","name":"zhangsan","reason":"3213123213","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}

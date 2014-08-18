@@ -1,0 +1,10 @@
+[20130729 10:05:45 680 INFO ] 0:0:0:0:0:0:0:1 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","status":"4","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 10:06:42 866 INFO ] 192.168.0.133 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 10:06:43 162 INFO ] 192.168.0.133 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 10:06:43 507 INFO ] 192.168.0.133 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 10:07:06 000 INFO ] 192.168.0.133 GET /employer/requirementManagement.json {"pageSize":"10","startIndex":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
+[20130729 10:30:25 608 INFO ] 192.168.0.150 POST /userRequirement/queryRequirement.json {"pageSize":"30","queryOrder":"newest","startIndex":"0","status":"0","type":"0"}
+[20130729 10:30:26 352 INFO ] 192.168.0.150 POST /user/login.json {"deviceToken":"369accdd5d1866ba26ad52ca3c716b322ae027a1912d2d63c19c644f95a8dda2","deviceType":"0","qqAccessToken":"71C404C03109160B9F1D804FD371DB68","qqUid":"E78D39776EF59318BC5AF2A270F095C7","userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 10:30:26 462 INFO ] 192.168.0.150 POST /userStatics/urs.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 10:30:27 249 INFO ] 192.168.0.150 GET /employer/home.json {"userId":"402880173f0e6534013f130c6b300022","userToken":"39dbdcde2b0d419ca036e7ec731e9693"}
+[20130729 10:40:09 640 INFO ] 192.168.0.137 POST /user/updateDevice.json {"deviceToken":"3fa666e3a896b924d73affa88ae27930","deviceType":"1","userId":"402880173f07abcf013f08a0f97f002d","userToken":"e0ddde3a4c40439e8160f03f310e94e9"}
