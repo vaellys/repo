@@ -1,0 +1,140 @@
+package com.alipay.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.alipay.config.AlipayConfig;
+import com.alipay.dao.PaymentRecorderDao;
+import com.alipay.model.PaymentRecorder;
+import com.alipay.util.AlipayStatus;
+import com.alipay.util.AlipaySubmit;
+import com.alipay.util.Formats;
+import com.alipay.util.HashUtils;
+import com.alipay.util.PassException;
+import com.alipay.util.ResponseUtils;
+import com.alipay.util.StringUtils;
+
+/**
+ * Servlet implementation class AlipayServlet
+ */
+public class AlipayServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		// 支付类型
+		String payment_type = "1";
+		// 页面跳转同步通知页面路径
+		String return_url = "http://payment.ccidnet.com/alipayNotification";
+		// 订单名称
+		String subject = AlipayStatus.FREESCALE_TECHNOLOGY_FORUM_BEIJING;
+		// 发票抬头
+		String invoiceTitle = new String(request.getParameter("invoiceTitle").getBytes("ISO-8859-1"), "UTF-8");;
+		//默认支付方式
+		String paymethod = "bankPay";
+
+		// 付款金额
+		String total_fee = new String(request.getParameter("WIDtotal_fee")
+				.getBytes("ISO-8859-1"), "UTF-8");
+		// 必填
+
+		// 防钓鱼时间戳
+		String anti_phishing_key = "";
+		// 若要使用请调用类文件submit中的query_timestamp函数
+		// 客户端的IP地址
+		String exter_invoke_ip = "";
+		String confirmationNumber = getString(request, response, "confirmationNumber", true);
+		if(StringUtils.isEmpty(confirmationNumber)){
+			return;
+		}
+		String firstname = new String(request.getParameter("firstname").getBytes("ISO-8859-1"), "UTF-8");
+		String lastname = new String(request.getParameter("lastname").getBytes("ISO-8859-1"), "UTF-8");
+		PaymentRecorderDao dao;
+		String sHtmlText = null;
+		try {
+			dao = new PaymentRecorderDao();
+			Map<String, Object> map = dao.getByInvoiceAndCfnum(confirmationNumber);
+			Map<String, Object> args = new HashMap<String, Object>();
+			Map<String, String> sParaTemp = new HashMap<String, String>();
+			sParaTemp.put("service", "create_direct_pay_by_user");
+			sParaTemp.put("partner", AlipayConfig.partner);
+			sParaTemp.put("_input_charset", AlipayConfig.input_charset);
+			sParaTemp.put("payment_type", payment_type);
+			sParaTemp.put("notify_url", return_url);
+			sParaTemp.put("seller_id", AlipayConfig.partner);
+			if(null != map && map.size() != 0){
+				//sParaTemp.put("notify_url", notify_url);
+				sParaTemp.put("out_trade_no", (String)map.get("alipay_number"));
+				sParaTemp.put("subject", subject);
+				sParaTemp.put("total_fee", total_fee);
+				sParaTemp.put("anti_phishing_key", anti_phishing_key);
+				sParaTemp.put("exter_invoke_ip", exter_invoke_ip);
+				// 建立请求
+				sHtmlText = AlipaySubmit.buildRequest(sParaTemp, "get", "确认");
+				args.put("first_name", firstname);
+				args.put("last_name", lastname);
+				args.put("create_time", new Timestamp(System.currentTimeMillis()));
+				args.put("invoice_title", invoiceTitle);
+				dao.update((String)map.get("alipay_number"), args);
+				
+			}else{
+				String outTradeNo = HashUtils.systemUuid();
+				// 把请求参数打包成数组
+				sParaTemp.put("out_trade_no", outTradeNo);
+				sParaTemp.put("subject", subject);
+				sParaTemp.put("total_fee", total_fee);
+				sParaTemp.put("anti_phishing_key", anti_phishing_key);
+				sParaTemp.put("exter_invoke_ip", exter_invoke_ip);
+				// 建立请求
+				sHtmlText = AlipaySubmit.buildRequest(sParaTemp, "get", "确认");
+				// 保存记录
+				PaymentRecorder bean = new PaymentRecorder();
+				bean.setConfirmation_number(confirmationNumber);
+				bean.setFirst_name(firstname);
+				bean.setLast_name(lastname);
+				bean.setInvoice_title(invoiceTitle);
+				bean.setPay_money(Formats.formatMoney(new BigDecimal(total_fee)));
+				bean.setCreate_time(new Timestamp(System.currentTimeMillis()));
+				bean.setAlipay_number(outTradeNo);
+				bean.setTrade_status(AlipayStatus.ALIPAY_TRADE_STATUSES
+						.get(AlipayStatus.ALIPAY_STATUS_WAIT_BUYER_PAY));
+				dao.savePaymentRecorder(bean);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		response.setContentType("text/html");
+		out.println(sHtmlText);
+	}
+	
+	protected String getString(HttpServletRequest request, HttpServletResponse response, String key, boolean isCheckNull) {
+		String value = request.getParameter(key);
+		if (isCheckNull) {
+			checkParameterNotNull(request,response, key, value);
+		}
+		return value;
+	}
+	
+	protected void checkParameterNotNull(HttpServletRequest request, HttpServletResponse response, String name, String value) {
+		if (StringUtils.isEmpty(value)) {
+			ResponseUtils.renderText(response, name + " is null");
+			return;
+		}
+	}
+}
