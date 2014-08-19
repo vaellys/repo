@@ -1,0 +1,12 @@
+20:19:00.690 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+20:19:02.337 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+20:19:02.481 [main] INFO  org.mas.codehaus.finder.UserTest - "[{\"email\":\"617907867@qq.com\",\"id\":\"11111111\",\"password\":\"12334444\",\"username\":\"张三\"}]"
+20:20:45.519 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+20:20:47.410 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+20:22:08.024 [main] INFO  org.mas.codehaus.finder.UserTest - "{\"email\":\"617907867@qq.com\",\"id\":\"11111111\",\"password\":\"12334444\",\"username\":\"张三\"}"
+21:09:45.710 [qtp788694856-19] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@51aea551]
+21:09:45.758 [qtp788694856-19] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+21:09:45.916 [qtp788694856-19] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+21:10:06.845 [qtp788694856-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@51aea551]
+21:10:06.848 [qtp788694856-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+21:10:06.849 [qtp788694856-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 11111111(String)

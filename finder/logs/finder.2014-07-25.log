@@ -1,0 +1,104 @@
+19:41:53.422 [qtp15725893-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@13bf6c8]
+19:41:53.450 [qtp15725893-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:41:53.587 [qtp15725893-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:43:27.441 [qtp15725893-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@13bf6c8]
+19:43:27.442 [qtp15725893-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:43:27.443 [qtp15725893-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:43:56.466 [qtp15725893-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@13838e6]
+19:43:56.473 [qtp15725893-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:43:56.546 [qtp15725893-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:43:59.453 [qtp15725893-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@13838e6]
+19:43:59.454 [qtp15725893-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:43:59.455 [qtp15725893-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:49:10.101 [qtp9783727-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1de5d00]
+19:49:10.124 [qtp9783727-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:49:10.249 [qtp9783727-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:50:02.615 [qtp9783727-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1de5d00]
+19:50:02.615 [qtp9783727-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:50:02.616 [qtp9783727-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:53:33.366 [qtp10416590-26] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@bb92b]
+19:53:33.520 [qtp10416590-26] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:53:34.586 [qtp10416590-26] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:54:37.660 [qtp10416590-24] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@bb92b]
+19:54:37.661 [qtp10416590-24] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:54:37.662 [qtp10416590-24] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:55:38.794 [qtp10416590-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@bb92b]
+19:55:38.798 [qtp10416590-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:55:38.801 [qtp10416590-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+19:58:00.135 [qtp4572701-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3aa539]
+19:58:00.151 [qtp4572701-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+19:58:00.307 [qtp4572701-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:03:40.543 [qtp24679125-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1ef118a]
+20:03:40.560 [qtp24679125-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:03:40.683 [qtp24679125-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:05:59.946 [qtp24679125-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1c3f8fd]
+20:05:59.952 [qtp24679125-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:06:00.025 [qtp24679125-22] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:07:39.802 [qtp24679125-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@5c517a]
+20:07:39.809 [qtp24679125-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:07:39.883 [qtp24679125-23] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:16:51.335 [qtp25929107-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1800894]
+20:16:51.356 [qtp25929107-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:16:51.499 [qtp25929107-21] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:19:34.998 [qtp25929107-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@16907e6]
+20:19:35.003 [qtp25929107-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:19:35.067 [qtp25929107-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:24:51.654 [qtp14322087-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1e33255]
+20:24:51.672 [qtp14322087-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:24:51.794 [qtp14322087-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:38:44.803 [qtp14322087-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@f5aa2f]
+20:38:44.808 [qtp14322087-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:38:44.882 [qtp14322087-18] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+20:42:28.304 [qtp30100074-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1db0505]
+20:42:28.320 [qtp30100074-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==>  Preparing: select id, username, password, email, name, sex, birthday, address, tel, qq, image, sfjh, sfzx, sfhf, sfpl, sffx from user where id = ? 
+20:42:28.455 [qtp30100074-20] DEBUG o.m.c.f.d.U.selectByPrimaryKey - ==> Parameters: 1(String)
+16:05:08.636 [qtp24413780-21] DEBUG o.m.c.finder.dao.UserMapper.register - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1d12330]
+16:05:08.752 [qtp24413780-21] DEBUG o.m.c.finder.dao.UserMapper.register - ==>  Preparing: insert into user (id, name, password, email, nickname, avatar, sex, cellphone, register_time, user_token) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+16:05:08.892 [qtp24413780-21] DEBUG o.m.c.finder.dao.UserMapper.register - ==> Parameters: null, null, null, null, null, null, null, null, null, null
+16:16:26.865 [qtp24413780-22] DEBUG o.m.c.finder.dao.UserMapper.register - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1d12330]
+16:16:26.867 [qtp24413780-22] DEBUG o.m.c.finder.dao.UserMapper.register - ==>  Preparing: insert into user (id, name, password, email, nickname, avatar, sex, cellphone, register_time, user_token) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+16:16:26.869 [qtp24413780-22] DEBUG o.m.c.finder.dao.UserMapper.register - ==> Parameters: null, null, null, null, null, null, null, null, null, null
+16:18:27.556 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:18:27.646 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+16:18:27.667 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+16:18:27.783 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Class not found: org.jboss.vfs.VFS
+16:18:27.783 [main] DEBUG org.apache.ibatis.io.ResolverUtil - JBoss 6 VFS API is not available in this environment.
+16:18:27.785 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Class not found: org.jboss.vfs.VirtualFile
+16:18:27.788 [main] DEBUG org.apache.ibatis.io.ResolverUtil - VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+16:18:27.791 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Using VFS adapter org.apache.ibatis.io.DefaultVFS
+16:18:27.792 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity
+16:18:27.793 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity
+16:18:27.897 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: base
+16:18:27.898 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: hbm
+16:18:27.899 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: mapping
+16:18:27.900 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: User.class
+16:18:27.901 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Listing file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity
+16:18:27.901 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/base
+16:18:27.902 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/base
+16:18:27.903 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/hbm
+16:18:27.903 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/hbm
+16:18:27.904 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/mapping
+16:18:27.904 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/mapping
+16:18:27.906 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: UserMapper.xml
+16:18:27.907 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Listing file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/mapping
+16:18:27.908 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/mapping/UserMapper.xml
+16:18:27.909 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/mapping/UserMapper.xml
+16:18:27.910 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: <?xml version="1.0" encoding="UTF-8" ?>
+16:18:27.911 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Find JAR URL: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/User.class
+16:18:27.912 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Not a JAR: file:/E:/sts/maven/finder/target/classes/org/mas/codehaus/finder/entity/User.class
+16:18:27.913 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Reader entry: ����   2 Q  #org/mas/codehaus/finder/entity/User  java/lang/Object id Ljava/lang/Integer; name Ljava/lang/String; password email nickname avatar sex 	cellphone registerTime Ljava/util/Date; 	userToken <init> ()V Code
+16:18:27.916 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class org.mas.codehaus.finder.entity.User matches criteria [is assignable to Object]
+16:18:27.919 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Scanned package: 'org.mas.codehaus.finder.entity' for aliases
+16:18:28.225 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\sts\maven\finder\target\classes\org\mas\codehaus\finder\entity\mapping\UserMapper.xml]'
+16:18:36.331 [qtp1967692-18] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+16:18:36.346 [qtp1967692-18] DEBUG org.mybatis.spring.SqlSessionUtils - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d635a]
+16:18:36.451 [qtp1967692-18] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@167e86a] will be managed by Spring
+16:18:36.456 [qtp1967692-18] DEBUG o.m.c.finder.dao.UserMapper.register - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@167e86a]
+16:18:36.469 [qtp1967692-18] DEBUG o.m.c.finder.dao.UserMapper.register - ==>  Preparing: insert into user (id, name, password, email, nickname, avatar, sex, cellphone, register_time, user_token) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+16:18:36.593 [qtp1967692-18] DEBUG o.m.c.finder.dao.UserMapper.register - ==> Parameters: null, null, null, null, null, null, null, null, null, null
+16:18:36.600 [qtp1967692-18] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache
+16:18:36.601 [qtp1967692-18] DEBUG org.mybatis.spring.SqlSessionUtils - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d635a]
+16:18:36.604 [qtp1967692-18] DEBUG org.mybatis.spring.SqlSessionUtils - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d635a]
+16:18:36.605 [qtp1967692-18] DEBUG org.mybatis.spring.SqlSessionUtils - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d635a]
+16:35:11.557 [Scanner-0] DEBUG c.a.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} exit cache
+16:35:11.565 [Scanner-0] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

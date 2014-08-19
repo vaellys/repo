@@ -1,0 +1,12 @@
+package org.mas.codehaus.finder.manager;
+
+import java.util.List;
+
+import org.mas.codehaus.finder.entity.User;
+
+public interface UserServiceI {
+	
+	public User getUserById(String userId);
+	
+	public List<User> getAll();
+}

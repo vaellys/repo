@@ -1,0 +1,38 @@
+package org.mas.codehaus.finder;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mas.codehaus.finder.entity.User;
+import org.mas.codehaus.finder.manager.UserServiceI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.alibaba.fastjson.JSON;
+
+
+public class UserTest{
+	ApplicationContext ac = null;
+	UserServiceI userService = null;
+	
+	private static Logger logger = LoggerFactory.getLogger(UserTest.class);
+			
+	@Before
+	public void setUp(){
+		ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml", "spring-mybatis.xml"});
+		userService = (UserServiceI) ac.getBean("userService");
+	}
+	@Test
+	public void testInsert(){
+		User u = userService.getUserById("11111111");
+		logger.debug(JSON.toJSONString(JSON.toJSONStringWithDateFormat(u, "yyyy-MM-dd HH:mm:ss")));
+	}
+	@Test
+	public void testGetAll(){
+		List<User> l = userService.getAll();
+		logger.debug(JSON.toJSONString(JSON.toJSONStringWithDateFormat(l, "yyyy-MM-dd HH:mm:ss")));
+	}
+}

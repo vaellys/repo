@@ -1,0 +1,32 @@
+package org.mas.codehaus.finder.manager.impl;
+
+import java.util.List;
+
+import org.mas.codehaus.finder.dao.UserMapper;
+import org.mas.codehaus.finder.entity.User;
+import org.mas.codehaus.finder.manager.UserServiceI;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("userService")
+public class UserServiceImpl implements UserServiceI {
+	
+	private UserMapper userMapper;
+
+	public User getUserById(String userId) {
+		return userMapper.selectByPrimaryKey(userId);
+	}
+
+	public UserMapper getUserMapper() {
+		return userMapper;
+	}
+	@Autowired
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
+
+	public List<User> getAll() {
+		return userMapper.getAll();
+	}
+
+}
